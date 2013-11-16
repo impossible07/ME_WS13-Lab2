@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/at.ac.tuwien.big.questionnaire/src-gen" editDirectory="/at.ac.tuwien.big.questionnaire.edit/src"
+    editorDirectory="/at.ac.tuwien.big.questionnaire.editor/src" modelPluginID="at.ac.tuwien.big.questionnaire"
+    forceOverwrite="true" modelName="Questionnaire" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="at.ac.tuwien.big.questionnaire.edit"
+    editorPluginID="at.ac.tuwien.big.questionnaire.editor" runtimeVersion="2.9">
+  <genPackages prefix="Questionnaire" basePackage="at.ac.tuwien.big" disposableProviderFactory="true"
+      fileExtensions="questionnaire" ecorePackage="Questionnaire.ecore#/">
+    <genClasses ecoreClass="Questionnaire.ecore#//Questionnaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//Questionnaire/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//Questionnaire/groups"/>
+    </genClasses>
+    <genClasses ecoreClass="Questionnaire.ecore#//Group">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//Group/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//Group/questions"/>
+    </genClasses>
+    <genClasses ecoreClass="Questionnaire.ecore#//OpenQuestion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//OpenQuestion/mandatory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//OpenQuestion/multiline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//OpenQuestion/question"/>
+    </genClasses>
+    <genClasses ecoreClass="Questionnaire.ecore#//ClosedQuestion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//ClosedQuestion/question"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//ClosedQuestion/answers"/>
+    </genClasses>
+    <genClasses ecoreClass="Questionnaire.ecore#//LikertQuestion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//LikertQuestion/question"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//LikertQuestion/lower"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//LikertQuestion/higher"/>
+    </genClasses>
+    <genClasses ecoreClass="Questionnaire.ecore#//Answers">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//Answers/answers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//Answers/answer"/>
+    </genClasses>
+    <genClasses ecoreClass="Questionnaire.ecore#//OpenAnswer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//OpenAnswer/answer"/>
+    </genClasses>
+    <genClasses ecoreClass="Questionnaire.ecore#//ClosedAnswer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//ClosedAnswer/answer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//ClosedAnswer/question"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
