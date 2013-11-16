@@ -81,54 +81,53 @@ ruleQuestionnaire returns [EObject current=null]
     {
     	newLeafNode(otherlv_0, grammarAccess.getQuestionnaireAccess().getQuestionnaireKeyword_0());
     }
-(
-(
-		lv_name_1_0=	'"' 
+	otherlv_1='"' 
     {
-        newLeafNode(lv_name_1_0, grammarAccess.getQuestionnaireAccess().getNameQuotationMarkKeyword_1_0());
+    	newLeafNode(otherlv_1, grammarAccess.getQuestionnaireAccess().getQuotationMarkKeyword_1());
     }
- 
-	    {
+(
+(
+		lv_name_2_0=RULE_ID
+		{
+			newLeafNode(lv_name_2_0, grammarAccess.getQuestionnaireAccess().getNameIDTerminalRuleCall_2_0()); 
+		}
+		{
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getQuestionnaireRule());
 	        }
-       		setWithLastConsumed($current, "name", lv_name_1_0, "\"");
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_2_0, 
+        		"ID");
 	    }
 
 )
-)this_ID_2=RULE_ID
-    { 
-    newLeafNode(this_ID_2, grammarAccess.getQuestionnaireAccess().getIDTerminalRuleCall_2()); 
-    }
-	otherlv_3='"' 
+)	otherlv_3='" [' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getQuestionnaireAccess().getQuotationMarkKeyword_3());
-    }
-	otherlv_4='[' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getQuestionnaireAccess().getLeftSquareBracketKeyword_4());
+    	newLeafNode(otherlv_3, grammarAccess.getQuestionnaireAccess().getQuotationMarkSpaceLeftSquareBracketKeyword_3());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getQuestionnaireAccess().getGroupsGroupParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getQuestionnaireAccess().getGroupsGroupParserRuleCall_4_0()); 
 	    }
-		lv_groups_5_0=ruleGroup		{
+		lv_groups_4_0=ruleGroup		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getQuestionnaireRule());
 	        }
        		add(
        			$current, 
        			"groups",
-        		lv_groups_5_0, 
+        		lv_groups_4_0, 
         		"Group");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)+	otherlv_6=']' 
+)+	otherlv_5=']' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getQuestionnaireAccess().getRightSquareBracketKeyword_6());
+    	newLeafNode(otherlv_5, grammarAccess.getQuestionnaireAccess().getRightSquareBracketKeyword_5());
     }
 )
 ;

@@ -22,48 +22,44 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Questionnaire");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cQuestionnaireKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cNameQuotationMarkKeyword_1_0 = (Keyword)cNameAssignment_1.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Keyword cQuotationMarkKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cLeftSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cGroupsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cGroupsGroupParserRuleCall_5_0 = (RuleCall)cGroupsAssignment_5.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cQuotationMarkKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cQuotationMarkSpaceLeftSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cGroupsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cGroupsGroupParserRuleCall_4_0 = (RuleCall)cGroupsAssignment_4.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Questionnaire:
-		//	"questionnaire" name="\"" ID "\"" "[" groups+=Group+ "]";
+		//	"questionnaire" "\"" name=ID "\" [" groups+=Group+ "]";
 		public ParserRule getRule() { return rule; }
 
-		//"questionnaire" name="\"" ID "\"" "[" groups+=Group+ "]"
+		//"questionnaire" "\"" name=ID "\" [" groups+=Group+ "]"
 		public Group getGroup() { return cGroup; }
 
 		//"questionnaire"
 		public Keyword getQuestionnaireKeyword_0() { return cQuestionnaireKeyword_0; }
 
-		//name="\""
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
 		//"\""
-		public Keyword getNameQuotationMarkKeyword_1_0() { return cNameQuotationMarkKeyword_1_0; }
+		public Keyword getQuotationMarkKeyword_1() { return cQuotationMarkKeyword_1; }
+
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//ID
-		public RuleCall getIDTerminalRuleCall_2() { return cIDTerminalRuleCall_2; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//"\""
-		public Keyword getQuotationMarkKeyword_3() { return cQuotationMarkKeyword_3; }
-
-		//"["
-		public Keyword getLeftSquareBracketKeyword_4() { return cLeftSquareBracketKeyword_4; }
+		//"\" ["
+		public Keyword getQuotationMarkSpaceLeftSquareBracketKeyword_3() { return cQuotationMarkSpaceLeftSquareBracketKeyword_3; }
 
 		//groups+=Group+
-		public Assignment getGroupsAssignment_5() { return cGroupsAssignment_5; }
+		public Assignment getGroupsAssignment_4() { return cGroupsAssignment_4; }
 
 		//Group
-		public RuleCall getGroupsGroupParserRuleCall_5_0() { return cGroupsGroupParserRuleCall_5_0; }
+		public RuleCall getGroupsGroupParserRuleCall_4_0() { return cGroupsGroupParserRuleCall_4_0; }
 
 		//"]"
-		public Keyword getRightSquareBracketKeyword_6() { return cRightSquareBracketKeyword_6; }
+		public Keyword getRightSquareBracketKeyword_5() { return cRightSquareBracketKeyword_5; }
 	}
 
 	public class GroupElements extends AbstractParserRuleElementFinder {
@@ -451,7 +447,7 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Questionnaire:
-	//	"questionnaire" name="\"" ID "\"" "[" groups+=Group+ "]";
+	//	"questionnaire" "\"" name=ID "\" [" groups+=Group+ "]";
 	public QuestionnaireElements getQuestionnaireAccess() {
 		return (pQuestionnaire != null) ? pQuestionnaire : (pQuestionnaire = new QuestionnaireElements());
 	}

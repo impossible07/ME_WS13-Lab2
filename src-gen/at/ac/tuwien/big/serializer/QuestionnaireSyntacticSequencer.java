@@ -38,19 +38,9 @@ public class QuestionnaireSyntacticSequencer extends AbstractSyntacticSequencer 
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getIDRule())
-			return getIDToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-	 */
-	protected String getIDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -92,7 +82,7 @@ public class QuestionnaireSyntacticSequencer extends AbstractSyntacticSequencer 
 	
 	/**
 	 * Syntax:
-	 *     'multiple answers' | 'single answer'
+	 *     'single answer' | 'multiple answers'
 	 */
 	protected void emit_ClosedQuestion_MultipleAnswersKeyword_1_1_or_SingleAnswerKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

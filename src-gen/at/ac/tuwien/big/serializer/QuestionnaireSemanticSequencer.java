@@ -179,7 +179,7 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (name='"' groups+=Group+)
+	 *     (name=ID groups+=Group+)
 	 */
 	protected void sequence_Questionnaire(EObject context, Questionnaire semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
