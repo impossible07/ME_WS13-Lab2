@@ -1,6 +1,5 @@
 package at.ac.tuwien.big.serializer;
 
-import at.ac.tuwien.big.questionnaire.Answers;
 import at.ac.tuwien.big.questionnaire.ClosedQuestion;
 import at.ac.tuwien.big.questionnaire.Group;
 import at.ac.tuwien.big.questionnaire.LikertQuestion;
@@ -30,12 +29,6 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == QuestionnairePackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case QuestionnairePackage.ANSWERS:
-				if(context == grammarAccess.getAnswersRule()) {
-					sequence_Answers(context, (Answers) semanticObject); 
-					return; 
-				}
-				else break;
 			case QuestionnairePackage.CLOSED_QUESTION:
 				if(context == grammarAccess.getClosedQuestionRule()) {
 					sequence_ClosedQuestion(context, (ClosedQuestion) semanticObject); 
@@ -69,15 +62,6 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
-	
-	/**
-	 * Constraint:
-	 *     question=[ClosedQuestion|ID]?
-	 */
-	protected void sequence_Answers(EObject context, Answers semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
 	
 	/**
 	 * Constraint:
@@ -123,8 +107,8 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getLikertQuestionAccess().getQuestionSTRINGTerminalRuleCall_1_0(), semanticObject.getQuestion());
-		feeder.accept(grammarAccess.getLikertQuestionAccess().getLowerINTTerminalRuleCall_3_0(), semanticObject.getLower());
-		feeder.accept(grammarAccess.getLikertQuestionAccess().getHigherINTTerminalRuleCall_5_0(), semanticObject.getHigher());
+		feeder.accept(grammarAccess.getLikertQuestionAccess().getLowerINTTerminalRuleCall_4_0(), semanticObject.getLower());
+		feeder.accept(grammarAccess.getLikertQuestionAccess().getHigherINTTerminalRuleCall_6_0(), semanticObject.getHigher());
 		feeder.finish();
 	}
 	

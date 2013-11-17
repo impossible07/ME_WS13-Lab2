@@ -356,7 +356,11 @@ ruleClosedQuestion returns [EObject current=null]
 	    }
 
 )
-))
+)(	otherlv_5=',' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getClosedQuestionAccess().getCommaKeyword_4());
+    }
+)?)
 ;
 
 
@@ -399,15 +403,19 @@ ruleLikertQuestion returns [EObject current=null]
 	    }
 
 )
-)	otherlv_2='(-' 
+)	otherlv_2='(' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getLikertQuestionAccess().getLeftParenthesisHyphenMinusKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getLikertQuestionAccess().getLeftParenthesisKeyword_2());
     }
+(	otherlv_3='-' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getLikertQuestionAccess().getHyphenMinusKeyword_3());
+    }
+)?(
 (
-(
-		lv_lower_3_0=RULE_INT
+		lv_lower_4_0=RULE_INT
 		{
-			newLeafNode(lv_lower_3_0, grammarAccess.getLikertQuestionAccess().getLowerINTTerminalRuleCall_3_0()); 
+			newLeafNode(lv_lower_4_0, grammarAccess.getLikertQuestionAccess().getLowerINTTerminalRuleCall_4_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -416,20 +424,20 @@ ruleLikertQuestion returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"lower",
-        		lv_lower_3_0, 
+        		lv_lower_4_0, 
         		"INT");
 	    }
 
 )
-)	otherlv_4='..' 
+)	otherlv_5='..' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getLikertQuestionAccess().getFullStopFullStopKeyword_4());
+    	newLeafNode(otherlv_5, grammarAccess.getLikertQuestionAccess().getFullStopFullStopKeyword_5());
     }
 (
 (
-		lv_higher_5_0=RULE_INT
+		lv_higher_6_0=RULE_INT
 		{
-			newLeafNode(lv_higher_5_0, grammarAccess.getLikertQuestionAccess().getHigherINTTerminalRuleCall_5_0()); 
+			newLeafNode(lv_higher_6_0, grammarAccess.getLikertQuestionAccess().getHigherINTTerminalRuleCall_6_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -438,18 +446,18 @@ ruleLikertQuestion returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"higher",
-        		lv_higher_5_0, 
+        		lv_higher_6_0, 
         		"INT");
 	    }
 
 )
-)	otherlv_6=')' 
+)	otherlv_7=')' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getLikertQuestionAccess().getRightParenthesisKeyword_6());
+    	newLeafNode(otherlv_7, grammarAccess.getLikertQuestionAccess().getRightParenthesisKeyword_7());
     }
-(	otherlv_7=',' 
+(	otherlv_8=',' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getLikertQuestionAccess().getCommaKeyword_7());
+    	newLeafNode(otherlv_8, grammarAccess.getLikertQuestionAccess().getCommaKeyword_8());
     }
 )?)
 ;
@@ -459,66 +467,84 @@ ruleLikertQuestion returns [EObject current=null]
 
 
 // Entry rule entryRuleAnswers
-entryRuleAnswers returns [EObject current=null] 
+entryRuleAnswers returns [String current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getAnswersRule()); }
+	{ newCompositeNode(grammarAccess.getAnswersRule()); } 
 	 iv_ruleAnswers=ruleAnswers 
-	 { $current=$iv_ruleAnswers.current; } 
+	 { $current=$iv_ruleAnswers.current.getText(); }  
 	 EOF 
 ;
 
 // Rule Answers
-ruleAnswers returns [EObject current=null] 
+ruleAnswers returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='answers [' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getAnswersAccess().getAnswersKeyword_0());
-    }
-(this_STRING_1=RULE_STRING
-    { 
-    newLeafNode(this_STRING_1, grammarAccess.getAnswersAccess().getSTRINGTerminalRuleCall_1()); 
-    }
-)+(	otherlv_2='enables question [' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getAnswersAccess().getEnablesQuestionKeyword_2_0());
-    }
 (
-(
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAnswersRule());
-	        }
-        }
-	otherlv_3=RULE_ID
-	{
-		newLeafNode(otherlv_3, grammarAccess.getAnswersAccess().getQuestionClosedQuestionCrossReference_2_1_0()); 
-	}
+	kw='answers [' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getAnswersAccess().getAnswersKeyword_0()); 
+    }
+(    this_STRING_1=RULE_STRING    {
+		$current.merge(this_STRING_1);
+    }
 
-)
-)	otherlv_4=']' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getAnswersAccess().getRightSquareBracketKeyword_2_2());
-    }
-)?(	otherlv_5=',' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getAnswersAccess().getCommaKeyword_3());
-    }
-)?	otherlv_6=']' 
-    {
-    	newLeafNode(otherlv_6, grammarAccess.getAnswersAccess().getRightSquareBracketKeyword_4());
-    }
-(	otherlv_7='default answer is' 
-    {
-    	newLeafNode(otherlv_7, grammarAccess.getAnswersAccess().getDefaultAnswerIsKeyword_5_0());
-    }
-this_STRING_8=RULE_STRING
     { 
-    newLeafNode(this_STRING_8, grammarAccess.getAnswersAccess().getSTRINGTerminalRuleCall_5_1()); 
+    newLeafNode(this_STRING_1, grammarAccess.getAnswersAccess().getSTRINGTerminalRuleCall_1_0()); 
+    }
+(
+	kw='enables question [' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getAnswersAccess().getEnablesQuestionKeyword_1_1_0()); 
+    }
+(    this_STRING_3=RULE_STRING    {
+		$current.merge(this_STRING_3);
+    }
+
+    { 
+    newLeafNode(this_STRING_3, grammarAccess.getAnswersAccess().getSTRINGTerminalRuleCall_1_1_1_0()); 
+    }
+(
+	kw=',' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getAnswersAccess().getCommaKeyword_1_1_1_1()); 
+    }
+)?)+
+	kw=']' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getAnswersAccess().getRightSquareBracketKeyword_1_1_2()); 
+    }
+)?(
+	kw=',' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getAnswersAccess().getCommaKeyword_1_2()); 
+    }
+)?)+
+	kw=']' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getAnswersAccess().getRightSquareBracketKeyword_2()); 
+    }
+(
+	kw='default answer is' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getAnswersAccess().getDefaultAnswerIsKeyword_3_0()); 
+    }
+    this_STRING_9=RULE_STRING    {
+		$current.merge(this_STRING_9);
+    }
+
+    { 
+    newLeafNode(this_STRING_9, grammarAccess.getAnswersAccess().getSTRINGTerminalRuleCall_3_1()); 
     }
 )?)
-;
+    ;
 
 
 

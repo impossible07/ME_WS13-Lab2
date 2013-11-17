@@ -161,12 +161,13 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cQuestionSTRINGTerminalRuleCall_2_0 = (RuleCall)cQuestionAssignment_2.eContents().get(0);
 		private final Assignment cAnswersAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cAnswersAnswersParserRuleCall_3_0 = (RuleCall)cAnswersAssignment_3.eContents().get(0);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ClosedQuestion:
-		//	"closed question allowing" ("single answer" | "multiple answers") question=STRING answers=Answers;
+		//	"closed question allowing" ("single answer" | "multiple answers") question=STRING answers=Answers ","?;
 		public ParserRule getRule() { return rule; }
 
-		//"closed question allowing" ("single answer" | "multiple answers") question=STRING answers=Answers
+		//"closed question allowing" ("single answer" | "multiple answers") question=STRING answers=Answers ","?
 		public Group getGroup() { return cGroup; }
 
 		//"closed question allowing"
@@ -192,6 +193,9 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Answers
 		public RuleCall getAnswersAnswersParserRuleCall_3_0() { return cAnswersAnswersParserRuleCall_3_0; }
+
+		//","?
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 	}
 
 	public class LikertQuestionElements extends AbstractParserRuleElementFinder {
@@ -200,20 +204,21 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLikertQuestionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cQuestionAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cQuestionSTRINGTerminalRuleCall_1_0 = (RuleCall)cQuestionAssignment_1.eContents().get(0);
-		private final Keyword cLeftParenthesisHyphenMinusKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cLowerAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cLowerINTTerminalRuleCall_3_0 = (RuleCall)cLowerAssignment_3.eContents().get(0);
-		private final Keyword cFullStopFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cHigherAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cHigherINTTerminalRuleCall_5_0 = (RuleCall)cHigherAssignment_5.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cCommaKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cLowerAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cLowerINTTerminalRuleCall_4_0 = (RuleCall)cLowerAssignment_4.eContents().get(0);
+		private final Keyword cFullStopFullStopKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cHigherAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cHigherINTTerminalRuleCall_6_0 = (RuleCall)cHigherAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//LikertQuestion:
-		//	"likert question" question=STRING "(-" lower=INT ".." higher=INT ")" ","?;
+		//	"likert question" question=STRING "(" "-"? lower=INT ".." higher=INT ")" ","?;
 		public ParserRule getRule() { return rule; }
 
-		//"likert question" question=STRING "(-" lower=INT ".." higher=INT ")" ","?
+		//"likert question" question=STRING "(" "-"? lower=INT ".." higher=INT ")" ","?
 		public Group getGroup() { return cGroup; }
 
 		//"likert question"
@@ -225,47 +230,51 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getQuestionSTRINGTerminalRuleCall_1_0() { return cQuestionSTRINGTerminalRuleCall_1_0; }
 
-		//"(-"
-		public Keyword getLeftParenthesisHyphenMinusKeyword_2() { return cLeftParenthesisHyphenMinusKeyword_2; }
+		//"("
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+
+		//"-"?
+		public Keyword getHyphenMinusKeyword_3() { return cHyphenMinusKeyword_3; }
 
 		//lower=INT
-		public Assignment getLowerAssignment_3() { return cLowerAssignment_3; }
+		public Assignment getLowerAssignment_4() { return cLowerAssignment_4; }
 
 		//INT
-		public RuleCall getLowerINTTerminalRuleCall_3_0() { return cLowerINTTerminalRuleCall_3_0; }
+		public RuleCall getLowerINTTerminalRuleCall_4_0() { return cLowerINTTerminalRuleCall_4_0; }
 
 		//".."
-		public Keyword getFullStopFullStopKeyword_4() { return cFullStopFullStopKeyword_4; }
+		public Keyword getFullStopFullStopKeyword_5() { return cFullStopFullStopKeyword_5; }
 
 		//higher=INT
-		public Assignment getHigherAssignment_5() { return cHigherAssignment_5; }
+		public Assignment getHigherAssignment_6() { return cHigherAssignment_6; }
 
 		//INT
-		public RuleCall getHigherINTTerminalRuleCall_5_0() { return cHigherINTTerminalRuleCall_5_0; }
+		public RuleCall getHigherINTTerminalRuleCall_6_0() { return cHigherINTTerminalRuleCall_6_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 
 		//","?
-		public Keyword getCommaKeyword_7() { return cCommaKeyword_7; }
+		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
 	}
 
 	public class AnswersElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Answers");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAnswersKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cEnablesQuestionKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cQuestionAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cQuestionClosedQuestionCrossReference_2_1_0 = (CrossReference)cQuestionAssignment_2_1.eContents().get(0);
-		private final RuleCall cQuestionClosedQuestionIDTerminalRuleCall_2_1_0_1 = (RuleCall)cQuestionClosedQuestionCrossReference_2_1_0.eContents().get(1);
-		private final Keyword cRightSquareBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cDefaultAnswerIsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final RuleCall cSTRINGTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
+		private final Keyword cEnablesQuestionKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
+		private final Group cGroup_1_1_1 = (Group)cGroup_1_1.eContents().get(1);
+		private final RuleCall cSTRINGTerminalRuleCall_1_1_1_0 = (RuleCall)cGroup_1_1_1.eContents().get(0);
+		private final Keyword cCommaKeyword_1_1_1_1 = (Keyword)cGroup_1_1_1.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_1_1_2 = (Keyword)cGroup_1_1.eContents().get(2);
+		private final Keyword cCommaKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Keyword cRightSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cDefaultAnswerIsKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
 		
 		////	('default answer is' answer=[ClosedAnswer])?
 		// //OpenAnswer:
@@ -275,50 +284,53 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		////	answer=STRING(',')? ('enables question ['question=[ClosedQuestion]']')?(',')?
 		// //; Answers:
-		//	"answers [" STRING+ ("enables question [" question=[ClosedQuestion] "]")? ","? "]" ("default answer is" STRING)?;
+		//	"answers [" (STRING ("enables question [" (STRING ","?)+ "]")? ","?)+ "]" ("default answer is" STRING)?;
 		public ParserRule getRule() { return rule; }
 
-		//"answers [" STRING+ ("enables question [" question=[ClosedQuestion] "]")? ","? "]" ("default answer is" STRING)?
+		//"answers [" (STRING ("enables question [" (STRING ","?)+ "]")? ","?)+ "]" ("default answer is" STRING)?
 		public Group getGroup() { return cGroup; }
 
 		//"answers ["
 		public Keyword getAnswersKeyword_0() { return cAnswersKeyword_0; }
 
-		//STRING+
-		public RuleCall getSTRINGTerminalRuleCall_1() { return cSTRINGTerminalRuleCall_1; }
-
-		//("enables question [" question=[ClosedQuestion] "]")?
-		public Group getGroup_2() { return cGroup_2; }
-
-		//"enables question ["
-		public Keyword getEnablesQuestionKeyword_2_0() { return cEnablesQuestionKeyword_2_0; }
-
-		//question=[ClosedQuestion]
-		public Assignment getQuestionAssignment_2_1() { return cQuestionAssignment_2_1; }
-
-		//[ClosedQuestion]
-		public CrossReference getQuestionClosedQuestionCrossReference_2_1_0() { return cQuestionClosedQuestionCrossReference_2_1_0; }
-
-		//ID
-		public RuleCall getQuestionClosedQuestionIDTerminalRuleCall_2_1_0_1() { return cQuestionClosedQuestionIDTerminalRuleCall_2_1_0_1; }
-
-		//"]"
-		public Keyword getRightSquareBracketKeyword_2_2() { return cRightSquareBracketKeyword_2_2; }
-
-		//","?
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
-
-		//"]"
-		public Keyword getRightSquareBracketKeyword_4() { return cRightSquareBracketKeyword_4; }
-
-		//("default answer is" STRING)?
-		public Group getGroup_5() { return cGroup_5; }
-
-		//"default answer is"
-		public Keyword getDefaultAnswerIsKeyword_5_0() { return cDefaultAnswerIsKeyword_5_0; }
+		//(STRING ("enables question [" (STRING ","?)+ "]")? ","?)+
+		public Group getGroup_1() { return cGroup_1; }
 
 		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_5_1() { return cSTRINGTerminalRuleCall_5_1; }
+		public RuleCall getSTRINGTerminalRuleCall_1_0() { return cSTRINGTerminalRuleCall_1_0; }
+
+		//("enables question [" (STRING ","?)+ "]")?
+		public Group getGroup_1_1() { return cGroup_1_1; }
+
+		//"enables question ["
+		public Keyword getEnablesQuestionKeyword_1_1_0() { return cEnablesQuestionKeyword_1_1_0; }
+
+		//(STRING ","?)+
+		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_1_1_1_0() { return cSTRINGTerminalRuleCall_1_1_1_0; }
+
+		//","?
+		public Keyword getCommaKeyword_1_1_1_1() { return cCommaKeyword_1_1_1_1; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_1_1_2() { return cRightSquareBracketKeyword_1_1_2; }
+
+		//","?
+		public Keyword getCommaKeyword_1_2() { return cCommaKeyword_1_2; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_2() { return cRightSquareBracketKeyword_2; }
+
+		//("default answer is" STRING)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"default answer is"
+		public Keyword getDefaultAnswerIsKeyword_3_0() { return cDefaultAnswerIsKeyword_3_0; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_3_1() { return cSTRINGTerminalRuleCall_3_1; }
 	}
 	
 	
@@ -398,7 +410,7 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ClosedQuestion:
-	//	"closed question allowing" ("single answer" | "multiple answers") question=STRING answers=Answers;
+	//	"closed question allowing" ("single answer" | "multiple answers") question=STRING answers=Answers ","?;
 	public ClosedQuestionElements getClosedQuestionAccess() {
 		return (pClosedQuestion != null) ? pClosedQuestion : (pClosedQuestion = new ClosedQuestionElements());
 	}
@@ -408,7 +420,7 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LikertQuestion:
-	//	"likert question" question=STRING "(-" lower=INT ".." higher=INT ")" ","?;
+	//	"likert question" question=STRING "(" "-"? lower=INT ".." higher=INT ")" ","?;
 	public LikertQuestionElements getLikertQuestionAccess() {
 		return (pLikertQuestion != null) ? pLikertQuestion : (pLikertQuestion = new LikertQuestionElements());
 	}
@@ -425,7 +437,7 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	////	answer=STRING(',')? ('enables question ['question=[ClosedQuestion]']')?(',')?
 	// //; Answers:
-	//	"answers [" STRING+ ("enables question [" question=[ClosedQuestion] "]")? ","? "]" ("default answer is" STRING)?;
+	//	"answers [" (STRING ("enables question [" (STRING ","?)+ "]")? ","?)+ "]" ("default answer is" STRING)?;
 	public AnswersElements getAnswersAccess() {
 		return (pAnswers != null) ? pAnswers : (pAnswers = new AnswersElements());
 	}

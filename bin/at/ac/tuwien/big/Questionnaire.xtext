@@ -22,16 +22,16 @@ OpenQuestion:
 
 ClosedQuestion:
 	'closed question allowing' ('single answer'|'multiple answers') question=STRING
-	answers=Answers
+	answers=Answers(',')?
 ;
 
 LikertQuestion:
-	'likert question' question=STRING '(-'lower=INT'..'higher=INT')'(',')?
+	'likert question' question=STRING '('('-')?lower=INT'..'higher=INT')'(',')?
 ;
 
 Answers:
 	'answers ['
-	(STRING)+ ('enables question ['question=[ClosedQuestion]']')?(',')?
+	((STRING) ('enables question ['(STRING(',')?)+']')?(',')?)+
 	']'
 	('default answer is' STRING)?
 //	('default answer is' answer=[ClosedAnswer])?

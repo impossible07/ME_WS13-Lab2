@@ -178,7 +178,7 @@ public interface QuestionnairePackage extends EPackage
   int CLOSED_QUESTION__QUESTION = 0;
 
   /**
-   * The feature id for the '<em><b>Answers</b></em>' containment reference.
+   * The feature id for the '<em><b>Answers</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -240,34 +240,6 @@ public interface QuestionnairePackage extends EPackage
    * @ordered
    */
   int LIKERT_QUESTION_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link at.ac.tuwien.big.questionnaire.impl.AnswersImpl <em>Answers</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see at.ac.tuwien.big.questionnaire.impl.AnswersImpl
-   * @see at.ac.tuwien.big.questionnaire.impl.QuestionnairePackageImpl#getAnswers()
-   * @generated
-   */
-  int ANSWERS = 5;
-
-  /**
-   * The feature id for the '<em><b>Question</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ANSWERS__QUESTION = 0;
-
-  /**
-   * The number of structural features of the '<em>Answers</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ANSWERS_FEATURE_COUNT = 1;
 
 
   /**
@@ -377,15 +349,15 @@ public interface QuestionnairePackage extends EPackage
   EAttribute getClosedQuestion_Question();
 
   /**
-   * Returns the meta object for the containment reference '{@link at.ac.tuwien.big.questionnaire.ClosedQuestion#getAnswers <em>Answers</em>}'.
+   * Returns the meta object for the attribute '{@link at.ac.tuwien.big.questionnaire.ClosedQuestion#getAnswers <em>Answers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Answers</em>'.
+   * @return the meta object for the attribute '<em>Answers</em>'.
    * @see at.ac.tuwien.big.questionnaire.ClosedQuestion#getAnswers()
    * @see #getClosedQuestion()
    * @generated
    */
-  EReference getClosedQuestion_Answers();
+  EAttribute getClosedQuestion_Answers();
 
   /**
    * Returns the meta object for class '{@link at.ac.tuwien.big.questionnaire.LikertQuestion <em>Likert Question</em>}'.
@@ -429,27 +401,6 @@ public interface QuestionnairePackage extends EPackage
    * @generated
    */
   EAttribute getLikertQuestion_Higher();
-
-  /**
-   * Returns the meta object for class '{@link at.ac.tuwien.big.questionnaire.Answers <em>Answers</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Answers</em>'.
-   * @see at.ac.tuwien.big.questionnaire.Answers
-   * @generated
-   */
-  EClass getAnswers();
-
-  /**
-   * Returns the meta object for the reference '{@link at.ac.tuwien.big.questionnaire.Answers#getQuestion <em>Question</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Question</em>'.
-   * @see at.ac.tuwien.big.questionnaire.Answers#getQuestion()
-   * @see #getAnswers()
-   * @generated
-   */
-  EReference getAnswers_Question();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -563,12 +514,12 @@ public interface QuestionnairePackage extends EPackage
     EAttribute CLOSED_QUESTION__QUESTION = eINSTANCE.getClosedQuestion_Question();
 
     /**
-     * The meta object literal for the '<em><b>Answers</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Answers</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLOSED_QUESTION__ANSWERS = eINSTANCE.getClosedQuestion_Answers();
+    EAttribute CLOSED_QUESTION__ANSWERS = eINSTANCE.getClosedQuestion_Answers();
 
     /**
      * The meta object literal for the '{@link at.ac.tuwien.big.questionnaire.impl.LikertQuestionImpl <em>Likert Question</em>}' class.
@@ -603,24 +554,6 @@ public interface QuestionnairePackage extends EPackage
      * @generated
      */
     EAttribute LIKERT_QUESTION__HIGHER = eINSTANCE.getLikertQuestion_Higher();
-
-    /**
-     * The meta object literal for the '{@link at.ac.tuwien.big.questionnaire.impl.AnswersImpl <em>Answers</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see at.ac.tuwien.big.questionnaire.impl.AnswersImpl
-     * @see at.ac.tuwien.big.questionnaire.impl.QuestionnairePackageImpl#getAnswers()
-     * @generated
-     */
-    EClass ANSWERS = eINSTANCE.getAnswers();
-
-    /**
-     * The meta object literal for the '<em><b>Question</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ANSWERS__QUESTION = eINSTANCE.getAnswers_Question();
 
   }
 
