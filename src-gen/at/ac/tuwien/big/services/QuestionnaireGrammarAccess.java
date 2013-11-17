@@ -119,47 +119,47 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 		private final UnorderedGroup cUnorderedGroup = (UnorderedGroup)rule.eContents().get(1);
 		private final Assignment cMandatoryAssignment_0 = (Assignment)cUnorderedGroup.eContents().get(0);
 		private final Keyword cMandatoryMandatoryKeyword_0_0 = (Keyword)cMandatoryAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cUnorderedGroup.eContents().get(1);
-		private final Assignment cMultilineAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final Keyword cMultilineMultilineKeyword_1_0_0 = (Keyword)cMultilineAssignment_1_0.eContents().get(0);
-		private final Keyword cOpenQuestionKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cQuestionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cQuestionSTRINGTerminalRuleCall_1_2_0 = (RuleCall)cQuestionAssignment_1_2.eContents().get(0);
-		private final Keyword cCommaKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		private final Assignment cMultilineAssignment_1 = (Assignment)cUnorderedGroup.eContents().get(1);
+		private final Keyword cMultilineMultilineKeyword_1_0 = (Keyword)cMultilineAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cUnorderedGroup.eContents().get(2);
+		private final Keyword cOpenQuestionKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cQuestionAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cQuestionSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cQuestionAssignment_2_1.eContents().get(0);
+		private final Keyword cCommaKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		
 		//OpenQuestion:
-		//	mandatory?="mandatory" & multiline?="multiline"? "open question" question=STRING ","?;
+		//	mandatory?="mandatory"? & multiline?="multiline"? & "open question" question=STRING ","?;
 		public ParserRule getRule() { return rule; }
 
-		//mandatory?="mandatory" & multiline?="multiline"? "open question" question=STRING ","?
+		//mandatory?="mandatory"? & multiline?="multiline"? & "open question" question=STRING ","?
 		public UnorderedGroup getUnorderedGroup() { return cUnorderedGroup; }
 
-		//mandatory?="mandatory"
+		//mandatory?="mandatory"?
 		public Assignment getMandatoryAssignment_0() { return cMandatoryAssignment_0; }
 
 		//"mandatory"
 		public Keyword getMandatoryMandatoryKeyword_0_0() { return cMandatoryMandatoryKeyword_0_0; }
 
-		//multiline?="multiline"? "open question" question=STRING ","?
-		public Group getGroup_1() { return cGroup_1; }
-
 		//multiline?="multiline"?
-		public Assignment getMultilineAssignment_1_0() { return cMultilineAssignment_1_0; }
+		public Assignment getMultilineAssignment_1() { return cMultilineAssignment_1; }
 
 		//"multiline"
-		public Keyword getMultilineMultilineKeyword_1_0_0() { return cMultilineMultilineKeyword_1_0_0; }
+		public Keyword getMultilineMultilineKeyword_1_0() { return cMultilineMultilineKeyword_1_0; }
+
+		//"open question" question=STRING ","?
+		public Group getGroup_2() { return cGroup_2; }
 
 		//"open question"
-		public Keyword getOpenQuestionKeyword_1_1() { return cOpenQuestionKeyword_1_1; }
+		public Keyword getOpenQuestionKeyword_2_0() { return cOpenQuestionKeyword_2_0; }
 
 		//question=STRING
-		public Assignment getQuestionAssignment_1_2() { return cQuestionAssignment_1_2; }
+		public Assignment getQuestionAssignment_2_1() { return cQuestionAssignment_2_1; }
 
 		//STRING
-		public RuleCall getQuestionSTRINGTerminalRuleCall_1_2_0() { return cQuestionSTRINGTerminalRuleCall_1_2_0; }
+		public RuleCall getQuestionSTRINGTerminalRuleCall_2_1_0() { return cQuestionSTRINGTerminalRuleCall_2_1_0; }
 
 		//","?
-		public Keyword getCommaKeyword_1_3() { return cCommaKeyword_1_3; }
+		public Keyword getCommaKeyword_2_2() { return cCommaKeyword_2_2; }
 	}
 
 	public class ClosedQuestionElements extends AbstractParserRuleElementFinder {
@@ -280,12 +280,13 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSTRINGTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
 		
 		////	('default answer is' answer=[ClosedAnswer])?
-		////OpenAnswer:
-		////	answer=ID'...'(',')?
-		////;
-		////ClosedAnswer:
+		// //OpenAnswer:
+		// //	answer=ID'...'(',')?
+		// //;
+		// //ClosedAnswer:
+		//
 		////	answer=STRING(',')? ('enables question ['question=[ClosedQuestion]']')?(',')?
-		////; Answers:
+		// //; Answers:
 		//	"answers [" STRING+ ("enables question [" question=[ClosedQuestion] "]")? ","? "]" ("default answer is" STRING)?;
 		public ParserRule getRule() { return rule; }
 
@@ -399,7 +400,7 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OpenQuestion:
-	//	mandatory?="mandatory" & multiline?="multiline"? "open question" question=STRING ","?;
+	//	mandatory?="mandatory"? & multiline?="multiline"? & "open question" question=STRING ","?;
 	public OpenQuestionElements getOpenQuestionAccess() {
 		return (pOpenQuestion != null) ? pOpenQuestion : (pOpenQuestion = new OpenQuestionElements());
 	}
@@ -429,12 +430,13 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	////	('default answer is' answer=[ClosedAnswer])?
-	////OpenAnswer:
-	////	answer=ID'...'(',')?
-	////;
-	////ClosedAnswer:
+	// //OpenAnswer:
+	// //	answer=ID'...'(',')?
+	// //;
+	// //ClosedAnswer:
+	//
 	////	answer=STRING(',')? ('enables question ['question=[ClosedQuestion]']')?(',')?
-	////; Answers:
+	// //; Answers:
 	//	"answers [" STRING+ ("enables question [" question=[ClosedQuestion] "]")? ","? "]" ("default answer is" STRING)?;
 	public AnswersElements getAnswersAccess() {
 		return (pAnswers != null) ? pAnswers : (pAnswers = new AnswersElements());

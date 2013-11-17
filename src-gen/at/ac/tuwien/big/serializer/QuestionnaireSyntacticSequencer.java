@@ -25,7 +25,7 @@ public class QuestionnaireSyntacticSequencer extends AbstractSyntacticSequencer 
 	protected AbstractElementAlias match_ClosedQuestion_MultipleAnswersKeyword_1_1_or_SingleAnswerKeyword_1_0;
 	protected AbstractElementAlias match_Group_CommaKeyword_5_q;
 	protected AbstractElementAlias match_LikertQuestion_CommaKeyword_7_q;
-	protected AbstractElementAlias match_OpenQuestion_CommaKeyword_1_3_q;
+	protected AbstractElementAlias match_OpenQuestion_CommaKeyword_2_2_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -36,7 +36,7 @@ public class QuestionnaireSyntacticSequencer extends AbstractSyntacticSequencer 
 		match_ClosedQuestion_MultipleAnswersKeyword_1_1_or_SingleAnswerKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getClosedQuestionAccess().getMultipleAnswersKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getClosedQuestionAccess().getSingleAnswerKeyword_1_0()));
 		match_Group_CommaKeyword_5_q = new TokenAlias(false, true, grammarAccess.getGroupAccess().getCommaKeyword_5());
 		match_LikertQuestion_CommaKeyword_7_q = new TokenAlias(false, true, grammarAccess.getLikertQuestionAccess().getCommaKeyword_7());
-		match_OpenQuestion_CommaKeyword_1_3_q = new TokenAlias(false, true, grammarAccess.getOpenQuestionAccess().getCommaKeyword_1_3());
+		match_OpenQuestion_CommaKeyword_2_2_q = new TokenAlias(false, true, grammarAccess.getOpenQuestionAccess().getCommaKeyword_2_2());
 	}
 	
 	@Override
@@ -76,8 +76,8 @@ public class QuestionnaireSyntacticSequencer extends AbstractSyntacticSequencer 
 				emit_Group_CommaKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_LikertQuestion_CommaKeyword_7_q.equals(syntax))
 				emit_LikertQuestion_CommaKeyword_7_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_OpenQuestion_CommaKeyword_1_3_q.equals(syntax))
-				emit_OpenQuestion_CommaKeyword_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_OpenQuestion_CommaKeyword_2_2_q.equals(syntax))
+				emit_OpenQuestion_CommaKeyword_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -134,7 +134,7 @@ public class QuestionnaireSyntacticSequencer extends AbstractSyntacticSequencer 
 	 * Syntax:
 	 *     ','?
 	 */
-	protected void emit_OpenQuestion_CommaKeyword_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_OpenQuestion_CommaKeyword_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

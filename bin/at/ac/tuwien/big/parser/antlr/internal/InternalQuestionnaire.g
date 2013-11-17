@@ -293,11 +293,11 @@ ruleOpenQuestion returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getOpenQuestionAccess().getUnorderedGroup(), 1);
 	 				}
-					({true}?=>((
+					({true}?=>(
 (
 		lv_multiline_2_0=	'multiline' 
     {
-        newLeafNode(lv_multiline_2_0, grammarAccess.getOpenQuestionAccess().getMultilineMultilineKeyword_1_0_0());
+        newLeafNode(lv_multiline_2_0, grammarAccess.getOpenQuestionAccess().getMultilineMultilineKeyword_1_0());
     }
  
 	    {
@@ -308,15 +308,27 @@ ruleOpenQuestion returns [EObject current=null]
 	    }
 
 )
-)?	otherlv_3='open question' 
+))
+					{ 
+	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getOpenQuestionAccess().getUnorderedGroup());
+	 				}
+ 				)
+			)  |
+
+			( 
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getOpenQuestionAccess().getUnorderedGroup(), 2)}?=>(
+					{ 
+	 				  getUnorderedGroupHelper().select(grammarAccess.getOpenQuestionAccess().getUnorderedGroup(), 2);
+	 				}
+					({true}?=>(	otherlv_3='open question' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getOpenQuestionAccess().getOpenQuestionKeyword_1_1());
+    	newLeafNode(otherlv_3, grammarAccess.getOpenQuestionAccess().getOpenQuestionKeyword_2_0());
     }
 (
 (
 		lv_question_4_0=RULE_STRING
 		{
-			newLeafNode(lv_question_4_0, grammarAccess.getOpenQuestionAccess().getQuestionSTRINGTerminalRuleCall_1_2_0()); 
+			newLeafNode(lv_question_4_0, grammarAccess.getOpenQuestionAccess().getQuestionSTRINGTerminalRuleCall_2_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -332,7 +344,7 @@ ruleOpenQuestion returns [EObject current=null]
 )
 )(	otherlv_5=',' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getOpenQuestionAccess().getCommaKeyword_1_3());
+    	newLeafNode(otherlv_5, grammarAccess.getOpenQuestionAccess().getCommaKeyword_2_2());
     }
 )?))
 					{ 

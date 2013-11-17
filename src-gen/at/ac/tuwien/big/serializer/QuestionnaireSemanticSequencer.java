@@ -131,7 +131,7 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (mandatory?='mandatory' multiline?='multiline'? question=STRING)
+	 *     (mandatory?='mandatory'? multiline?='multiline'? question=STRING)
 	 */
 	protected void sequence_OpenQuestion(EObject context, OpenQuestion semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
