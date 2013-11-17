@@ -114,20 +114,6 @@ public class QuestionnaireSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case QuestionnairePackage.OPEN_ANSWER:
-      {
-        OpenAnswer openAnswer = (OpenAnswer)theEObject;
-        T result = caseOpenAnswer(openAnswer);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case QuestionnairePackage.CLOSED_ANSWER:
-      {
-        ClosedAnswer closedAnswer = (ClosedAnswer)theEObject;
-        T result = caseClosedAnswer(closedAnswer);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       default: return defaultCase(theEObject);
     }
   }
@@ -224,38 +210,6 @@ public class QuestionnaireSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAnswers(Answers object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Open Answer</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Open Answer</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOpenAnswer(OpenAnswer object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Closed Answer</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Closed Answer</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseClosedAnswer(ClosedAnswer object)
   {
     return null;
   }

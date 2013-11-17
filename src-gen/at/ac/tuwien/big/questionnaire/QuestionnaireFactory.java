@@ -77,24 +77,6 @@ public interface QuestionnaireFactory extends EFactory
   Answers createAnswers();
 
   /**
-   * Returns a new object of class '<em>Open Answer</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Open Answer</em>'.
-   * @generated
-   */
-  OpenAnswer createOpenAnswer();
-
-  /**
-   * Returns a new object of class '<em>Closed Answer</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Closed Answer</em>'.
-   * @generated
-   */
-  ClosedAnswer createClosedAnswer();
-
-  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

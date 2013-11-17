@@ -8,7 +8,7 @@
   <genPackages prefix="Questionnaire" basePackage="at.ac.tuwien.big" disposableProviderFactory="true"
       fileExtensions="questionnaire" ecorePackage="Questionnaire.ecore#/">
     <genClasses ecoreClass="Questionnaire.ecore#//Questionnaire">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//Questionnaire/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//Questionnaire/title"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//Questionnaire/groups"/>
     </genClasses>
     <genClasses ecoreClass="Questionnaire.ecore#//Group">
@@ -30,15 +30,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//LikertQuestion/higher"/>
     </genClasses>
     <genClasses ecoreClass="Questionnaire.ecore#//Answers">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//Answers/answers"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//Answers/answer"/>
-    </genClasses>
-    <genClasses ecoreClass="Questionnaire.ecore#//OpenAnswer">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//OpenAnswer/answer"/>
-    </genClasses>
-    <genClasses ecoreClass="Questionnaire.ecore#//ClosedAnswer">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//ClosedAnswer/answer"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//ClosedAnswer/question"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//Answers/question"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

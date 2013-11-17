@@ -105,16 +105,6 @@ public class QuestionnaireAdapterFactory extends AdapterFactoryImpl
         return createAnswersAdapter();
       }
       @Override
-      public Adapter caseOpenAnswer(OpenAnswer object)
-      {
-        return createOpenAnswerAdapter();
-      }
-      @Override
-      public Adapter caseClosedAnswer(ClosedAnswer object)
-      {
-        return createClosedAnswerAdapter();
-      }
-      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -222,36 +212,6 @@ public class QuestionnaireAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAnswersAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link at.ac.tuwien.big.questionnaire.OpenAnswer <em>Open Answer</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.ac.tuwien.big.questionnaire.OpenAnswer
-   * @generated
-   */
-  public Adapter createOpenAnswerAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link at.ac.tuwien.big.questionnaire.ClosedAnswer <em>Closed Answer</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.ac.tuwien.big.questionnaire.ClosedAnswer
-   * @generated
-   */
-  public Adapter createClosedAnswerAdapter()
   {
     return null;
   }

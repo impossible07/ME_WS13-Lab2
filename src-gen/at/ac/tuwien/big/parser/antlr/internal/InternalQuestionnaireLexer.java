@@ -12,8 +12,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalQuestionnaireLexer extends Lexer {
-    public static final int RULE_ID=4;
-    public static final int T__29=29;
+    public static final int RULE_ID=6;
     public static final int T__28=28;
     public static final int T__27=27;
     public static final int T__26=26;
@@ -27,10 +26,8 @@ public class InternalQuestionnaireLexer extends Lexer {
     public static final int EOF=-1;
     public static final int RULE_SL_COMMENT=8;
     public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
     public static final int T__19=19;
-    public static final int T__31=31;
-    public static final int RULE_STRING=6;
+    public static final int RULE_STRING=4;
     public static final int T__16=16;
     public static final int T__15=15;
     public static final int T__18=18;
@@ -81,10 +78,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:12:7: ( '\"' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:12:9: '\"'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:12:7: ( '[' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:12:9: '['
             {
-            match('\"'); 
+            match('['); 
 
             }
 
@@ -101,11 +98,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:13:7: ( '\" [' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:13:9: '\" ['
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:13:7: ( ']' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:13:9: ']'
             {
-            match("\" ["); 
-
+            match(']'); 
 
             }
 
@@ -122,10 +118,11 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:14:7: ( ']' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:14:9: ']'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:14:7: ( 'group' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:14:9: 'group'
             {
-            match(']'); 
+            match("group"); 
+
 
             }
 
@@ -142,11 +139,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:15:7: ( 'group' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:15:9: 'group'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:15:7: ( ',' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:15:9: ','
             {
-            match("group"); 
-
+            match(','); 
 
             }
 
@@ -163,10 +159,11 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:16:7: ( '[' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:16:9: '['
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:16:7: ( 'mandatory' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:16:9: 'mandatory'
             {
-            match('['); 
+            match("mandatory"); 
+
 
             }
 
@@ -183,10 +180,11 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:17:7: ( ',' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:17:9: ','
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:17:7: ( 'multiline' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:17:9: 'multiline'
             {
-            match(','); 
+            match("multiline"); 
+
 
             }
 
@@ -203,10 +201,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:18:7: ( 'mandatory' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:18:9: 'mandatory'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:18:7: ( 'open question' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:18:9: 'open question'
             {
-            match("mandatory"); 
+            match("open question"); 
 
 
             }
@@ -224,10 +222,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:19:7: ( 'multiline' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:19:9: 'multiline'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:19:7: ( 'closed question allowing' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:19:9: 'closed question allowing'
             {
-            match("multiline"); 
+            match("closed question allowing"); 
 
 
             }
@@ -245,10 +243,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:20:7: ( 'open question' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:20:9: 'open question'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:20:7: ( 'single answer' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:20:9: 'single answer'
             {
-            match("open question"); 
+            match("single answer"); 
 
 
             }
@@ -266,10 +264,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:21:7: ( 'closed question allowing' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:21:9: 'closed question allowing'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:21:7: ( 'multiple answers' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:21:9: 'multiple answers'
             {
-            match("closed question allowing"); 
+            match("multiple answers"); 
 
 
             }
@@ -287,10 +285,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:22:7: ( 'single answer' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:22:9: 'single answer'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:22:7: ( 'likert question' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:22:9: 'likert question'
             {
-            match("single answer"); 
+            match("likert question"); 
 
 
             }
@@ -308,10 +306,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:23:7: ( 'multiple answers' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:23:9: 'multiple answers'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:23:7: ( '(-' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:23:9: '(-'
             {
-            match("multiple answers"); 
+            match("(-"); 
 
 
             }
@@ -329,10 +327,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:24:7: ( 'likert question' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:24:9: 'likert question'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:24:7: ( '..' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:24:9: '..'
             {
-            match("likert question"); 
+            match(".."); 
 
 
             }
@@ -350,11 +348,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:25:7: ( '(-' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:25:9: '(-'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:25:7: ( ')' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:25:9: ')'
             {
-            match("(-"); 
-
+            match(')'); 
 
             }
 
@@ -371,10 +368,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:26:7: ( '..' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:26:9: '..'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:26:7: ( 'answers [' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:26:9: 'answers ['
             {
-            match(".."); 
+            match("answers ["); 
 
 
             }
@@ -392,10 +389,11 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:27:7: ( ')' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:27:9: ')'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:27:7: ( 'enables question [' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:27:9: 'enables question ['
             {
-            match(')'); 
+            match("enables question ["); 
+
 
             }
 
@@ -412,29 +410,8 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:28:7: ( 'answers [' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:28:9: 'answers ['
-            {
-            match("answers ["); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__28"
-
-    // $ANTLR start "T__29"
-    public final void mT__29() throws RecognitionException {
-        try {
-            int _type = T__29;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:29:7: ( 'default answer is' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:29:9: 'default answer is'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:28:7: ( 'default answer is' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:28:9: 'default answer is'
             {
             match("default answer is"); 
 
@@ -447,59 +424,17 @@ public class InternalQuestionnaireLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__29"
-
-    // $ANTLR start "T__30"
-    public final void mT__30() throws RecognitionException {
-        try {
-            int _type = T__30;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:30:7: ( '...' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:30:9: '...'
-            {
-            match("..."); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__30"
-
-    // $ANTLR start "T__31"
-    public final void mT__31() throws RecognitionException {
-        try {
-            int _type = T__31;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:31:7: ( 'enables question [' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:31:9: 'enables question ['
-            {
-            match("enables question ["); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__31"
+    // $ANTLR end "T__28"
 
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:721:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:721:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:590:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:590:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:721:11: ( '^' )?
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:590:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -508,7 +443,7 @@ public class InternalQuestionnaireLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:721:11: '^'
+                    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:590:11: '^'
                     {
                     match('^'); 
 
@@ -526,7 +461,7 @@ public class InternalQuestionnaireLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:721:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:590:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -575,10 +510,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:723:10: ( ( '0' .. '9' )+ )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:723:12: ( '0' .. '9' )+
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:592:10: ( ( '0' .. '9' )+ )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:592:12: ( '0' .. '9' )+
             {
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:723:12: ( '0' .. '9' )+
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:592:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -592,7 +527,7 @@ public class InternalQuestionnaireLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:723:13: '0' .. '9'
+            	    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:592:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -624,10 +559,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:725:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:725:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:594:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:594:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:725:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:594:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -645,10 +580,10 @@ public class InternalQuestionnaireLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:725:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:594:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:725:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:594:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -664,7 +599,7 @@ public class InternalQuestionnaireLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:725:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:594:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -680,7 +615,7 @@ public class InternalQuestionnaireLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:725:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:594:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -705,10 +640,10 @@ public class InternalQuestionnaireLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:725:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:594:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:725:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:594:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -724,7 +659,7 @@ public class InternalQuestionnaireLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:725:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:594:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -740,7 +675,7 @@ public class InternalQuestionnaireLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:725:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:594:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -783,12 +718,12 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:727:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:727:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:596:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:596:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:727:24: ( options {greedy=false; } : . )*
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:596:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -813,7 +748,7 @@ public class InternalQuestionnaireLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:727:52: .
+            	    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:596:52: .
             	    {
             	    matchAny(); 
 
@@ -843,12 +778,12 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:729:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:729:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:598:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:598:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:729:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:598:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -861,7 +796,7 @@ public class InternalQuestionnaireLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:729:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:598:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -881,7 +816,7 @@ public class InternalQuestionnaireLexer extends Lexer {
                 }
             } while (true);
 
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:729:40: ( ( '\\r' )? '\\n' )?
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:598:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -890,9 +825,9 @@ public class InternalQuestionnaireLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:729:41: ( '\\r' )? '\\n'
+                    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:598:41: ( '\\r' )? '\\n'
                     {
-                    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:729:41: ( '\\r' )?
+                    // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:598:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -901,7 +836,7 @@ public class InternalQuestionnaireLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:729:41: '\\r'
+                            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:598:41: '\\r'
                             {
                             match('\r'); 
 
@@ -933,10 +868,10 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:731:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:731:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:600:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:600:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:731:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:600:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -990,8 +925,8 @@ public class InternalQuestionnaireLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:733:16: ( . )
-            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:733:18: .
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:602:16: ( . )
+            // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:602:18: .
             {
             matchAny(); 
 
@@ -1006,8 +941,8 @@ public class InternalQuestionnaireLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=28;
+        // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=25;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1137,70 +1072,49 @@ public class InternalQuestionnaireLexer extends Lexer {
                 }
                 break;
             case 19 :
-                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:118: T__29
-                {
-                mT__29(); 
-
-                }
-                break;
-            case 20 :
-                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:124: T__30
-                {
-                mT__30(); 
-
-                }
-                break;
-            case 21 :
-                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:130: T__31
-                {
-                mT__31(); 
-
-                }
-                break;
-            case 22 :
-                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:136: RULE_ID
+                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:118: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 23 :
-                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:144: RULE_INT
+            case 20 :
+                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:126: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 24 :
-                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:153: RULE_STRING
+            case 21 :
+                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:135: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 25 :
-                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:165: RULE_ML_COMMENT
+            case 22 :
+                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:147: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 26 :
-                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:181: RULE_SL_COMMENT
+            case 23 :
+                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:163: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 27 :
-                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:197: RULE_WS
+            case 24 :
+                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:179: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 28 :
-                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:205: RULE_ANY_OTHER
+            case 25 :
+                // ../at.ac.tuwien.big.questionnaire/src-gen/at/ac/tuwien/big/parser/antlr/internal/InternalQuestionnaire.g:1:187: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1214,101 +1128,101 @@ public class InternalQuestionnaireLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\32\1\34\1\uffff\1\32\2\uffff\5\32\2\30\1\uffff\3\32\1"+
-        "\30\2\uffff\2\30\2\uffff\1\32\5\uffff\1\32\2\uffff\6\32\1\uffff"+
-        "\1\74\1\uffff\3\32\4\uffff\1\32\1\101\7\32\2\uffff\4\32\1\uffff"+
-        "\13\32\1\130\2\32\1\uffff\7\32\1\uffff\15\32\3\uffff\7\32\3\uffff"+
-        "\1\32\1\170\1\171\1\uffff\1\32\2\uffff\2\32\1\175\1\uffff";
+        "\1\uffff\1\32\2\uffff\1\32\1\uffff\5\32\2\30\1\uffff\3\32\1\30"+
+        "\2\uffff\3\30\2\uffff\1\32\3\uffff\1\32\1\uffff\6\32\3\uffff\3\32"+
+        "\5\uffff\27\32\1\122\2\32\1\uffff\7\32\1\uffff\15\32\3\uffff\7\32"+
+        "\3\uffff\1\32\1\162\1\163\1\uffff\1\32\2\uffff\2\32\1\167\1\uffff";
     static final String DFA12_eofS =
-        "\176\uffff";
+        "\170\uffff";
     static final String DFA12_minS =
-        "\1\0\1\165\1\0\1\uffff\1\162\2\uffff\1\141\1\160\1\154\2\151\1\55"+
-        "\1\56\1\uffff\1\156\1\145\1\156\1\101\2\uffff\1\0\1\52\2\uffff\1"+
-        "\145\1\uffff\1\0\3\uffff\1\157\2\uffff\1\156\1\154\1\145\1\157\1"+
-        "\156\1\153\1\uffff\1\56\1\uffff\1\163\1\146\1\141\4\uffff\1\163"+
-        "\1\0\1\165\1\144\1\164\1\156\1\163\1\147\1\145\2\uffff\1\167\1\141"+
-        "\1\142\1\164\1\uffff\1\160\1\141\1\151\1\40\1\145\1\154\1\162\1"+
-        "\145\1\165\1\154\1\151\1\60\1\164\1\154\1\uffff\1\144\1\145\1\164"+
-        "\1\162\1\154\1\145\1\157\1\uffff\1\157\1\151\1\154\3\40\1\163\1"+
-        "\164\1\163\1\156\1\162\1\156\1\145\3\uffff\3\40\1\156\1\171\1\145"+
-        "\1\40\3\uffff\1\141\2\60\1\uffff\1\151\2\uffff\1\162\1\145\1\60"+
-        "\1\uffff";
+        "\1\0\1\165\2\uffff\1\162\1\uffff\1\141\1\160\1\154\2\151\1\55\1"+
+        "\56\1\uffff\2\156\1\145\1\101\2\uffff\2\0\1\52\2\uffff\1\145\3\uffff"+
+        "\1\157\1\uffff\1\156\1\154\1\145\1\157\1\156\1\153\3\uffff\1\163"+
+        "\1\141\1\146\5\uffff\1\163\1\165\1\144\1\164\1\156\1\163\1\147\1"+
+        "\145\1\167\1\142\1\141\1\164\1\160\1\141\1\151\1\40\1\145\1\154"+
+        "\1\162\1\145\1\154\1\165\1\151\1\60\1\164\1\154\1\uffff\1\144\1"+
+        "\145\1\164\1\162\1\145\1\154\1\157\1\uffff\1\157\1\151\1\154\3\40"+
+        "\2\163\1\164\1\156\1\162\1\156\1\145\3\uffff\3\40\1\156\1\171\1"+
+        "\145\1\40\3\uffff\1\141\2\60\1\uffff\1\151\2\uffff\1\162\1\145\1"+
+        "\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\165\1\uffff\1\uffff\1\162\2\uffff\1\165\1\160\1\154\2"+
-        "\151\1\55\1\56\1\uffff\1\156\1\145\1\156\1\172\2\uffff\1\uffff\1"+
-        "\57\2\uffff\1\145\1\uffff\1\uffff\3\uffff\1\157\2\uffff\1\156\1"+
-        "\154\1\145\1\157\1\156\1\153\1\uffff\1\56\1\uffff\1\163\1\146\1"+
-        "\141\4\uffff\1\163\1\uffff\1\165\1\144\1\164\1\156\1\163\1\147\1"+
-        "\145\2\uffff\1\167\1\141\1\142\1\164\1\uffff\1\160\1\141\1\151\1"+
-        "\40\1\145\1\154\1\162\1\145\1\165\1\154\1\151\1\172\1\164\1\160"+
-        "\1\uffff\1\144\1\145\1\164\1\162\1\154\1\145\1\157\1\uffff\1\157"+
-        "\1\151\1\154\3\40\1\163\1\164\1\163\1\156\1\162\1\156\1\145\3\uffff"+
-        "\3\40\1\156\1\171\1\145\1\40\3\uffff\1\141\2\172\1\uffff\1\151\2"+
-        "\uffff\1\162\1\145\1\172\1\uffff";
+        "\1\uffff\1\165\2\uffff\1\162\1\uffff\1\165\1\160\1\154\2\151\1"+
+        "\55\1\56\1\uffff\2\156\1\145\1\172\2\uffff\2\uffff\1\57\2\uffff"+
+        "\1\145\3\uffff\1\157\1\uffff\1\156\1\154\1\145\1\157\1\156\1\153"+
+        "\3\uffff\1\163\1\141\1\146\5\uffff\1\163\1\165\1\144\1\164\1\156"+
+        "\1\163\1\147\1\145\1\167\1\142\1\141\1\164\1\160\1\141\1\151\1\40"+
+        "\1\145\1\154\1\162\1\145\1\154\1\165\1\151\1\172\1\164\1\160\1\uffff"+
+        "\1\144\1\145\1\164\1\162\1\145\1\154\1\157\1\uffff\1\157\1\151\1"+
+        "\154\3\40\2\163\1\164\1\156\1\162\1\156\1\145\3\uffff\3\40\1\156"+
+        "\1\171\1\145\1\40\3\uffff\1\141\2\172\1\uffff\1\151\2\uffff\1\162"+
+        "\1\145\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\3\uffff\1\4\1\uffff\1\6\1\7\7\uffff\1\21\4\uffff\1\26\1\27\2\uffff"+
-        "\1\33\1\34\1\uffff\1\26\1\uffff\1\2\1\30\1\4\1\uffff\1\6\1\7\6\uffff"+
-        "\1\17\1\uffff\1\21\3\uffff\1\27\1\31\1\32\1\33\11\uffff\1\24\1\20"+
-        "\4\uffff\1\3\16\uffff\1\12\7\uffff\1\5\15\uffff\1\13\1\14\1\16\7"+
-        "\uffff\1\22\1\23\1\25\3\uffff\1\15\1\uffff\1\10\1\11\3\uffff\1\1";
+        "\2\uffff\1\2\1\3\1\uffff\1\5\7\uffff\1\17\4\uffff\1\23\1\24\3\uffff"+
+        "\1\30\1\31\1\uffff\1\23\1\2\1\3\1\uffff\1\5\6\uffff\1\15\1\16\1"+
+        "\17\3\uffff\1\24\1\25\1\26\1\27\1\30\32\uffff\1\10\7\uffff\1\4\15"+
+        "\uffff\1\11\1\12\1\14\7\uffff\1\20\1\21\1\22\3\uffff\1\13\1\uffff"+
+        "\1\6\1\7\3\uffff\1\1";
     static final String DFA12_specialS =
-        "\1\2\1\uffff\1\0\22\uffff\1\3\5\uffff\1\4\27\uffff\1\1\112\uffff}>";
+        "\1\2\23\uffff\1\1\1\0\142\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\30\2\27\2\30\1\27\22\30\1\27\1\30\1\2\4\30\1\25\1\14\1\16"+
-            "\2\30\1\6\1\30\1\15\1\26\12\24\7\30\32\23\1\5\1\30\1\3\1\22"+
-            "\1\23\1\30\1\17\1\23\1\11\1\20\1\21\1\23\1\4\4\23\1\13\1\7\1"+
-            "\23\1\10\1\23\1\1\1\23\1\12\7\23\uff85\30",
+            "\11\30\2\27\2\30\1\27\22\30\1\27\1\30\1\24\4\30\1\25\1\13\1"+
+            "\15\2\30\1\5\1\30\1\14\1\26\12\23\7\30\32\22\1\2\1\30\1\3\1"+
+            "\21\1\22\1\30\1\16\1\22\1\10\1\20\1\17\1\22\1\4\4\22\1\12\1"+
+            "\6\1\22\1\7\1\22\1\1\1\22\1\11\7\22\uff85\30",
             "\1\31",
-            "\40\35\1\33\uffdf\35",
-            "",
-            "\1\37",
             "",
             "",
-            "\1\42\23\uffff\1\43",
+            "\1\35",
+            "",
+            "\1\37\23\uffff\1\40",
+            "\1\41",
+            "\1\42",
+            "\1\43",
             "\1\44",
             "\1\45",
             "\1\46",
-            "\1\47",
+            "",
             "\1\50",
             "\1\51",
-            "",
-            "\1\53",
-            "\1\54",
-            "\1\55",
+            "\1\52",
             "\32\32\4\uffff\1\32\1\uffff\32\32",
             "",
             "",
-            "\0\35",
-            "\1\57\4\uffff\1\60",
+            "\0\54",
+            "\0\54",
+            "\1\55\4\uffff\1\56",
             "",
+            "",
+            "\1\60",
+            "",
+            "",
+            "",
+            "\1\61",
             "",
             "\1\62",
-            "",
-            "\133\35\1\63\uffa4\35",
-            "",
-            "",
-            "",
+            "\1\63",
             "\1\64",
-            "",
-            "",
             "\1\65",
             "\1\66",
             "\1\67",
+            "",
+            "",
+            "",
             "\1\70",
             "\1\71",
             "\1\72",
             "",
-            "\1\73",
             "",
+            "",
+            "",
+            "",
+            "\1\73",
+            "\1\74",
             "\1\75",
             "\1\76",
             "\1\77",
-            "",
-            "",
-            "",
-            "",
             "\1\100",
-            "\0\35",
+            "\1\101",
             "\1\102",
             "\1\103",
             "\1\104",
@@ -1316,36 +1230,33 @@ public class InternalQuestionnaireLexer extends Lexer {
             "\1\106",
             "\1\107",
             "\1\110",
-            "",
-            "",
             "\1\111",
             "\1\112",
             "\1\113",
             "\1\114",
-            "",
             "\1\115",
             "\1\116",
             "\1\117",
             "\1\120",
             "\1\121",
-            "\1\122",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\123",
-            "\1\124",
-            "\1\125",
+            "\1\124\3\uffff\1\125",
+            "",
             "\1\126",
             "\1\127",
-            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\130",
             "\1\131",
-            "\1\132\3\uffff\1\133",
-            "",
+            "\1\132",
+            "\1\133",
             "\1\134",
+            "",
             "\1\135",
             "\1\136",
             "\1\137",
             "\1\140",
             "\1\141",
             "\1\142",
-            "",
             "\1\143",
             "\1\144",
             "\1\145",
@@ -1353,34 +1264,28 @@ public class InternalQuestionnaireLexer extends Lexer {
             "\1\147",
             "\1\150",
             "\1\151",
+            "",
+            "",
+            "",
             "\1\152",
             "\1\153",
             "\1\154",
             "\1\155",
             "\1\156",
             "\1\157",
-            "",
-            "",
-            "",
             "\1\160",
+            "",
+            "",
+            "",
             "\1\161",
-            "\1\162",
-            "\1\163",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "",
             "\1\164",
+            "",
+            "",
             "\1\165",
             "\1\166",
-            "",
-            "",
-            "",
-            "\1\167",
-            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
-            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
-            "",
-            "\1\172",
-            "",
-            "",
-            "\1\173",
-            "\1\174",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             ""
     };
@@ -1415,31 +1320,29 @@ public class InternalQuestionnaireLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_2 = input.LA(1);
+                        int LA12_21 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_2==' ') ) {s = 27;}
+                        if ( ((LA12_21>='\u0000' && LA12_21<='\uFFFF')) ) {s = 44;}
 
-                        else if ( ((LA12_2>='\u0000' && LA12_2<='\u001F')||(LA12_2>='!' && LA12_2<='\uFFFF')) ) {s = 29;}
-
-                        else s = 28;
+                        else s = 24;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_51 = input.LA(1);
+                        int LA12_20 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_51>='\u0000' && LA12_51<='\uFFFF')) ) {s = 29;}
+                        if ( ((LA12_20>='\u0000' && LA12_20<='\uFFFF')) ) {s = 44;}
 
-                        else s = 65;
+                        else s = 24;
 
                         if ( s>=0 ) return s;
                         break;
@@ -1449,43 +1352,43 @@ public class InternalQuestionnaireLexer extends Lexer {
                         s = -1;
                         if ( (LA12_0=='q') ) {s = 1;}
 
-                        else if ( (LA12_0=='\"') ) {s = 2;}
+                        else if ( (LA12_0=='[') ) {s = 2;}
 
                         else if ( (LA12_0==']') ) {s = 3;}
 
                         else if ( (LA12_0=='g') ) {s = 4;}
 
-                        else if ( (LA12_0=='[') ) {s = 5;}
+                        else if ( (LA12_0==',') ) {s = 5;}
 
-                        else if ( (LA12_0==',') ) {s = 6;}
+                        else if ( (LA12_0=='m') ) {s = 6;}
 
-                        else if ( (LA12_0=='m') ) {s = 7;}
+                        else if ( (LA12_0=='o') ) {s = 7;}
 
-                        else if ( (LA12_0=='o') ) {s = 8;}
+                        else if ( (LA12_0=='c') ) {s = 8;}
 
-                        else if ( (LA12_0=='c') ) {s = 9;}
+                        else if ( (LA12_0=='s') ) {s = 9;}
 
-                        else if ( (LA12_0=='s') ) {s = 10;}
+                        else if ( (LA12_0=='l') ) {s = 10;}
 
-                        else if ( (LA12_0=='l') ) {s = 11;}
+                        else if ( (LA12_0=='(') ) {s = 11;}
 
-                        else if ( (LA12_0=='(') ) {s = 12;}
+                        else if ( (LA12_0=='.') ) {s = 12;}
 
-                        else if ( (LA12_0=='.') ) {s = 13;}
+                        else if ( (LA12_0==')') ) {s = 13;}
 
-                        else if ( (LA12_0==')') ) {s = 14;}
+                        else if ( (LA12_0=='a') ) {s = 14;}
 
-                        else if ( (LA12_0=='a') ) {s = 15;}
+                        else if ( (LA12_0=='e') ) {s = 15;}
 
                         else if ( (LA12_0=='d') ) {s = 16;}
 
-                        else if ( (LA12_0=='e') ) {s = 17;}
+                        else if ( (LA12_0=='^') ) {s = 17;}
 
-                        else if ( (LA12_0=='^') ) {s = 18;}
+                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='b'||LA12_0=='f'||(LA12_0>='h' && LA12_0<='k')||LA12_0=='n'||LA12_0=='p'||LA12_0=='r'||(LA12_0>='t' && LA12_0<='z')) ) {s = 18;}
 
-                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='b'||LA12_0=='f'||(LA12_0>='h' && LA12_0<='k')||LA12_0=='n'||LA12_0=='p'||LA12_0=='r'||(LA12_0>='t' && LA12_0<='z')) ) {s = 19;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 19;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 20;}
+                        else if ( (LA12_0=='\"') ) {s = 20;}
 
                         else if ( (LA12_0=='\'') ) {s = 21;}
 
@@ -1494,26 +1397,6 @@ public class InternalQuestionnaireLexer extends Lexer {
                         else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 23;}
 
                         else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='+')||LA12_0=='-'||(LA12_0>=':' && LA12_0<='@')||LA12_0=='\\'||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 24;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA12_21 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_21>='\u0000' && LA12_21<='\uFFFF')) ) {s = 29;}
-
-                        else s = 24;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA12_27 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA12_27=='[') ) {s = 51;}
-
-                        else if ( ((LA12_27>='\u0000' && LA12_27<='Z')||(LA12_27>='\\' && LA12_27<='\uFFFF')) ) {s = 29;}
 
                         if ( s>=0 ) return s;
                         break;

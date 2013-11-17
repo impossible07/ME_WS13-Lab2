@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.ac.tuwien.big.questionnaire.impl.QuestionnaireImpl#getName <em>Name</em>}</li>
+ *   <li>{@link at.ac.tuwien.big.questionnaire.impl.QuestionnaireImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link at.ac.tuwien.big.questionnaire.impl.QuestionnaireImpl#getGroups <em>Groups</em>}</li>
  * </ul>
  * </p>
@@ -39,24 +39,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class QuestionnaireImpl extends MinimalEObjectImpl.Container implements Questionnaire
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getTitle()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String TITLE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getTitle()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String title = TITLE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getGroups() <em>Groups</em>}' containment reference list.
@@ -94,9 +94,9 @@ public class QuestionnaireImpl extends MinimalEObjectImpl.Container implements Q
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public String getTitle()
   {
-    return name;
+    return title;
   }
 
   /**
@@ -104,12 +104,12 @@ public class QuestionnaireImpl extends MinimalEObjectImpl.Container implements Q
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setTitle(String newTitle)
   {
-    String oldName = name;
-    name = newName;
+    String oldTitle = title;
+    title = newTitle;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.QUESTIONNAIRE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.QUESTIONNAIRE__TITLE, oldTitle, title));
   }
 
   /**
@@ -152,8 +152,8 @@ public class QuestionnaireImpl extends MinimalEObjectImpl.Container implements Q
   {
     switch (featureID)
     {
-      case QuestionnairePackage.QUESTIONNAIRE__NAME:
-        return getName();
+      case QuestionnairePackage.QUESTIONNAIRE__TITLE:
+        return getTitle();
       case QuestionnairePackage.QUESTIONNAIRE__GROUPS:
         return getGroups();
     }
@@ -171,8 +171,8 @@ public class QuestionnaireImpl extends MinimalEObjectImpl.Container implements Q
   {
     switch (featureID)
     {
-      case QuestionnairePackage.QUESTIONNAIRE__NAME:
-        setName((String)newValue);
+      case QuestionnairePackage.QUESTIONNAIRE__TITLE:
+        setTitle((String)newValue);
         return;
       case QuestionnairePackage.QUESTIONNAIRE__GROUPS:
         getGroups().clear();
@@ -192,8 +192,8 @@ public class QuestionnaireImpl extends MinimalEObjectImpl.Container implements Q
   {
     switch (featureID)
     {
-      case QuestionnairePackage.QUESTIONNAIRE__NAME:
-        setName(NAME_EDEFAULT);
+      case QuestionnairePackage.QUESTIONNAIRE__TITLE:
+        setTitle(TITLE_EDEFAULT);
         return;
       case QuestionnairePackage.QUESTIONNAIRE__GROUPS:
         getGroups().clear();
@@ -212,8 +212,8 @@ public class QuestionnaireImpl extends MinimalEObjectImpl.Container implements Q
   {
     switch (featureID)
     {
-      case QuestionnairePackage.QUESTIONNAIRE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case QuestionnairePackage.QUESTIONNAIRE__TITLE:
+        return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
       case QuestionnairePackage.QUESTIONNAIRE__GROUPS:
         return groups != null && !groups.isEmpty();
     }
@@ -231,8 +231,8 @@ public class QuestionnaireImpl extends MinimalEObjectImpl.Container implements Q
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (title: ");
+    result.append(title);
     result.append(')');
     return result.toString();
   }
