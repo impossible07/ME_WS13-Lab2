@@ -206,29 +206,9 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getOpenQuestion_Mandatory()
-  {
-    return (EAttribute)openQuestionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getOpenQuestion_Multiline()
-  {
-    return (EAttribute)openQuestionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getOpenQuestion_Question()
   {
-    return (EAttribute)openQuestionEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)openQuestionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -360,8 +340,6 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
     createEReference(groupEClass, GROUP__QUESTIONS);
 
     openQuestionEClass = createEClass(OPEN_QUESTION);
-    createEAttribute(openQuestionEClass, OPEN_QUESTION__MANDATORY);
-    createEAttribute(openQuestionEClass, OPEN_QUESTION__MULTILINE);
     createEAttribute(openQuestionEClass, OPEN_QUESTION__QUESTION);
 
     closedQuestionEClass = createEClass(CLOSED_QUESTION);
@@ -417,8 +395,6 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
     initEReference(getGroup_Questions(), ecorePackage.getEObject(), null, "questions", null, 0, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(openQuestionEClass, OpenQuestion.class, "OpenQuestion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOpenQuestion_Mandatory(), ecorePackage.getEBoolean(), "mandatory", null, 0, 1, OpenQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getOpenQuestion_Multiline(), ecorePackage.getEBoolean(), "multiline", null, 0, 1, OpenQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getOpenQuestion_Question(), ecorePackage.getEString(), "question", null, 0, 1, OpenQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(closedQuestionEClass, ClosedQuestion.class, "ClosedQuestion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

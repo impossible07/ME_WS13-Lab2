@@ -131,10 +131,17 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (mandatory?='mandatory'? multiline?='multiline'? question=STRING)
+	 *     question=STRING
 	 */
 	protected void sequence_OpenQuestion(EObject context, OpenQuestion semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.OPEN_QUESTION__QUESTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.OPEN_QUESTION__QUESTION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getOpenQuestionAccess().getQuestionSTRINGTerminalRuleCall_3_0(), semanticObject.getQuestion());
+		feeder.finish();
 	}
 	
 	

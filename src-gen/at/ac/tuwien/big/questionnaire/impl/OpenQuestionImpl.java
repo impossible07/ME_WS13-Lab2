@@ -19,8 +19,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.ac.tuwien.big.questionnaire.impl.OpenQuestionImpl#isMandatory <em>Mandatory</em>}</li>
- *   <li>{@link at.ac.tuwien.big.questionnaire.impl.OpenQuestionImpl#isMultiline <em>Multiline</em>}</li>
  *   <li>{@link at.ac.tuwien.big.questionnaire.impl.OpenQuestionImpl#getQuestion <em>Question</em>}</li>
  * </ul>
  * </p>
@@ -29,46 +27,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements OpenQuestion
 {
-  /**
-   * The default value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isMandatory()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean MANDATORY_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isMandatory()
-   * @generated
-   * @ordered
-   */
-  protected boolean mandatory = MANDATORY_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isMultiline() <em>Multiline</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isMultiline()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean MULTILINE_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isMultiline() <em>Multiline</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isMultiline()
-   * @generated
-   * @ordered
-   */
-  protected boolean multiline = MULTILINE_EDEFAULT;
-
   /**
    * The default value of the '{@link #getQuestion() <em>Question</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -115,52 +73,6 @@ public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements Op
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isMandatory()
-  {
-    return mandatory;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMandatory(boolean newMandatory)
-  {
-    boolean oldMandatory = mandatory;
-    mandatory = newMandatory;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.OPEN_QUESTION__MANDATORY, oldMandatory, mandatory));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isMultiline()
-  {
-    return multiline;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMultiline(boolean newMultiline)
-  {
-    boolean oldMultiline = multiline;
-    multiline = newMultiline;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.OPEN_QUESTION__MULTILINE, oldMultiline, multiline));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getQuestion()
   {
     return question;
@@ -189,10 +101,6 @@ public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements Op
   {
     switch (featureID)
     {
-      case QuestionnairePackage.OPEN_QUESTION__MANDATORY:
-        return isMandatory();
-      case QuestionnairePackage.OPEN_QUESTION__MULTILINE:
-        return isMultiline();
       case QuestionnairePackage.OPEN_QUESTION__QUESTION:
         return getQuestion();
     }
@@ -209,12 +117,6 @@ public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements Op
   {
     switch (featureID)
     {
-      case QuestionnairePackage.OPEN_QUESTION__MANDATORY:
-        setMandatory((Boolean)newValue);
-        return;
-      case QuestionnairePackage.OPEN_QUESTION__MULTILINE:
-        setMultiline((Boolean)newValue);
-        return;
       case QuestionnairePackage.OPEN_QUESTION__QUESTION:
         setQuestion((String)newValue);
         return;
@@ -232,12 +134,6 @@ public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements Op
   {
     switch (featureID)
     {
-      case QuestionnairePackage.OPEN_QUESTION__MANDATORY:
-        setMandatory(MANDATORY_EDEFAULT);
-        return;
-      case QuestionnairePackage.OPEN_QUESTION__MULTILINE:
-        setMultiline(MULTILINE_EDEFAULT);
-        return;
       case QuestionnairePackage.OPEN_QUESTION__QUESTION:
         setQuestion(QUESTION_EDEFAULT);
         return;
@@ -255,10 +151,6 @@ public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements Op
   {
     switch (featureID)
     {
-      case QuestionnairePackage.OPEN_QUESTION__MANDATORY:
-        return mandatory != MANDATORY_EDEFAULT;
-      case QuestionnairePackage.OPEN_QUESTION__MULTILINE:
-        return multiline != MULTILINE_EDEFAULT;
       case QuestionnairePackage.OPEN_QUESTION__QUESTION:
         return QUESTION_EDEFAULT == null ? question != null : !QUESTION_EDEFAULT.equals(question);
     }
@@ -276,11 +168,7 @@ public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements Op
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (mandatory: ");
-    result.append(mandatory);
-    result.append(", multiline: ");
-    result.append(multiline);
-    result.append(", question: ");
+    result.append(" (question: ");
     result.append(question);
     result.append(')');
     return result.toString();

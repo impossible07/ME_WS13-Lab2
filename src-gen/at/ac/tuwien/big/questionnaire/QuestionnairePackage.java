@@ -141,31 +141,13 @@ public interface QuestionnairePackage extends EPackage
   int OPEN_QUESTION = 2;
 
   /**
-   * The feature id for the '<em><b>Mandatory</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPEN_QUESTION__MANDATORY = 0;
-
-  /**
-   * The feature id for the '<em><b>Multiline</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPEN_QUESTION__MULTILINE = 1;
-
-  /**
    * The feature id for the '<em><b>Question</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OPEN_QUESTION__QUESTION = 2;
+  int OPEN_QUESTION__QUESTION = 0;
 
   /**
    * The number of structural features of the '<em>Open Question</em>' class.
@@ -174,7 +156,7 @@ public interface QuestionnairePackage extends EPackage
    * @generated
    * @ordered
    */
-  int OPEN_QUESTION_FEATURE_COUNT = 3;
+  int OPEN_QUESTION_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link at.ac.tuwien.big.questionnaire.impl.ClosedQuestionImpl <em>Closed Question</em>}' class.
@@ -361,28 +343,6 @@ public interface QuestionnairePackage extends EPackage
    * @generated
    */
   EClass getOpenQuestion();
-
-  /**
-   * Returns the meta object for the attribute '{@link at.ac.tuwien.big.questionnaire.OpenQuestion#isMandatory <em>Mandatory</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Mandatory</em>'.
-   * @see at.ac.tuwien.big.questionnaire.OpenQuestion#isMandatory()
-   * @see #getOpenQuestion()
-   * @generated
-   */
-  EAttribute getOpenQuestion_Mandatory();
-
-  /**
-   * Returns the meta object for the attribute '{@link at.ac.tuwien.big.questionnaire.OpenQuestion#isMultiline <em>Multiline</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Multiline</em>'.
-   * @see at.ac.tuwien.big.questionnaire.OpenQuestion#isMultiline()
-   * @see #getOpenQuestion()
-   * @generated
-   */
-  EAttribute getOpenQuestion_Multiline();
 
   /**
    * Returns the meta object for the attribute '{@link at.ac.tuwien.big.questionnaire.OpenQuestion#getQuestion <em>Question</em>}'.
@@ -575,22 +535,6 @@ public interface QuestionnairePackage extends EPackage
      * @generated
      */
     EClass OPEN_QUESTION = eINSTANCE.getOpenQuestion();
-
-    /**
-     * The meta object literal for the '<em><b>Mandatory</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OPEN_QUESTION__MANDATORY = eINSTANCE.getOpenQuestion_Mandatory();
-
-    /**
-     * The meta object literal for the '<em><b>Multiline</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OPEN_QUESTION__MULTILINE = eINSTANCE.getOpenQuestion_Multiline();
 
     /**
      * The meta object literal for the '<em><b>Question</b></em>' attribute feature.

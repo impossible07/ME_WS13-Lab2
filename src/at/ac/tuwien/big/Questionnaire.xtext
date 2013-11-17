@@ -17,7 +17,7 @@ Group:
 ;
 
 OpenQuestion:
-	(mandatory?='mandatory')? & (multiline?='multiline')? & 'open question' question=STRING(',')?
+	('mandatory')? ('multiline')? 'open question' question=STRING(',')?
 ;
 
 ClosedQuestion:

@@ -16,8 +16,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//Group/questions"/>
     </genClasses>
     <genClasses ecoreClass="Questionnaire.ecore#//OpenQuestion">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//OpenQuestion/mandatory"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//OpenQuestion/multiline"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//OpenQuestion/question"/>
     </genClasses>
     <genClasses ecoreClass="Questionnaire.ecore#//ClosedQuestion">
