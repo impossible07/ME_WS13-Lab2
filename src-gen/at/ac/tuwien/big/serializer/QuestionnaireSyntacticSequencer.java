@@ -9,6 +9,7 @@ import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -18,6 +19,9 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class QuestionnaireSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected QuestionnaireGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Answers_CommaKeyword_2_q;
+	protected AbstractElementAlias match_Answers_CommaKeyword_5_q;
+	protected AbstractElementAlias match_Answers___DefaultAnswerIsKeyword_4_0_STRINGTerminalRuleCall_4_1__q;
 	protected AbstractElementAlias match_ClosedQuestion_CommaKeyword_4_q;
 	protected AbstractElementAlias match_ClosedQuestion_MultipleAnswersKeyword_1_1_or_SingleAnswerKeyword_1_0;
 	protected AbstractElementAlias match_Group_CommaKeyword_5_q;
@@ -30,6 +34,9 @@ public class QuestionnaireSyntacticSequencer extends AbstractSyntacticSequencer 
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (QuestionnaireGrammarAccess) access;
+		match_Answers_CommaKeyword_2_q = new TokenAlias(false, true, grammarAccess.getAnswersAccess().getCommaKeyword_2());
+		match_Answers_CommaKeyword_5_q = new TokenAlias(false, true, grammarAccess.getAnswersAccess().getCommaKeyword_5());
+		match_Answers___DefaultAnswerIsKeyword_4_0_STRINGTerminalRuleCall_4_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getAnswersAccess().getDefaultAnswerIsKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getAnswersAccess().getSTRINGTerminalRuleCall_4_1()));
 		match_ClosedQuestion_CommaKeyword_4_q = new TokenAlias(false, true, grammarAccess.getClosedQuestionAccess().getCommaKeyword_4());
 		match_ClosedQuestion_MultipleAnswersKeyword_1_1_or_SingleAnswerKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getClosedQuestionAccess().getMultipleAnswersKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getClosedQuestionAccess().getSingleAnswerKeyword_1_0()));
 		match_Group_CommaKeyword_5_q = new TokenAlias(false, true, grammarAccess.getGroupAccess().getCommaKeyword_5());
@@ -42,9 +49,22 @@ public class QuestionnaireSyntacticSequencer extends AbstractSyntacticSequencer 
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if(ruleCall.getRule() == grammarAccess.getSTRINGRule())
+			return getSTRINGToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * terminal STRING	: 
+	 * 			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+	 * 			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'"
+	 * 		;
+	 */
+	protected String getSTRINGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\"\"";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -52,7 +72,13 @@ public class QuestionnaireSyntacticSequencer extends AbstractSyntacticSequencer 
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_ClosedQuestion_CommaKeyword_4_q.equals(syntax))
+			if(match_Answers_CommaKeyword_2_q.equals(syntax))
+				emit_Answers_CommaKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Answers_CommaKeyword_5_q.equals(syntax))
+				emit_Answers_CommaKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Answers___DefaultAnswerIsKeyword_4_0_STRINGTerminalRuleCall_4_1__q.equals(syntax))
+				emit_Answers___DefaultAnswerIsKeyword_4_0_STRINGTerminalRuleCall_4_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_ClosedQuestion_CommaKeyword_4_q.equals(syntax))
 				emit_ClosedQuestion_CommaKeyword_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_ClosedQuestion_MultipleAnswersKeyword_1_1_or_SingleAnswerKeyword_1_0.equals(syntax))
 				emit_ClosedQuestion_MultipleAnswersKeyword_1_1_or_SingleAnswerKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -76,13 +102,37 @@ public class QuestionnaireSyntacticSequencer extends AbstractSyntacticSequencer 
 	 * Syntax:
 	 *     ','?
 	 */
+	protected void emit_Answers_CommaKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ','?
+	 */
+	protected void emit_Answers_CommaKeyword_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ('default answer is' STRING)?
+	 */
+	protected void emit_Answers___DefaultAnswerIsKeyword_4_0_STRINGTerminalRuleCall_4_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ','?
+	 */
 	protected void emit_ClosedQuestion_CommaKeyword_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Syntax:
-	 *     'single answer' | 'multiple answers'
+	 *     'multiple answers' | 'single answer'
 	 */
 	protected void emit_ClosedQuestion_MultipleAnswersKeyword_1_1_or_SingleAnswerKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

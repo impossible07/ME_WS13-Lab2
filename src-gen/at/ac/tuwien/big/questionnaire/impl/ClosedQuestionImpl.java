@@ -2,12 +2,15 @@
  */
 package at.ac.tuwien.big.questionnaire.impl;
 
+import at.ac.tuwien.big.questionnaire.Answers;
 import at.ac.tuwien.big.questionnaire.ClosedQuestion;
 import at.ac.tuwien.big.questionnaire.QuestionnairePackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -49,24 +52,14 @@ public class ClosedQuestionImpl extends MinimalEObjectImpl.Container implements 
   protected String question = QUESTION_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getAnswers() <em>Answers</em>}' attribute.
+   * The cached value of the '{@link #getAnswers() <em>Answers</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getAnswers()
    * @generated
    * @ordered
    */
-  protected static final String ANSWERS_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getAnswers() <em>Answers</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAnswers()
-   * @generated
-   * @ordered
-   */
-  protected String answers = ANSWERS_EDEFAULT;
+  protected Answers answers;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,7 +110,7 @@ public class ClosedQuestionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getAnswers()
+  public Answers getAnswers()
   {
     return answers;
   }
@@ -127,12 +120,53 @@ public class ClosedQuestionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAnswers(String newAnswers)
+  public NotificationChain basicSetAnswers(Answers newAnswers, NotificationChain msgs)
   {
-    String oldAnswers = answers;
+    Answers oldAnswers = answers;
     answers = newAnswers;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.CLOSED_QUESTION__ANSWERS, oldAnswers, answers));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, QuestionnairePackage.CLOSED_QUESTION__ANSWERS, oldAnswers, newAnswers);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAnswers(Answers newAnswers)
+  {
+    if (newAnswers != answers)
+    {
+      NotificationChain msgs = null;
+      if (answers != null)
+        msgs = ((InternalEObject)answers).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - QuestionnairePackage.CLOSED_QUESTION__ANSWERS, null, msgs);
+      if (newAnswers != null)
+        msgs = ((InternalEObject)newAnswers).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - QuestionnairePackage.CLOSED_QUESTION__ANSWERS, null, msgs);
+      msgs = basicSetAnswers(newAnswers, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.CLOSED_QUESTION__ANSWERS, newAnswers, newAnswers));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case QuestionnairePackage.CLOSED_QUESTION__ANSWERS:
+        return basicSetAnswers(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -167,7 +201,7 @@ public class ClosedQuestionImpl extends MinimalEObjectImpl.Container implements 
         setQuestion((String)newValue);
         return;
       case QuestionnairePackage.CLOSED_QUESTION__ANSWERS:
-        setAnswers((String)newValue);
+        setAnswers((Answers)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -187,7 +221,7 @@ public class ClosedQuestionImpl extends MinimalEObjectImpl.Container implements 
         setQuestion(QUESTION_EDEFAULT);
         return;
       case QuestionnairePackage.CLOSED_QUESTION__ANSWERS:
-        setAnswers(ANSWERS_EDEFAULT);
+        setAnswers((Answers)null);
         return;
     }
     super.eUnset(featureID);
@@ -206,7 +240,7 @@ public class ClosedQuestionImpl extends MinimalEObjectImpl.Container implements 
       case QuestionnairePackage.CLOSED_QUESTION__QUESTION:
         return QUESTION_EDEFAULT == null ? question != null : !QUESTION_EDEFAULT.equals(question);
       case QuestionnairePackage.CLOSED_QUESTION__ANSWERS:
-        return ANSWERS_EDEFAULT == null ? answers != null : !ANSWERS_EDEFAULT.equals(answers);
+        return answers != null;
     }
     return super.eIsSet(featureID);
   }
@@ -224,8 +258,6 @@ public class ClosedQuestionImpl extends MinimalEObjectImpl.Container implements 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (question: ");
     result.append(question);
-    result.append(", answers: ");
-    result.append(answers);
     result.append(')');
     return result.toString();
   }
