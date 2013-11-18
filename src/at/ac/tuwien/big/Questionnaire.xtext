@@ -29,27 +29,17 @@ LikertQuestion:
 	'likert question' question=STRING '('('-')?lower=INT'..'higher=INT')'(',')?
 ;
 
-//1st version works without Errors (except of "Other...")
-//Answers:
-//        'answers ['
-//        ((STRING) ('enables question ['(STRING(',')?)+']')?(',')?)+
-//        ']'
-//        ('default answer is' STRING)?
-//;
-
-//2nd version (with warnings und Other geht trotzdem nicht ;)
 Answers:
 	'answers ['
-	(answers+=(OpenAnswer|ClosedAnswer)+)(',')?
+	(answers+=(OpenAnswer | ClosedAnswer)+)(',')?
 	']'
-	('default answer is' STRING)?(',')?
-//	('default answer is' answer=[ClosedAnswer])?
+	('default answer is' answer=[ClosedAnswer])?
 ;
 
 OpenAnswer:
-	(STRING)'...'
+	answer=STRING'...'
 ;
 
 ClosedAnswer:
-	(STRING ('enables question ['(STRING(',')?)+']')?(',')?)+
+	answer=STRING ('enables question ['question=[ClosedQuestion]']')?(',')?
 ;

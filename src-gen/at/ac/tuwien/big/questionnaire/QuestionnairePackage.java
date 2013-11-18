@@ -252,7 +252,7 @@ public interface QuestionnairePackage extends EPackage
   int ANSWERS = 5;
 
   /**
-   * The feature id for the '<em><b>Answers</b></em>' attribute list.
+   * The feature id for the '<em><b>Answers</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -261,13 +261,87 @@ public interface QuestionnairePackage extends EPackage
   int ANSWERS__ANSWERS = 0;
 
   /**
+   * The feature id for the '<em><b>Answer</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANSWERS__ANSWER = 1;
+
+  /**
    * The number of structural features of the '<em>Answers</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANSWERS_FEATURE_COUNT = 1;
+  int ANSWERS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link at.ac.tuwien.big.questionnaire.impl.OpenAnswerImpl <em>Open Answer</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.ac.tuwien.big.questionnaire.impl.OpenAnswerImpl
+   * @see at.ac.tuwien.big.questionnaire.impl.QuestionnairePackageImpl#getOpenAnswer()
+   * @generated
+   */
+  int OPEN_ANSWER = 6;
+
+  /**
+   * The feature id for the '<em><b>Answer</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPEN_ANSWER__ANSWER = 0;
+
+  /**
+   * The number of structural features of the '<em>Open Answer</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPEN_ANSWER_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link at.ac.tuwien.big.questionnaire.impl.ClosedAnswerImpl <em>Closed Answer</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.ac.tuwien.big.questionnaire.impl.ClosedAnswerImpl
+   * @see at.ac.tuwien.big.questionnaire.impl.QuestionnairePackageImpl#getClosedAnswer()
+   * @generated
+   */
+  int CLOSED_ANSWER = 7;
+
+  /**
+   * The feature id for the '<em><b>Answer</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLOSED_ANSWER__ANSWER = 0;
+
+  /**
+   * The feature id for the '<em><b>Question</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLOSED_ANSWER__QUESTION = 1;
+
+  /**
+   * The number of structural features of the '<em>Closed Answer</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLOSED_ANSWER_FEATURE_COUNT = 2;
 
 
   /**
@@ -441,15 +515,79 @@ public interface QuestionnairePackage extends EPackage
   EClass getAnswers();
 
   /**
-   * Returns the meta object for the attribute list '{@link at.ac.tuwien.big.questionnaire.Answers#getAnswers <em>Answers</em>}'.
+   * Returns the meta object for the containment reference list '{@link at.ac.tuwien.big.questionnaire.Answers#getAnswers <em>Answers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Answers</em>'.
+   * @return the meta object for the containment reference list '<em>Answers</em>'.
    * @see at.ac.tuwien.big.questionnaire.Answers#getAnswers()
    * @see #getAnswers()
    * @generated
    */
-  EAttribute getAnswers_Answers();
+  EReference getAnswers_Answers();
+
+  /**
+   * Returns the meta object for the reference '{@link at.ac.tuwien.big.questionnaire.Answers#getAnswer <em>Answer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Answer</em>'.
+   * @see at.ac.tuwien.big.questionnaire.Answers#getAnswer()
+   * @see #getAnswers()
+   * @generated
+   */
+  EReference getAnswers_Answer();
+
+  /**
+   * Returns the meta object for class '{@link at.ac.tuwien.big.questionnaire.OpenAnswer <em>Open Answer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Open Answer</em>'.
+   * @see at.ac.tuwien.big.questionnaire.OpenAnswer
+   * @generated
+   */
+  EClass getOpenAnswer();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.ac.tuwien.big.questionnaire.OpenAnswer#getAnswer <em>Answer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Answer</em>'.
+   * @see at.ac.tuwien.big.questionnaire.OpenAnswer#getAnswer()
+   * @see #getOpenAnswer()
+   * @generated
+   */
+  EAttribute getOpenAnswer_Answer();
+
+  /**
+   * Returns the meta object for class '{@link at.ac.tuwien.big.questionnaire.ClosedAnswer <em>Closed Answer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Closed Answer</em>'.
+   * @see at.ac.tuwien.big.questionnaire.ClosedAnswer
+   * @generated
+   */
+  EClass getClosedAnswer();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.ac.tuwien.big.questionnaire.ClosedAnswer#getAnswer <em>Answer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Answer</em>'.
+   * @see at.ac.tuwien.big.questionnaire.ClosedAnswer#getAnswer()
+   * @see #getClosedAnswer()
+   * @generated
+   */
+  EAttribute getClosedAnswer_Answer();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.ac.tuwien.big.questionnaire.ClosedAnswer#getQuestion <em>Question</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Question</em>'.
+   * @see at.ac.tuwien.big.questionnaire.ClosedAnswer#getQuestion()
+   * @see #getClosedAnswer()
+   * @generated
+   */
+  EAttribute getClosedAnswer_Question();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -615,12 +753,64 @@ public interface QuestionnairePackage extends EPackage
     EClass ANSWERS = eINSTANCE.getAnswers();
 
     /**
-     * The meta object literal for the '<em><b>Answers</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Answers</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ANSWERS__ANSWERS = eINSTANCE.getAnswers_Answers();
+    EReference ANSWERS__ANSWERS = eINSTANCE.getAnswers_Answers();
+
+    /**
+     * The meta object literal for the '<em><b>Answer</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ANSWERS__ANSWER = eINSTANCE.getAnswers_Answer();
+
+    /**
+     * The meta object literal for the '{@link at.ac.tuwien.big.questionnaire.impl.OpenAnswerImpl <em>Open Answer</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.ac.tuwien.big.questionnaire.impl.OpenAnswerImpl
+     * @see at.ac.tuwien.big.questionnaire.impl.QuestionnairePackageImpl#getOpenAnswer()
+     * @generated
+     */
+    EClass OPEN_ANSWER = eINSTANCE.getOpenAnswer();
+
+    /**
+     * The meta object literal for the '<em><b>Answer</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OPEN_ANSWER__ANSWER = eINSTANCE.getOpenAnswer_Answer();
+
+    /**
+     * The meta object literal for the '{@link at.ac.tuwien.big.questionnaire.impl.ClosedAnswerImpl <em>Closed Answer</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.ac.tuwien.big.questionnaire.impl.ClosedAnswerImpl
+     * @see at.ac.tuwien.big.questionnaire.impl.QuestionnairePackageImpl#getClosedAnswer()
+     * @generated
+     */
+    EClass CLOSED_ANSWER = eINSTANCE.getClosedAnswer();
+
+    /**
+     * The meta object literal for the '<em><b>Answer</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLOSED_ANSWER__ANSWER = eINSTANCE.getClosedAnswer_Answer();
+
+    /**
+     * The meta object literal for the '<em><b>Question</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLOSED_ANSWER__QUESTION = eINSTANCE.getClosedAnswer_Question();
 
   }
 

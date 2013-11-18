@@ -2,7 +2,7 @@
  */
 package at.ac.tuwien.big.questionnaire.impl;
 
-import at.ac.tuwien.big.questionnaire.OpenQuestion;
+import at.ac.tuwien.big.questionnaire.OpenAnswer;
 import at.ac.tuwien.big.questionnaire.QuestionnairePackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,45 +14,45 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Open Question</b></em>'.
+ * An implementation of the model object '<em><b>Open Answer</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.ac.tuwien.big.questionnaire.impl.OpenQuestionImpl#getQuestion <em>Question</em>}</li>
+ *   <li>{@link at.ac.tuwien.big.questionnaire.impl.OpenAnswerImpl#getAnswer <em>Answer</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements OpenQuestion
+public class OpenAnswerImpl extends MinimalEObjectImpl.Container implements OpenAnswer
 {
   /**
-   * The default value of the '{@link #getQuestion() <em>Question</em>}' attribute.
+   * The default value of the '{@link #getAnswer() <em>Answer</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQuestion()
+   * @see #getAnswer()
    * @generated
    * @ordered
    */
-  protected static final String QUESTION_EDEFAULT = null;
+  protected static final String ANSWER_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getQuestion() <em>Question</em>}' attribute.
+   * The cached value of the '{@link #getAnswer() <em>Answer</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQuestion()
+   * @see #getAnswer()
    * @generated
    * @ordered
    */
-  protected String question = QUESTION_EDEFAULT;
+  protected String answer = ANSWER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected OpenQuestionImpl()
+  protected OpenAnswerImpl()
   {
     super();
   }
@@ -65,7 +65,7 @@ public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements Op
   @Override
   protected EClass eStaticClass()
   {
-    return QuestionnairePackage.Literals.OPEN_QUESTION;
+    return QuestionnairePackage.Literals.OPEN_ANSWER;
   }
 
   /**
@@ -73,9 +73,9 @@ public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements Op
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getQuestion()
+  public String getAnswer()
   {
-    return question;
+    return answer;
   }
 
   /**
@@ -83,12 +83,12 @@ public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements Op
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setQuestion(String newQuestion)
+  public void setAnswer(String newAnswer)
   {
-    String oldQuestion = question;
-    question = newQuestion;
+    String oldAnswer = answer;
+    answer = newAnswer;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.OPEN_QUESTION__QUESTION, oldQuestion, question));
+      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.OPEN_ANSWER__ANSWER, oldAnswer, answer));
   }
 
   /**
@@ -101,8 +101,8 @@ public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements Op
   {
     switch (featureID)
     {
-      case QuestionnairePackage.OPEN_QUESTION__QUESTION:
-        return getQuestion();
+      case QuestionnairePackage.OPEN_ANSWER__ANSWER:
+        return getAnswer();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +117,8 @@ public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements Op
   {
     switch (featureID)
     {
-      case QuestionnairePackage.OPEN_QUESTION__QUESTION:
-        setQuestion((String)newValue);
+      case QuestionnairePackage.OPEN_ANSWER__ANSWER:
+        setAnswer((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +134,8 @@ public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements Op
   {
     switch (featureID)
     {
-      case QuestionnairePackage.OPEN_QUESTION__QUESTION:
-        setQuestion(QUESTION_EDEFAULT);
+      case QuestionnairePackage.OPEN_ANSWER__ANSWER:
+        setAnswer(ANSWER_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +151,8 @@ public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements Op
   {
     switch (featureID)
     {
-      case QuestionnairePackage.OPEN_QUESTION__QUESTION:
-        return QUESTION_EDEFAULT == null ? question != null : !QUESTION_EDEFAULT.equals(question);
+      case QuestionnairePackage.OPEN_ANSWER__ANSWER:
+        return ANSWER_EDEFAULT == null ? answer != null : !ANSWER_EDEFAULT.equals(answer);
     }
     return super.eIsSet(featureID);
   }
@@ -168,10 +168,10 @@ public class OpenQuestionImpl extends MinimalEObjectImpl.Container implements Op
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (question: ");
-    result.append(question);
+    result.append(" (answer: ");
+    result.append(answer);
     result.append(')');
     return result.toString();
   }
 
-} //OpenQuestionImpl
+} //OpenAnswerImpl

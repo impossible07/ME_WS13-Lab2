@@ -2,7 +2,8 @@
  */
 package at.ac.tuwien.big.questionnaire.impl;
 
-import at.ac.tuwien.big.questionnaire.Group;
+import at.ac.tuwien.big.questionnaire.Answers;
+import at.ac.tuwien.big.questionnaire.ClosedAnswer;
 import at.ac.tuwien.big.questionnaire.QuestionnairePackage;
 
 import java.util.Collection;
@@ -24,56 +25,46 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Group</b></em>'.
+ * An implementation of the model object '<em><b>Answers</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.ac.tuwien.big.questionnaire.impl.GroupImpl#getName <em>Name</em>}</li>
- *   <li>{@link at.ac.tuwien.big.questionnaire.impl.GroupImpl#getQuestions <em>Questions</em>}</li>
+ *   <li>{@link at.ac.tuwien.big.questionnaire.impl.AnswersImpl#getAnswers <em>Answers</em>}</li>
+ *   <li>{@link at.ac.tuwien.big.questionnaire.impl.AnswersImpl#getAnswer <em>Answer</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class GroupImpl extends MinimalEObjectImpl.Container implements Group
+public class AnswersImpl extends MinimalEObjectImpl.Container implements Answers
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getAnswers() <em>Answers</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getAnswers()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected EList<EObject> answers;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getAnswer() <em>Answer</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getAnswer()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getQuestions() <em>Questions</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getQuestions()
-   * @generated
-   * @ordered
-   */
-  protected EList<EObject> questions;
+  protected ClosedAnswer answer;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GroupImpl()
+  protected AnswersImpl()
   {
     super();
   }
@@ -86,7 +77,7 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
   @Override
   protected EClass eStaticClass()
   {
-    return QuestionnairePackage.Literals.GROUP;
+    return QuestionnairePackage.Literals.ANSWERS;
   }
 
   /**
@@ -94,36 +85,56 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public EList<EObject> getAnswers()
   {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.GROUP__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<EObject> getQuestions()
-  {
-    if (questions == null)
+    if (answers == null)
     {
-      questions = new EObjectContainmentEList<EObject>(EObject.class, this, QuestionnairePackage.GROUP__QUESTIONS);
+      answers = new EObjectContainmentEList<EObject>(EObject.class, this, QuestionnairePackage.ANSWERS__ANSWERS);
     }
-    return questions;
+    return answers;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ClosedAnswer getAnswer()
+  {
+    if (answer != null && answer.eIsProxy())
+    {
+      InternalEObject oldAnswer = (InternalEObject)answer;
+      answer = (ClosedAnswer)eResolveProxy(oldAnswer);
+      if (answer != oldAnswer)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuestionnairePackage.ANSWERS__ANSWER, oldAnswer, answer));
+      }
+    }
+    return answer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ClosedAnswer basicGetAnswer()
+  {
+    return answer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAnswer(ClosedAnswer newAnswer)
+  {
+    ClosedAnswer oldAnswer = answer;
+    answer = newAnswer;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.ANSWERS__ANSWER, oldAnswer, answer));
   }
 
   /**
@@ -136,8 +147,8 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
   {
     switch (featureID)
     {
-      case QuestionnairePackage.GROUP__QUESTIONS:
-        return ((InternalEList<?>)getQuestions()).basicRemove(otherEnd, msgs);
+      case QuestionnairePackage.ANSWERS__ANSWERS:
+        return ((InternalEList<?>)getAnswers()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -152,10 +163,11 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
   {
     switch (featureID)
     {
-      case QuestionnairePackage.GROUP__NAME:
-        return getName();
-      case QuestionnairePackage.GROUP__QUESTIONS:
-        return getQuestions();
+      case QuestionnairePackage.ANSWERS__ANSWERS:
+        return getAnswers();
+      case QuestionnairePackage.ANSWERS__ANSWER:
+        if (resolve) return getAnswer();
+        return basicGetAnswer();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -171,12 +183,12 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
   {
     switch (featureID)
     {
-      case QuestionnairePackage.GROUP__NAME:
-        setName((String)newValue);
+      case QuestionnairePackage.ANSWERS__ANSWERS:
+        getAnswers().clear();
+        getAnswers().addAll((Collection<? extends EObject>)newValue);
         return;
-      case QuestionnairePackage.GROUP__QUESTIONS:
-        getQuestions().clear();
-        getQuestions().addAll((Collection<? extends EObject>)newValue);
+      case QuestionnairePackage.ANSWERS__ANSWER:
+        setAnswer((ClosedAnswer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -192,11 +204,11 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
   {
     switch (featureID)
     {
-      case QuestionnairePackage.GROUP__NAME:
-        setName(NAME_EDEFAULT);
+      case QuestionnairePackage.ANSWERS__ANSWERS:
+        getAnswers().clear();
         return;
-      case QuestionnairePackage.GROUP__QUESTIONS:
-        getQuestions().clear();
+      case QuestionnairePackage.ANSWERS__ANSWER:
+        setAnswer((ClosedAnswer)null);
         return;
     }
     super.eUnset(featureID);
@@ -212,29 +224,12 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
   {
     switch (featureID)
     {
-      case QuestionnairePackage.GROUP__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case QuestionnairePackage.GROUP__QUESTIONS:
-        return questions != null && !questions.isEmpty();
+      case QuestionnairePackage.ANSWERS__ANSWERS:
+        return answers != null && !answers.isEmpty();
+      case QuestionnairePackage.ANSWERS__ANSWER:
+        return answer != null;
     }
     return super.eIsSet(featureID);
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
-  }
-
-} //GroupImpl
+} //AnswersImpl

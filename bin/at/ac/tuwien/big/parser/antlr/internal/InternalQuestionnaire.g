@@ -532,15 +532,20 @@ ruleAnswers returns [EObject current=null]
     {
     	newLeafNode(otherlv_4, grammarAccess.getAnswersAccess().getDefaultAnswerIsKeyword_4_0());
     }
-this_STRING_5=RULE_STRING
-    { 
-    newLeafNode(this_STRING_5, grammarAccess.getAnswersAccess().getSTRINGTerminalRuleCall_4_1()); 
-    }
-)?(	otherlv_6=',' 
-    {
-    	newLeafNode(otherlv_6, grammarAccess.getAnswersAccess().getCommaKeyword_5());
-    }
-)?)
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAnswersRule());
+	        }
+        }
+	otherlv_5=RULE_ID
+	{
+		newLeafNode(otherlv_5, grammarAccess.getAnswersAccess().getAnswerClosedAnswerCrossReference_4_1_0()); 
+	}
+
+)
+))?)
 ;
 
 
@@ -548,93 +553,112 @@ this_STRING_5=RULE_STRING
 
 
 // Entry rule entryRuleOpenAnswer
-entryRuleOpenAnswer returns [String current=null] 
+entryRuleOpenAnswer returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getOpenAnswerRule()); } 
+	{ newCompositeNode(grammarAccess.getOpenAnswerRule()); }
 	 iv_ruleOpenAnswer=ruleOpenAnswer 
-	 { $current=$iv_ruleOpenAnswer.current.getText(); }  
+	 { $current=$iv_ruleOpenAnswer.current; } 
 	 EOF 
 ;
 
 // Rule OpenAnswer
-ruleOpenAnswer returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+ruleOpenAnswer returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(    this_STRING_0=RULE_STRING    {
-		$current.merge(this_STRING_0);
-    }
+((
+(
+		lv_answer_0_0=RULE_STRING
+		{
+			newLeafNode(lv_answer_0_0, grammarAccess.getOpenAnswerAccess().getAnswerSTRINGTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getOpenAnswerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"answer",
+        		lv_answer_0_0, 
+        		"STRING");
+	    }
 
-    { 
-    newLeafNode(this_STRING_0, grammarAccess.getOpenAnswerAccess().getSTRINGTerminalRuleCall_0()); 
-    }
-
-	kw='...' 
+)
+)	otherlv_1='...' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getOpenAnswerAccess().getFullStopFullStopFullStopKeyword_1()); 
+    	newLeafNode(otherlv_1, grammarAccess.getOpenAnswerAccess().getFullStopFullStopFullStopKeyword_1());
     }
 )
-    ;
+;
 
 
 
 
 
 // Entry rule entryRuleClosedAnswer
-entryRuleClosedAnswer returns [String current=null] 
+entryRuleClosedAnswer returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getClosedAnswerRule()); } 
+	{ newCompositeNode(grammarAccess.getClosedAnswerRule()); }
 	 iv_ruleClosedAnswer=ruleClosedAnswer 
-	 { $current=$iv_ruleClosedAnswer.current.getText(); }  
+	 { $current=$iv_ruleClosedAnswer.current; } 
 	 EOF 
 ;
 
 // Rule ClosedAnswer
-ruleClosedAnswer returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+ruleClosedAnswer returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(    this_STRING_0=RULE_STRING    {
-		$current.merge(this_STRING_0);
-    }
+((
+(
+		lv_answer_0_0=RULE_STRING
+		{
+			newLeafNode(lv_answer_0_0, grammarAccess.getClosedAnswerAccess().getAnswerSTRINGTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getClosedAnswerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"answer",
+        		lv_answer_0_0, 
+        		"STRING");
+	    }
 
-    { 
-    newLeafNode(this_STRING_0, grammarAccess.getClosedAnswerAccess().getSTRINGTerminalRuleCall_0()); 
+)
+)(	otherlv_1='enables question [' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getClosedAnswerAccess().getEnablesQuestionKeyword_1_0());
     }
 (
-	kw='enables question [' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getClosedAnswerAccess().getEnablesQuestionKeyword_1_0()); 
-    }
-(    this_STRING_2=RULE_STRING    {
-		$current.merge(this_STRING_2);
-    }
-
-    { 
-    newLeafNode(this_STRING_2, grammarAccess.getClosedAnswerAccess().getSTRINGTerminalRuleCall_1_1_0()); 
-    }
 (
-	kw=',' 
+		lv_question_2_0=RULE_STRING
+		{
+			newLeafNode(lv_question_2_0, grammarAccess.getClosedAnswerAccess().getQuestionSTRINGTerminalRuleCall_1_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getClosedAnswerRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"question",
+        		lv_question_2_0, 
+        		"STRING");
+	    }
+
+)
+)	otherlv_3=']' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getClosedAnswerAccess().getCommaKeyword_1_1_1()); 
+    	newLeafNode(otherlv_3, grammarAccess.getClosedAnswerAccess().getRightSquareBracketKeyword_1_2());
     }
-)?)+
-	kw=']' 
+)?(	otherlv_4=',' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getClosedAnswerAccess().getRightSquareBracketKeyword_1_2()); 
+    	newLeafNode(otherlv_4, grammarAccess.getClosedAnswerAccess().getCommaKeyword_2());
     }
-)?(
-	kw=',' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getClosedAnswerAccess().getCommaKeyword_2()); 
-    }
-)?)+
-    ;
+)?)
+;
 
 
 

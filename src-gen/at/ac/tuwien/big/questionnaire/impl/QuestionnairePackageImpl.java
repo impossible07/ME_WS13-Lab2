@@ -3,9 +3,11 @@
 package at.ac.tuwien.big.questionnaire.impl;
 
 import at.ac.tuwien.big.questionnaire.Answers;
+import at.ac.tuwien.big.questionnaire.ClosedAnswer;
 import at.ac.tuwien.big.questionnaire.ClosedQuestion;
 import at.ac.tuwien.big.questionnaire.Group;
 import at.ac.tuwien.big.questionnaire.LikertQuestion;
+import at.ac.tuwien.big.questionnaire.OpenAnswer;
 import at.ac.tuwien.big.questionnaire.OpenQuestion;
 import at.ac.tuwien.big.questionnaire.Questionnaire;
 import at.ac.tuwien.big.questionnaire.QuestionnaireFactory;
@@ -67,6 +69,20 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
    * @generated
    */
   private EClass answersEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass openAnswerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass closedAnswerEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -296,9 +312,69 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAnswers_Answers()
+  public EReference getAnswers_Answers()
   {
-    return (EAttribute)answersEClass.getEStructuralFeatures().get(0);
+    return (EReference)answersEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAnswers_Answer()
+  {
+    return (EReference)answersEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOpenAnswer()
+  {
+    return openAnswerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOpenAnswer_Answer()
+  {
+    return (EAttribute)openAnswerEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getClosedAnswer()
+  {
+    return closedAnswerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getClosedAnswer_Answer()
+  {
+    return (EAttribute)closedAnswerEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getClosedAnswer_Question()
+  {
+    return (EAttribute)closedAnswerEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -352,7 +428,15 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
     createEAttribute(likertQuestionEClass, LIKERT_QUESTION__HIGHER);
 
     answersEClass = createEClass(ANSWERS);
-    createEAttribute(answersEClass, ANSWERS__ANSWERS);
+    createEReference(answersEClass, ANSWERS__ANSWERS);
+    createEReference(answersEClass, ANSWERS__ANSWER);
+
+    openAnswerEClass = createEClass(OPEN_ANSWER);
+    createEAttribute(openAnswerEClass, OPEN_ANSWER__ANSWER);
+
+    closedAnswerEClass = createEClass(CLOSED_ANSWER);
+    createEAttribute(closedAnswerEClass, CLOSED_ANSWER__ANSWER);
+    createEAttribute(closedAnswerEClass, CLOSED_ANSWER__QUESTION);
   }
 
   /**
@@ -407,7 +491,15 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
     initEAttribute(getLikertQuestion_Higher(), ecorePackage.getEInt(), "higher", null, 0, 1, LikertQuestion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(answersEClass, Answers.class, "Answers", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAnswers_Answers(), ecorePackage.getEString(), "answers", null, 0, -1, Answers.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAnswers_Answers(), ecorePackage.getEObject(), null, "answers", null, 0, -1, Answers.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAnswers_Answer(), this.getClosedAnswer(), null, "answer", null, 0, 1, Answers.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(openAnswerEClass, OpenAnswer.class, "OpenAnswer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOpenAnswer_Answer(), ecorePackage.getEString(), "answer", null, 0, 1, OpenAnswer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(closedAnswerEClass, ClosedAnswer.class, "ClosedAnswer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getClosedAnswer_Answer(), ecorePackage.getEString(), "answer", null, 0, 1, ClosedAnswer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getClosedAnswer_Question(), ecorePackage.getEString(), "question", null, 0, 1, ClosedAnswer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
