@@ -66,6 +66,7 @@ public class QuestionnaireFactoryImpl extends EFactoryImpl implements Questionna
     {
       case QuestionnairePackage.QUESTIONNAIRE: return createQuestionnaire();
       case QuestionnairePackage.GROUP: return createGroup();
+      case QuestionnairePackage.QUESTION: return createQuestion();
       case QuestionnairePackage.OPEN_QUESTION: return createOpenQuestion();
       case QuestionnairePackage.CLOSED_QUESTION: return createClosedQuestion();
       case QuestionnairePackage.LIKERT_QUESTION: return createLikertQuestion();
@@ -97,6 +98,17 @@ public class QuestionnaireFactoryImpl extends EFactoryImpl implements Questionna
   {
     GroupImpl group = new GroupImpl();
     return group;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Question createQuestion()
+  {
+    QuestionImpl question = new QuestionImpl();
+    return question;
   }
 
   /**

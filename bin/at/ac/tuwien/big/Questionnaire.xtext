@@ -12,8 +12,12 @@ Questionnaire:
 
 Group:
 	'group' name=STRING '['
-	(questions+=(OpenQuestion | ClosedQuestion | LikertQuestion)+)
+	(questions+=(Question)+)
 	']'(',')?
+;
+
+Question:
+	(OpenQuestion | ClosedQuestion | LikertQuestion)
 ;
 
 OpenQuestion:
@@ -33,7 +37,7 @@ Answers:
 	'answers ['
 	(answers+=(OpenAnswer | ClosedAnswer)+)(',')?
 	']'
-	('default answer is' answer=[ClosedAnswer])?
+	('default answer is' answer=[ClosedAnswer|STRING])?
 ;
 
 OpenAnswer:
@@ -41,5 +45,5 @@ OpenAnswer:
 ;
 
 ClosedAnswer:
-	answer=STRING ('enables question ['question=[ClosedQuestion]']')?(',')?
+	answer=STRING ('enables question ['(question+=[Question|STRING](',')?)+']')?(',')?
 ;

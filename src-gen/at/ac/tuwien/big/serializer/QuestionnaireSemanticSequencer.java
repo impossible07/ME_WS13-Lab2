@@ -45,7 +45,8 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 				}
 				else break;
 			case QuestionnairePackage.CLOSED_QUESTION:
-				if(context == grammarAccess.getClosedQuestionRule()) {
+				if(context == grammarAccess.getClosedQuestionRule() ||
+				   context == grammarAccess.getQuestionRule()) {
 					sequence_ClosedQuestion(context, (ClosedQuestion) semanticObject); 
 					return; 
 				}
@@ -57,7 +58,8 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 				}
 				else break;
 			case QuestionnairePackage.LIKERT_QUESTION:
-				if(context == grammarAccess.getLikertQuestionRule()) {
+				if(context == grammarAccess.getLikertQuestionRule() ||
+				   context == grammarAccess.getQuestionRule()) {
 					sequence_LikertQuestion(context, (LikertQuestion) semanticObject); 
 					return; 
 				}
@@ -69,7 +71,8 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 				}
 				else break;
 			case QuestionnairePackage.OPEN_QUESTION:
-				if(context == grammarAccess.getOpenQuestionRule()) {
+				if(context == grammarAccess.getOpenQuestionRule() ||
+				   context == grammarAccess.getQuestionRule()) {
 					sequence_OpenQuestion(context, (OpenQuestion) semanticObject); 
 					return; 
 				}
@@ -86,7 +89,7 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     ((answers+=OpenAnswer | answers+=ClosedAnswer)+ answer=[ClosedAnswer|ID]?)
+	 *     ((answers+=OpenAnswer | answers+=ClosedAnswer)+ answer=[ClosedAnswer|STRING]?)
 	 */
 	protected void sequence_Answers(EObject context, Answers semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -95,7 +98,7 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (answer=STRING question=STRING?)
+	 *     (answer=STRING question+=[Question|STRING]*)
 	 */
 	protected void sequence_ClosedAnswer(EObject context, ClosedAnswer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -108,8 +111,8 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	 */
 	protected void sequence_ClosedQuestion(EObject context, ClosedQuestion semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.CLOSED_QUESTION__QUESTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.CLOSED_QUESTION__QUESTION));
+			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.QUESTION__QUESTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.QUESTION__QUESTION));
 			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.CLOSED_QUESTION__ANSWERS) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.CLOSED_QUESTION__ANSWERS));
 		}
@@ -123,7 +126,7 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (name=STRING (questions+=OpenQuestion | questions+=ClosedQuestion | questions+=LikertQuestion)+)
+	 *     (name=STRING questions+=Question+)
 	 */
 	protected void sequence_Group(EObject context, Group semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -136,8 +139,8 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	 */
 	protected void sequence_LikertQuestion(EObject context, LikertQuestion semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.LIKERT_QUESTION__QUESTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.LIKERT_QUESTION__QUESTION));
+			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.QUESTION__QUESTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.QUESTION__QUESTION));
 			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.LIKERT_QUESTION__LOWER) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.LIKERT_QUESTION__LOWER));
 			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.LIKERT_QUESTION__HIGHER) == ValueTransient.YES)
@@ -174,8 +177,8 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	 */
 	protected void sequence_OpenQuestion(EObject context, OpenQuestion semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.OPEN_QUESTION__QUESTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.OPEN_QUESTION__QUESTION));
+			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.QUESTION__QUESTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.QUESTION__QUESTION));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);

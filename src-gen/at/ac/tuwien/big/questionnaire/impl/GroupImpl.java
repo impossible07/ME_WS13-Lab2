@@ -3,6 +3,7 @@
 package at.ac.tuwien.big.questionnaire.impl;
 
 import at.ac.tuwien.big.questionnaire.Group;
+import at.ac.tuwien.big.questionnaire.Question;
 import at.ac.tuwien.big.questionnaire.QuestionnairePackage;
 
 import java.util.Collection;
@@ -13,7 +14,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -66,7 +66,7 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
    * @generated
    * @ordered
    */
-  protected EList<EObject> questions;
+  protected EList<Question> questions;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,11 +117,11 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EObject> getQuestions()
+  public EList<Question> getQuestions()
   {
     if (questions == null)
     {
-      questions = new EObjectContainmentEList<EObject>(EObject.class, this, QuestionnairePackage.GROUP__QUESTIONS);
+      questions = new EObjectContainmentEList<Question>(Question.class, this, QuestionnairePackage.GROUP__QUESTIONS);
     }
     return questions;
   }
@@ -176,7 +176,7 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
         return;
       case QuestionnairePackage.GROUP__QUESTIONS:
         getQuestions().clear();
-        getQuestions().addAll((Collection<? extends EObject>)newValue);
+        getQuestions().addAll((Collection<? extends Question>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

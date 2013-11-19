@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +18,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.ac.tuwien.big.questionnaire.impl.LikertQuestionImpl#getQuestion <em>Question</em>}</li>
  *   <li>{@link at.ac.tuwien.big.questionnaire.impl.LikertQuestionImpl#getLower <em>Lower</em>}</li>
  *   <li>{@link at.ac.tuwien.big.questionnaire.impl.LikertQuestionImpl#getHigher <em>Higher</em>}</li>
  * </ul>
@@ -27,28 +25,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class LikertQuestionImpl extends MinimalEObjectImpl.Container implements LikertQuestion
+public class LikertQuestionImpl extends QuestionImpl implements LikertQuestion
 {
-  /**
-   * The default value of the '{@link #getQuestion() <em>Question</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getQuestion()
-   * @generated
-   * @ordered
-   */
-  protected static final String QUESTION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getQuestion() <em>Question</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getQuestion()
-   * @generated
-   * @ordered
-   */
-  protected String question = QUESTION_EDEFAULT;
-
   /**
    * The default value of the '{@link #getLower() <em>Lower</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -115,29 +93,6 @@ public class LikertQuestionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getQuestion()
-  {
-    return question;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setQuestion(String newQuestion)
-  {
-    String oldQuestion = question;
-    question = newQuestion;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.LIKERT_QUESTION__QUESTION, oldQuestion, question));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public int getLower()
   {
     return lower;
@@ -189,8 +144,6 @@ public class LikertQuestionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case QuestionnairePackage.LIKERT_QUESTION__QUESTION:
-        return getQuestion();
       case QuestionnairePackage.LIKERT_QUESTION__LOWER:
         return getLower();
       case QuestionnairePackage.LIKERT_QUESTION__HIGHER:
@@ -209,9 +162,6 @@ public class LikertQuestionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case QuestionnairePackage.LIKERT_QUESTION__QUESTION:
-        setQuestion((String)newValue);
-        return;
       case QuestionnairePackage.LIKERT_QUESTION__LOWER:
         setLower((Integer)newValue);
         return;
@@ -232,9 +182,6 @@ public class LikertQuestionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case QuestionnairePackage.LIKERT_QUESTION__QUESTION:
-        setQuestion(QUESTION_EDEFAULT);
-        return;
       case QuestionnairePackage.LIKERT_QUESTION__LOWER:
         setLower(LOWER_EDEFAULT);
         return;
@@ -255,8 +202,6 @@ public class LikertQuestionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case QuestionnairePackage.LIKERT_QUESTION__QUESTION:
-        return QUESTION_EDEFAULT == null ? question != null : !QUESTION_EDEFAULT.equals(question);
       case QuestionnairePackage.LIKERT_QUESTION__LOWER:
         return lower != LOWER_EDEFAULT;
       case QuestionnairePackage.LIKERT_QUESTION__HIGHER:
@@ -276,9 +221,7 @@ public class LikertQuestionImpl extends MinimalEObjectImpl.Container implements 
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (question: ");
-    result.append(question);
-    result.append(", lower: ");
+    result.append(" (lower: ");
     result.append(lower);
     result.append(", higher: ");
     result.append(higher);

@@ -41,6 +41,15 @@ public interface QuestionnaireFactory extends EFactory
   Group createGroup();
 
   /**
+   * Returns a new object of class '<em>Question</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Question</em>'.
+   * @generated
+   */
+  Question createQuestion();
+
+  /**
    * Returns a new object of class '<em>Open Question</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

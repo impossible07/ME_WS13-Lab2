@@ -53,7 +53,7 @@ public interface Group extends EObject
 
   /**
    * Returns the value of the '<em><b>Questions</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
+   * The list contents are of type {@link at.ac.tuwien.big.questionnaire.Question}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Questions</em>' containment reference list isn't clear,
@@ -65,6 +65,6 @@ public interface Group extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getQuestions();
+  EList<Question> getQuestions();
 
 } // Group

@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,35 +21,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.ac.tuwien.big.questionnaire.impl.ClosedQuestionImpl#getQuestion <em>Question</em>}</li>
  *   <li>{@link at.ac.tuwien.big.questionnaire.impl.ClosedQuestionImpl#getAnswers <em>Answers</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ClosedQuestionImpl extends MinimalEObjectImpl.Container implements ClosedQuestion
+public class ClosedQuestionImpl extends QuestionImpl implements ClosedQuestion
 {
-  /**
-   * The default value of the '{@link #getQuestion() <em>Question</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getQuestion()
-   * @generated
-   * @ordered
-   */
-  protected static final String QUESTION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getQuestion() <em>Question</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getQuestion()
-   * @generated
-   * @ordered
-   */
-  protected String question = QUESTION_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getAnswers() <em>Answers</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -80,29 +58,6 @@ public class ClosedQuestionImpl extends MinimalEObjectImpl.Container implements 
   protected EClass eStaticClass()
   {
     return QuestionnairePackage.Literals.CLOSED_QUESTION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getQuestion()
-  {
-    return question;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setQuestion(String newQuestion)
-  {
-    String oldQuestion = question;
-    question = newQuestion;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.CLOSED_QUESTION__QUESTION, oldQuestion, question));
   }
 
   /**
@@ -179,8 +134,6 @@ public class ClosedQuestionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case QuestionnairePackage.CLOSED_QUESTION__QUESTION:
-        return getQuestion();
       case QuestionnairePackage.CLOSED_QUESTION__ANSWERS:
         return getAnswers();
     }
@@ -197,9 +150,6 @@ public class ClosedQuestionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case QuestionnairePackage.CLOSED_QUESTION__QUESTION:
-        setQuestion((String)newValue);
-        return;
       case QuestionnairePackage.CLOSED_QUESTION__ANSWERS:
         setAnswers((Answers)newValue);
         return;
@@ -217,9 +167,6 @@ public class ClosedQuestionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case QuestionnairePackage.CLOSED_QUESTION__QUESTION:
-        setQuestion(QUESTION_EDEFAULT);
-        return;
       case QuestionnairePackage.CLOSED_QUESTION__ANSWERS:
         setAnswers((Answers)null);
         return;
@@ -237,29 +184,10 @@ public class ClosedQuestionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case QuestionnairePackage.CLOSED_QUESTION__QUESTION:
-        return QUESTION_EDEFAULT == null ? question != null : !QUESTION_EDEFAULT.equals(question);
       case QuestionnairePackage.CLOSED_QUESTION__ANSWERS:
         return answers != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (question: ");
-    result.append(question);
-    result.append(')');
-    return result.toString();
   }
 
 } //ClosedQuestionImpl

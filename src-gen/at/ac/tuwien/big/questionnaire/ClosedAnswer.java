@@ -2,6 +2,8 @@
  */
 package at.ac.tuwien.big.questionnaire;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -50,29 +52,19 @@ public interface ClosedAnswer extends EObject
   void setAnswer(String value);
 
   /**
-   * Returns the value of the '<em><b>Question</b></em>' attribute.
+   * Returns the value of the '<em><b>Question</b></em>' reference list.
+   * The list contents are of type {@link at.ac.tuwien.big.questionnaire.Question}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Question</em>' attribute isn't clear,
+   * If the meaning of the '<em>Question</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Question</em>' attribute.
-   * @see #setQuestion(String)
+   * @return the value of the '<em>Question</em>' reference list.
    * @see at.ac.tuwien.big.questionnaire.QuestionnairePackage#getClosedAnswer_Question()
    * @model
    * @generated
    */
-  String getQuestion();
-
-  /**
-   * Sets the value of the '{@link at.ac.tuwien.big.questionnaire.ClosedAnswer#getQuestion <em>Question</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Question</em>' attribute.
-   * @see #getQuestion()
-   * @generated
-   */
-  void setQuestion(String value);
+  EList<Question> getQuestion();
 
 } // ClosedAnswer

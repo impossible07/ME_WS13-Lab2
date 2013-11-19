@@ -3,14 +3,21 @@
 package at.ac.tuwien.big.questionnaire.impl;
 
 import at.ac.tuwien.big.questionnaire.ClosedAnswer;
+import at.ac.tuwien.big.questionnaire.Question;
 import at.ac.tuwien.big.questionnaire.QuestionnairePackage;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,24 +56,14 @@ public class ClosedAnswerImpl extends MinimalEObjectImpl.Container implements Cl
   protected String answer = ANSWER_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getQuestion() <em>Question</em>}' attribute.
+   * The cached value of the '{@link #getQuestion() <em>Question</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getQuestion()
    * @generated
    * @ordered
    */
-  protected static final String QUESTION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getQuestion() <em>Question</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getQuestion()
-   * @generated
-   * @ordered
-   */
-  protected String question = QUESTION_EDEFAULT;
+  protected EList<Question> question;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,22 +114,13 @@ public class ClosedAnswerImpl extends MinimalEObjectImpl.Container implements Cl
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getQuestion()
+  public EList<Question> getQuestion()
   {
+    if (question == null)
+    {
+      question = new EObjectResolvingEList<Question>(Question.class, this, QuestionnairePackage.CLOSED_ANSWER__QUESTION);
+    }
     return question;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setQuestion(String newQuestion)
-  {
-    String oldQuestion = question;
-    question = newQuestion;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.CLOSED_ANSWER__QUESTION, oldQuestion, question));
   }
 
   /**
@@ -158,6 +146,7 @@ public class ClosedAnswerImpl extends MinimalEObjectImpl.Container implements Cl
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -167,7 +156,8 @@ public class ClosedAnswerImpl extends MinimalEObjectImpl.Container implements Cl
         setAnswer((String)newValue);
         return;
       case QuestionnairePackage.CLOSED_ANSWER__QUESTION:
-        setQuestion((String)newValue);
+        getQuestion().clear();
+        getQuestion().addAll((Collection<? extends Question>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -187,7 +177,7 @@ public class ClosedAnswerImpl extends MinimalEObjectImpl.Container implements Cl
         setAnswer(ANSWER_EDEFAULT);
         return;
       case QuestionnairePackage.CLOSED_ANSWER__QUESTION:
-        setQuestion(QUESTION_EDEFAULT);
+        getQuestion().clear();
         return;
     }
     super.eUnset(featureID);
@@ -206,7 +196,7 @@ public class ClosedAnswerImpl extends MinimalEObjectImpl.Container implements Cl
       case QuestionnairePackage.CLOSED_ANSWER__ANSWER:
         return ANSWER_EDEFAULT == null ? answer != null : !ANSWER_EDEFAULT.equals(answer);
       case QuestionnairePackage.CLOSED_ANSWER__QUESTION:
-        return QUESTION_EDEFAULT == null ? question != null : !QUESTION_EDEFAULT.equals(question);
+        return question != null && !question.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -224,8 +214,6 @@ public class ClosedAnswerImpl extends MinimalEObjectImpl.Container implements Cl
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (answer: ");
     result.append(answer);
-    result.append(", question: ");
-    result.append(question);
     result.append(')');
     return result.toString();
   }

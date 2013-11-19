@@ -174,53 +174,20 @@ ruleGroup returns [EObject current=null]
     }
 (
 (
-(
 		{ 
-	        newCompositeNode(grammarAccess.getGroupAccess().getQuestionsOpenQuestionParserRuleCall_3_0_0()); 
+	        newCompositeNode(grammarAccess.getGroupAccess().getQuestionsQuestionParserRuleCall_3_0()); 
 	    }
-		lv_questions_3_1=ruleOpenQuestion		{
+		lv_questions_3_0=ruleQuestion		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getGroupRule());
 	        }
        		add(
        			$current, 
        			"questions",
-        		lv_questions_3_1, 
-        		"OpenQuestion");
+        		lv_questions_3_0, 
+        		"Question");
 	        afterParserOrEnumRuleCall();
 	    }
-
-    |		{ 
-	        newCompositeNode(grammarAccess.getGroupAccess().getQuestionsClosedQuestionParserRuleCall_3_0_1()); 
-	    }
-		lv_questions_3_2=ruleClosedQuestion		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getGroupRule());
-	        }
-       		add(
-       			$current, 
-       			"questions",
-        		lv_questions_3_2, 
-        		"ClosedQuestion");
-	        afterParserOrEnumRuleCall();
-	    }
-
-    |		{ 
-	        newCompositeNode(grammarAccess.getGroupAccess().getQuestionsLikertQuestionParserRuleCall_3_0_2()); 
-	    }
-		lv_questions_3_3=ruleLikertQuestion		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getGroupRule());
-	        }
-       		add(
-       			$current, 
-       			"questions",
-        		lv_questions_3_3, 
-        		"LikertQuestion");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
 
 )
 )+	otherlv_4=']' 
@@ -232,6 +199,56 @@ ruleGroup returns [EObject current=null]
     	newLeafNode(otherlv_5, grammarAccess.getGroupAccess().getCommaKeyword_5());
     }
 )?)
+;
+
+
+
+
+
+// Entry rule entryRuleQuestion
+entryRuleQuestion returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getQuestionRule()); }
+	 iv_ruleQuestion=ruleQuestion 
+	 { $current=$iv_ruleQuestion.current; } 
+	 EOF 
+;
+
+// Rule Question
+ruleQuestion returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getQuestionAccess().getOpenQuestionParserRuleCall_0()); 
+    }
+    this_OpenQuestion_0=ruleOpenQuestion
+    { 
+        $current = $this_OpenQuestion_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getQuestionAccess().getClosedQuestionParserRuleCall_1()); 
+    }
+    this_ClosedQuestion_1=ruleClosedQuestion
+    { 
+        $current = $this_ClosedQuestion_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getQuestionAccess().getLikertQuestionParserRuleCall_2()); 
+    }
+    this_LikertQuestion_2=ruleLikertQuestion
+    { 
+        $current = $this_LikertQuestion_2.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
 ;
 
 
@@ -539,7 +556,7 @@ ruleAnswers returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getAnswersRule());
 	        }
         }
-	otherlv_5=RULE_ID
+	otherlv_5=RULE_STRING
 	{
 		newLeafNode(otherlv_5, grammarAccess.getAnswersAccess().getAnswerClosedAnswerCrossReference_4_1_0()); 
 	}
@@ -631,31 +648,30 @@ ruleClosedAnswer returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getClosedAnswerAccess().getEnablesQuestionKeyword_1_0());
     }
+((
 (
-(
-		lv_question_2_0=RULE_STRING
 		{
-			newLeafNode(lv_question_2_0, grammarAccess.getClosedAnswerAccess().getQuestionSTRINGTerminalRuleCall_1_1_0()); 
-		}
-		{
-	        if ($current==null) {
+			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getClosedAnswerRule());
 	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"question",
-        		lv_question_2_0, 
-        		"STRING");
-	    }
+        }
+	otherlv_2=RULE_STRING
+	{
+		newLeafNode(otherlv_2, grammarAccess.getClosedAnswerAccess().getQuestionQuestionCrossReference_1_1_0_0()); 
+	}
 
 )
-)	otherlv_3=']' 
+)(	otherlv_3=',' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getClosedAnswerAccess().getRightSquareBracketKeyword_1_2());
+    	newLeafNode(otherlv_3, grammarAccess.getClosedAnswerAccess().getCommaKeyword_1_1_1());
     }
-)?(	otherlv_4=',' 
+)?)+	otherlv_4=']' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getClosedAnswerAccess().getCommaKeyword_2());
+    	newLeafNode(otherlv_4, grammarAccess.getClosedAnswerAccess().getRightSquareBracketKeyword_1_2());
+    }
+)?(	otherlv_5=',' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getClosedAnswerAccess().getCommaKeyword_2());
     }
 )?)
 ;

@@ -15,15 +15,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//Group/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//Group/questions"/>
     </genClasses>
-    <genClasses ecoreClass="Questionnaire.ecore#//OpenQuestion">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//OpenQuestion/question"/>
+    <genClasses ecoreClass="Questionnaire.ecore#//Question">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//Question/question"/>
     </genClasses>
+    <genClasses ecoreClass="Questionnaire.ecore#//OpenQuestion"/>
     <genClasses ecoreClass="Questionnaire.ecore#//ClosedQuestion">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//ClosedQuestion/question"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//ClosedQuestion/answers"/>
     </genClasses>
     <genClasses ecoreClass="Questionnaire.ecore#//LikertQuestion">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//LikertQuestion/question"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//LikertQuestion/lower"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//LikertQuestion/higher"/>
     </genClasses>
@@ -36,7 +35,7 @@
     </genClasses>
     <genClasses ecoreClass="Questionnaire.ecore#//ClosedAnswer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//ClosedAnswer/answer"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//ClosedAnswer/question"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//ClosedAnswer/question"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

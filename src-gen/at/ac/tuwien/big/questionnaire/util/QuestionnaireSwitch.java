@@ -86,10 +86,18 @@ public class QuestionnaireSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case QuestionnairePackage.QUESTION:
+      {
+        Question question = (Question)theEObject;
+        T result = caseQuestion(question);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case QuestionnairePackage.OPEN_QUESTION:
       {
         OpenQuestion openQuestion = (OpenQuestion)theEObject;
         T result = caseOpenQuestion(openQuestion);
+        if (result == null) result = caseQuestion(openQuestion);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -97,6 +105,7 @@ public class QuestionnaireSwitch<T> extends Switch<T>
       {
         ClosedQuestion closedQuestion = (ClosedQuestion)theEObject;
         T result = caseClosedQuestion(closedQuestion);
+        if (result == null) result = caseQuestion(closedQuestion);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -104,6 +113,7 @@ public class QuestionnaireSwitch<T> extends Switch<T>
       {
         LikertQuestion likertQuestion = (LikertQuestion)theEObject;
         T result = caseLikertQuestion(likertQuestion);
+        if (result == null) result = caseQuestion(likertQuestion);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -160,6 +170,22 @@ public class QuestionnaireSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGroup(Group object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Question</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Question</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQuestion(Question object)
   {
     return null;
   }
