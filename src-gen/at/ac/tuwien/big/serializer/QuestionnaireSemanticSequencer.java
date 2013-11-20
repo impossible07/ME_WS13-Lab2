@@ -89,7 +89,7 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     ((answers+=OpenAnswer | answers+=ClosedAnswer)+ answer=[ClosedAnswer|STRING]?)
+	 *     ((answers+=OpenAnswer | answers+=ClosedAnswer)+ name=[ClosedAnswer|STRING]?)
 	 */
 	protected void sequence_Answers(EObject context, Answers semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

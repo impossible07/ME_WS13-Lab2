@@ -1401,7 +1401,7 @@ public class InternalQuestionnaireParser extends AbstractInternalAntlrParser {
                             
                     otherlv_4=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAnswers1214); 
 
-                    		newLeafNode(otherlv_4, grammarAccess.getAnswersAccess().getAnswerClosedAnswerCrossReference_3_1_0()); 
+                    		newLeafNode(otherlv_4, grammarAccess.getAnswersAccess().getNameClosedAnswerCrossReference_3_1_0()); 
                     	
 
                     }

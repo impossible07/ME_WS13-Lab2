@@ -554,7 +554,7 @@ ruleAnswers returns [EObject current=null]
         }
 	otherlv_4=RULE_STRING
 	{
-		newLeafNode(otherlv_4, grammarAccess.getAnswersAccess().getAnswerClosedAnswerCrossReference_3_1_0()); 
+		newLeafNode(otherlv_4, grammarAccess.getAnswersAccess().getNameClosedAnswerCrossReference_3_1_0()); 
 	}
 
 )

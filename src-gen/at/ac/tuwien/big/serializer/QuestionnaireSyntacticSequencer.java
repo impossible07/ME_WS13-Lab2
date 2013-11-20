@@ -110,7 +110,7 @@ public class QuestionnaireSyntacticSequencer extends AbstractSyntacticSequencer 
 	
 	/**
 	 * Syntax:
-	 *     'single answer' | 'multiple answers'
+	 *     'multiple answers' | 'single answer'
 	 */
 	protected void emit_ClosedQuestion_MultipleAnswersKeyword_1_1_or_SingleAnswerKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

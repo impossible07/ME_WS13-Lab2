@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link at.ac.tuwien.big.questionnaire.impl.AnswersImpl#getAnswers <em>Answers</em>}</li>
- *   <li>{@link at.ac.tuwien.big.questionnaire.impl.AnswersImpl#getAnswer <em>Answer</em>}</li>
+ *   <li>{@link at.ac.tuwien.big.questionnaire.impl.AnswersImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,14 +50,14 @@ public class AnswersImpl extends MinimalEObjectImpl.Container implements Answers
   protected EList<EObject> answers;
 
   /**
-   * The cached value of the '{@link #getAnswer() <em>Answer</em>}' reference.
+   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAnswer()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected ClosedAnswer answer;
+  protected ClosedAnswer name;
 
   /**
    * <!-- begin-user-doc -->
@@ -99,19 +99,19 @@ public class AnswersImpl extends MinimalEObjectImpl.Container implements Answers
    * <!-- end-user-doc -->
    * @generated
    */
-  public ClosedAnswer getAnswer()
+  public ClosedAnswer getName()
   {
-    if (answer != null && answer.eIsProxy())
+    if (name != null && name.eIsProxy())
     {
-      InternalEObject oldAnswer = (InternalEObject)answer;
-      answer = (ClosedAnswer)eResolveProxy(oldAnswer);
-      if (answer != oldAnswer)
+      InternalEObject oldName = (InternalEObject)name;
+      name = (ClosedAnswer)eResolveProxy(oldName);
+      if (name != oldName)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuestionnairePackage.ANSWERS__ANSWER, oldAnswer, answer));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuestionnairePackage.ANSWERS__NAME, oldName, name));
       }
     }
-    return answer;
+    return name;
   }
 
   /**
@@ -119,9 +119,9 @@ public class AnswersImpl extends MinimalEObjectImpl.Container implements Answers
    * <!-- end-user-doc -->
    * @generated
    */
-  public ClosedAnswer basicGetAnswer()
+  public ClosedAnswer basicGetName()
   {
-    return answer;
+    return name;
   }
 
   /**
@@ -129,12 +129,12 @@ public class AnswersImpl extends MinimalEObjectImpl.Container implements Answers
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAnswer(ClosedAnswer newAnswer)
+  public void setName(ClosedAnswer newName)
   {
-    ClosedAnswer oldAnswer = answer;
-    answer = newAnswer;
+    ClosedAnswer oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.ANSWERS__ANSWER, oldAnswer, answer));
+      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.ANSWERS__NAME, oldName, name));
   }
 
   /**
@@ -165,9 +165,9 @@ public class AnswersImpl extends MinimalEObjectImpl.Container implements Answers
     {
       case QuestionnairePackage.ANSWERS__ANSWERS:
         return getAnswers();
-      case QuestionnairePackage.ANSWERS__ANSWER:
-        if (resolve) return getAnswer();
-        return basicGetAnswer();
+      case QuestionnairePackage.ANSWERS__NAME:
+        if (resolve) return getName();
+        return basicGetName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -187,8 +187,8 @@ public class AnswersImpl extends MinimalEObjectImpl.Container implements Answers
         getAnswers().clear();
         getAnswers().addAll((Collection<? extends EObject>)newValue);
         return;
-      case QuestionnairePackage.ANSWERS__ANSWER:
-        setAnswer((ClosedAnswer)newValue);
+      case QuestionnairePackage.ANSWERS__NAME:
+        setName((ClosedAnswer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -207,8 +207,8 @@ public class AnswersImpl extends MinimalEObjectImpl.Container implements Answers
       case QuestionnairePackage.ANSWERS__ANSWERS:
         getAnswers().clear();
         return;
-      case QuestionnairePackage.ANSWERS__ANSWER:
-        setAnswer((ClosedAnswer)null);
+      case QuestionnairePackage.ANSWERS__NAME:
+        setName((ClosedAnswer)null);
         return;
     }
     super.eUnset(featureID);
@@ -226,8 +226,8 @@ public class AnswersImpl extends MinimalEObjectImpl.Container implements Answers
     {
       case QuestionnairePackage.ANSWERS__ANSWERS:
         return answers != null && !answers.isEmpty();
-      case QuestionnairePackage.ANSWERS__ANSWER:
-        return answer != null;
+      case QuestionnairePackage.ANSWERS__NAME:
+        return name != null;
     }
     return super.eIsSet(featureID);
   }

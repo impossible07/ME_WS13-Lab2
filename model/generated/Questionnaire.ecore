@@ -27,7 +27,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Answers">
     <eStructuralFeatures xsi:type="ecore:EReference" name="answers" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="answer" eType="#//ClosedAnswer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//ClosedAnswer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OpenAnswer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

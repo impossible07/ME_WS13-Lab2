@@ -289,13 +289,13 @@ public interface QuestionnairePackage extends EPackage
   int ANSWERS__ANSWERS = 0;
 
   /**
-   * The feature id for the '<em><b>Answer</b></em>' reference.
+   * The feature id for the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANSWERS__ANSWER = 1;
+  int ANSWERS__NAME = 1;
 
   /**
    * The number of structural features of the '<em>Answers</em>' class.
@@ -542,15 +542,15 @@ public interface QuestionnairePackage extends EPackage
   EReference getAnswers_Answers();
 
   /**
-   * Returns the meta object for the reference '{@link at.ac.tuwien.big.questionnaire.Answers#getAnswer <em>Answer</em>}'.
+   * Returns the meta object for the reference '{@link at.ac.tuwien.big.questionnaire.Answers#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Answer</em>'.
-   * @see at.ac.tuwien.big.questionnaire.Answers#getAnswer()
+   * @return the meta object for the reference '<em>Name</em>'.
+   * @see at.ac.tuwien.big.questionnaire.Answers#getName()
    * @see #getAnswers()
    * @generated
    */
-  EReference getAnswers_Answer();
+  EReference getAnswers_Name();
 
   /**
    * Returns the meta object for class '{@link at.ac.tuwien.big.questionnaire.OpenAnswer <em>Open Answer</em>}'.
@@ -771,12 +771,12 @@ public interface QuestionnairePackage extends EPackage
     EReference ANSWERS__ANSWERS = eINSTANCE.getAnswers_Answers();
 
     /**
-     * The meta object literal for the '<em><b>Answer</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ANSWERS__ANSWER = eINSTANCE.getAnswers_Answer();
+    EReference ANSWERS__NAME = eINSTANCE.getAnswers_Name();
 
     /**
      * The meta object literal for the '{@link at.ac.tuwien.big.questionnaire.impl.OpenAnswerImpl <em>Open Answer</em>}' class.

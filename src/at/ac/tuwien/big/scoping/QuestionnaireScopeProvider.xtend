@@ -5,6 +5,8 @@ package at.ac.tuwien.big.scoping
 
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
+import org.eclipse.xtext.scoping.IScope
+import at.ac.tuwien.big.questionnaire.ClosedAnswer
 
 /**
  * This class contains custom scoping description.
@@ -21,5 +23,9 @@ class QuestionnaireScopeProvider extends org.eclipse.xtext.scoping.impl.Abstract
 		
 		return super.getScope(context, reference)
 	}
+	
+	//IScope scope_ClosedAnswer_id(ClosedAnswer closedanswer, EReference ref){
+	//		return Scopes.scopeFor(ca.getVar().getType().getOps());
+	//}
 
 }

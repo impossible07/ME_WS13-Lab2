@@ -320,7 +320,7 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAnswers_Answer()
+  public EReference getAnswers_Name()
   {
     return (EReference)answersEClass.getEStructuralFeatures().get(1);
   }
@@ -427,7 +427,7 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 
     answersEClass = createEClass(ANSWERS);
     createEReference(answersEClass, ANSWERS__ANSWERS);
-    createEReference(answersEClass, ANSWERS__ANSWER);
+    createEReference(answersEClass, ANSWERS__NAME);
 
     openAnswerEClass = createEClass(OPEN_ANSWER);
     createEAttribute(openAnswerEClass, OPEN_ANSWER__NAME);
@@ -493,7 +493,7 @@ public class QuestionnairePackageImpl extends EPackageImpl implements Questionna
 
     initEClass(answersEClass, Answers.class, "Answers", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAnswers_Answers(), ecorePackage.getEObject(), null, "answers", null, 0, -1, Answers.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAnswers_Answer(), this.getClosedAnswer(), null, "answer", null, 0, 1, Answers.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAnswers_Name(), this.getClosedAnswer(), null, "name", null, 0, 1, Answers.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(openAnswerEClass, OpenAnswer.class, "OpenAnswer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOpenAnswer_Name(), ecorePackage.getEString(), "name", null, 0, 1, OpenAnswer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

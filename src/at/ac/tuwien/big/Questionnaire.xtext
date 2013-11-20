@@ -37,7 +37,7 @@ Answers:
 	'answers ['
 	(answers+=(OpenAnswer | ClosedAnswer)+)
 	']'
-	('default answer is' answer=[ClosedAnswer|STRING])?
+	('default answer is' name=[ClosedAnswer|STRING])?
 ;
 
 OpenAnswer:

@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link at.ac.tuwien.big.questionnaire.Answers#getAnswers <em>Answers</em>}</li>
- *   <li>{@link at.ac.tuwien.big.questionnaire.Answers#getAnswer <em>Answer</em>}</li>
+ *   <li>{@link at.ac.tuwien.big.questionnaire.Answers#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,29 +42,29 @@ public interface Answers extends EObject
   EList<EObject> getAnswers();
 
   /**
-   * Returns the value of the '<em><b>Answer</b></em>' reference.
+   * Returns the value of the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Answer</em>' reference isn't clear,
+   * If the meaning of the '<em>Name</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Answer</em>' reference.
-   * @see #setAnswer(ClosedAnswer)
-   * @see at.ac.tuwien.big.questionnaire.QuestionnairePackage#getAnswers_Answer()
+   * @return the value of the '<em>Name</em>' reference.
+   * @see #setName(ClosedAnswer)
+   * @see at.ac.tuwien.big.questionnaire.QuestionnairePackage#getAnswers_Name()
    * @model
    * @generated
    */
-  ClosedAnswer getAnswer();
+  ClosedAnswer getName();
 
   /**
-   * Sets the value of the '{@link at.ac.tuwien.big.questionnaire.Answers#getAnswer <em>Answer</em>}' reference.
+   * Sets the value of the '{@link at.ac.tuwien.big.questionnaire.Answers#getName <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Answer</em>' reference.
-   * @see #getAnswer()
+   * @param value the new value of the '<em>Name</em>' reference.
+   * @see #getName()
    * @generated
    */
-  void setAnswer(ClosedAnswer value);
+  void setName(ClosedAnswer value);
 
 } // Answers
