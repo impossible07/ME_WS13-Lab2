@@ -35,13 +35,13 @@ LikertQuestion:
 
 Answers:
 	'answers ['
-	(answers+=(OpenAnswer | ClosedAnswer)+)(',')?
+	(answers+=(OpenAnswer | ClosedAnswer)+)
 	']'
 	('default answer is' answer=[ClosedAnswer|STRING])?
 ;
 
 OpenAnswer:
-	answer=STRING'...'
+	answer=STRING'...'(',')?
 ;
 
 ClosedAnswer:

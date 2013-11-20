@@ -537,17 +537,13 @@ ruleAnswers returns [EObject current=null]
 )
 
 )
-)+(	otherlv_2=',' 
+)+	otherlv_2=']' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getAnswersAccess().getCommaKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getAnswersAccess().getRightSquareBracketKeyword_2());
     }
-)?	otherlv_3=']' 
+(	otherlv_3='default answer is' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getAnswersAccess().getRightSquareBracketKeyword_3());
-    }
-(	otherlv_4='default answer is' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getAnswersAccess().getDefaultAnswerIsKeyword_4_0());
+    	newLeafNode(otherlv_3, grammarAccess.getAnswersAccess().getDefaultAnswerIsKeyword_3_0());
     }
 (
 (
@@ -556,9 +552,9 @@ ruleAnswers returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getAnswersRule());
 	        }
         }
-	otherlv_5=RULE_STRING
+	otherlv_4=RULE_STRING
 	{
-		newLeafNode(otherlv_5, grammarAccess.getAnswersAccess().getAnswerClosedAnswerCrossReference_4_1_0()); 
+		newLeafNode(otherlv_4, grammarAccess.getAnswersAccess().getAnswerClosedAnswerCrossReference_3_1_0()); 
 	}
 
 )
@@ -605,7 +601,11 @@ ruleOpenAnswer returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getOpenAnswerAccess().getFullStopFullStopFullStopKeyword_1());
     }
-)
+(	otherlv_2=',' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getOpenAnswerAccess().getCommaKeyword_2());
+    }
+)?)
 ;
 
 
