@@ -98,7 +98,7 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (answer=STRING question+=[Question|STRING]*)
+	 *     (name=STRING id+=[Question|STRING]*)
 	 */
 	protected void sequence_ClosedAnswer(EObject context, ClosedAnswer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -107,18 +107,18 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (question=STRING answers=Answers)
+	 *     (name=STRING answers=Answers)
 	 */
 	protected void sequence_ClosedQuestion(EObject context, ClosedQuestion semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.QUESTION__QUESTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.QUESTION__QUESTION));
+			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.QUESTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.QUESTION__NAME));
 			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.CLOSED_QUESTION__ANSWERS) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.CLOSED_QUESTION__ANSWERS));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getClosedQuestionAccess().getQuestionSTRINGTerminalRuleCall_2_0(), semanticObject.getQuestion());
+		feeder.accept(grammarAccess.getClosedQuestionAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getClosedQuestionAccess().getAnswersAnswersParserRuleCall_3_0(), semanticObject.getAnswers());
 		feeder.finish();
 	}
@@ -135,12 +135,12 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (question=STRING lower=INT higher=INT)
+	 *     (name=STRING lower=INT higher=INT)
 	 */
 	protected void sequence_LikertQuestion(EObject context, LikertQuestion semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.QUESTION__QUESTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.QUESTION__QUESTION));
+			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.QUESTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.QUESTION__NAME));
 			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.LIKERT_QUESTION__LOWER) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.LIKERT_QUESTION__LOWER));
 			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.LIKERT_QUESTION__HIGHER) == ValueTransient.YES)
@@ -148,7 +148,7 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getLikertQuestionAccess().getQuestionSTRINGTerminalRuleCall_1_0(), semanticObject.getQuestion());
+		feeder.accept(grammarAccess.getLikertQuestionAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getLikertQuestionAccess().getLowerINTTerminalRuleCall_4_0(), semanticObject.getLower());
 		feeder.accept(grammarAccess.getLikertQuestionAccess().getHigherINTTerminalRuleCall_6_0(), semanticObject.getHigher());
 		feeder.finish();
@@ -157,32 +157,32 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     answer=STRING
+	 *     name=STRING
 	 */
 	protected void sequence_OpenAnswer(EObject context, OpenAnswer semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.OPEN_ANSWER__ANSWER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.OPEN_ANSWER__ANSWER));
+			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.OPEN_ANSWER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.OPEN_ANSWER__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getOpenAnswerAccess().getAnswerSTRINGTerminalRuleCall_0_0(), semanticObject.getAnswer());
+		feeder.accept(grammarAccess.getOpenAnswerAccess().getNameSTRINGTerminalRuleCall_0_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     question=STRING
+	 *     name=STRING
 	 */
 	protected void sequence_OpenQuestion(EObject context, OpenQuestion semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.QUESTION__QUESTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.QUESTION__QUESTION));
+			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.QUESTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.QUESTION__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getOpenQuestionAccess().getQuestionSTRINGTerminalRuleCall_3_0(), semanticObject.getQuestion());
+		feeder.accept(grammarAccess.getOpenQuestionAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

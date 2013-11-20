@@ -21,16 +21,16 @@ Question:
 ;
 
 OpenQuestion:
-	('mandatory')? ('multiline')? 'open question' question=STRING(',')?
+	('mandatory')? ('multiline')? 'open question' name=STRING(',')?
 ;
 
 ClosedQuestion:
-	'closed question allowing' ('single answer'|'multiple answers') question=STRING
+	'closed question allowing' ('single answer'|'multiple answers') name=STRING
 	answers=Answers(',')?
 ;
 
 LikertQuestion:
-	'likert question' question=STRING '('('-')?lower=INT'..'higher=INT')'(',')?
+	'likert question' name=STRING '('('-')?lower=INT'..'higher=INT')'(',')?
 ;
 
 Answers:
@@ -41,9 +41,9 @@ Answers:
 ;
 
 OpenAnswer:
-	answer=STRING'...'(',')?
+	name=STRING'...'(',')?
 ;
 
 ClosedAnswer:
-	answer=STRING ('enables question ['(question+=[Question|STRING](',')?)+']')?(',')?
+	name=STRING ('enables question ['(id+=[Question|STRING](',')?)+']')?(',')?
 ;

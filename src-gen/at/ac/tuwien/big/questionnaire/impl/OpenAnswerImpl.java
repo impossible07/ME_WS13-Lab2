@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.ac.tuwien.big.questionnaire.impl.OpenAnswerImpl#getAnswer <em>Answer</em>}</li>
+ *   <li>{@link at.ac.tuwien.big.questionnaire.impl.OpenAnswerImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,24 +28,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class OpenAnswerImpl extends MinimalEObjectImpl.Container implements OpenAnswer
 {
   /**
-   * The default value of the '{@link #getAnswer() <em>Answer</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAnswer()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String ANSWER_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAnswer() <em>Answer</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAnswer()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String answer = ANSWER_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,9 +73,9 @@ public class OpenAnswerImpl extends MinimalEObjectImpl.Container implements Open
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getAnswer()
+  public String getName()
   {
-    return answer;
+    return name;
   }
 
   /**
@@ -83,12 +83,12 @@ public class OpenAnswerImpl extends MinimalEObjectImpl.Container implements Open
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAnswer(String newAnswer)
+  public void setName(String newName)
   {
-    String oldAnswer = answer;
-    answer = newAnswer;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.OPEN_ANSWER__ANSWER, oldAnswer, answer));
+      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.OPEN_ANSWER__NAME, oldName, name));
   }
 
   /**
@@ -101,8 +101,8 @@ public class OpenAnswerImpl extends MinimalEObjectImpl.Container implements Open
   {
     switch (featureID)
     {
-      case QuestionnairePackage.OPEN_ANSWER__ANSWER:
-        return getAnswer();
+      case QuestionnairePackage.OPEN_ANSWER__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +117,8 @@ public class OpenAnswerImpl extends MinimalEObjectImpl.Container implements Open
   {
     switch (featureID)
     {
-      case QuestionnairePackage.OPEN_ANSWER__ANSWER:
-        setAnswer((String)newValue);
+      case QuestionnairePackage.OPEN_ANSWER__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +134,8 @@ public class OpenAnswerImpl extends MinimalEObjectImpl.Container implements Open
   {
     switch (featureID)
     {
-      case QuestionnairePackage.OPEN_ANSWER__ANSWER:
-        setAnswer(ANSWER_EDEFAULT);
+      case QuestionnairePackage.OPEN_ANSWER__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +151,8 @@ public class OpenAnswerImpl extends MinimalEObjectImpl.Container implements Open
   {
     switch (featureID)
     {
-      case QuestionnairePackage.OPEN_ANSWER__ANSWER:
-        return ANSWER_EDEFAULT == null ? answer != null : !ANSWER_EDEFAULT.equals(answer);
+      case QuestionnairePackage.OPEN_ANSWER__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -168,8 +168,8 @@ public class OpenAnswerImpl extends MinimalEObjectImpl.Container implements Open
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (answer: ");
-    result.append(answer);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

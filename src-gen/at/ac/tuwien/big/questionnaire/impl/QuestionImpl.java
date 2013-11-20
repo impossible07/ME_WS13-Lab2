@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.ac.tuwien.big.questionnaire.impl.QuestionImpl#getQuestion <em>Question</em>}</li>
+ *   <li>{@link at.ac.tuwien.big.questionnaire.impl.QuestionImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,24 +28,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class QuestionImpl extends MinimalEObjectImpl.Container implements Question
 {
   /**
-   * The default value of the '{@link #getQuestion() <em>Question</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQuestion()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String QUESTION_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getQuestion() <em>Question</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQuestion()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String question = QUESTION_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,9 +73,9 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getQuestion()
+  public String getName()
   {
-    return question;
+    return name;
   }
 
   /**
@@ -83,12 +83,12 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setQuestion(String newQuestion)
+  public void setName(String newName)
   {
-    String oldQuestion = question;
-    question = newQuestion;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.QUESTION__QUESTION, oldQuestion, question));
+      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.QUESTION__NAME, oldName, name));
   }
 
   /**
@@ -101,8 +101,8 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
   {
     switch (featureID)
     {
-      case QuestionnairePackage.QUESTION__QUESTION:
-        return getQuestion();
+      case QuestionnairePackage.QUESTION__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +117,8 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
   {
     switch (featureID)
     {
-      case QuestionnairePackage.QUESTION__QUESTION:
-        setQuestion((String)newValue);
+      case QuestionnairePackage.QUESTION__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +134,8 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
   {
     switch (featureID)
     {
-      case QuestionnairePackage.QUESTION__QUESTION:
-        setQuestion(QUESTION_EDEFAULT);
+      case QuestionnairePackage.QUESTION__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +151,8 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
   {
     switch (featureID)
     {
-      case QuestionnairePackage.QUESTION__QUESTION:
-        return QUESTION_EDEFAULT == null ? question != null : !QUESTION_EDEFAULT.equals(question);
+      case QuestionnairePackage.QUESTION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -168,8 +168,8 @@ public class QuestionImpl extends MinimalEObjectImpl.Container implements Questi
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (question: ");
-    result.append(question);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

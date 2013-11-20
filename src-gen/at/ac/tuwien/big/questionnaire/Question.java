@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.ac.tuwien.big.questionnaire.Question#getQuestion <em>Question</em>}</li>
+ *   <li>{@link at.ac.tuwien.big.questionnaire.Question#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,29 +23,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface Question extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Question</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Question</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Question</em>' attribute.
-   * @see #setQuestion(String)
-   * @see at.ac.tuwien.big.questionnaire.QuestionnairePackage#getQuestion_Question()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see at.ac.tuwien.big.questionnaire.QuestionnairePackage#getQuestion_Name()
    * @model
    * @generated
    */
-  String getQuestion();
+  String getName();
 
   /**
-   * Sets the value of the '{@link at.ac.tuwien.big.questionnaire.Question#getQuestion <em>Question</em>}' attribute.
+   * Sets the value of the '{@link at.ac.tuwien.big.questionnaire.Question#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Question</em>' attribute.
-   * @see #getQuestion()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setQuestion(String value);
+  void setName(String value);
 
 } // Question

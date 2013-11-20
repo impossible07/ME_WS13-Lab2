@@ -283,9 +283,9 @@ ruleOpenQuestion returns [EObject current=null]
     }
 (
 (
-		lv_question_3_0=RULE_STRING
+		lv_name_3_0=RULE_STRING
 		{
-			newLeafNode(lv_question_3_0, grammarAccess.getOpenQuestionAccess().getQuestionSTRINGTerminalRuleCall_3_0()); 
+			newLeafNode(lv_name_3_0, grammarAccess.getOpenQuestionAccess().getNameSTRINGTerminalRuleCall_3_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -293,8 +293,8 @@ ruleOpenQuestion returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"question",
-        		lv_question_3_0, 
+       			"name",
+        		lv_name_3_0, 
         		"STRING");
 	    }
 
@@ -339,9 +339,9 @@ ruleClosedQuestion returns [EObject current=null]
     }
 )(
 (
-		lv_question_3_0=RULE_STRING
+		lv_name_3_0=RULE_STRING
 		{
-			newLeafNode(lv_question_3_0, grammarAccess.getClosedQuestionAccess().getQuestionSTRINGTerminalRuleCall_2_0()); 
+			newLeafNode(lv_name_3_0, grammarAccess.getClosedQuestionAccess().getNameSTRINGTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -349,8 +349,8 @@ ruleClosedQuestion returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"question",
-        		lv_question_3_0, 
+       			"name",
+        		lv_name_3_0, 
         		"STRING");
 	    }
 
@@ -404,9 +404,9 @@ ruleLikertQuestion returns [EObject current=null]
     }
 (
 (
-		lv_question_1_0=RULE_STRING
+		lv_name_1_0=RULE_STRING
 		{
-			newLeafNode(lv_question_1_0, grammarAccess.getLikertQuestionAccess().getQuestionSTRINGTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getLikertQuestionAccess().getNameSTRINGTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -414,8 +414,8 @@ ruleLikertQuestion returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"question",
-        		lv_question_1_0, 
+       			"name",
+        		lv_name_1_0, 
         		"STRING");
 	    }
 
@@ -581,9 +581,9 @@ ruleOpenAnswer returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_answer_0_0=RULE_STRING
+		lv_name_0_0=RULE_STRING
 		{
-			newLeafNode(lv_answer_0_0, grammarAccess.getOpenAnswerAccess().getAnswerSTRINGTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_0_0, grammarAccess.getOpenAnswerAccess().getNameSTRINGTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -591,8 +591,8 @@ ruleOpenAnswer returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"answer",
-        		lv_answer_0_0, 
+       			"name",
+        		lv_name_0_0, 
         		"STRING");
 	    }
 
@@ -628,9 +628,9 @@ ruleClosedAnswer returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_answer_0_0=RULE_STRING
+		lv_name_0_0=RULE_STRING
 		{
-			newLeafNode(lv_answer_0_0, grammarAccess.getClosedAnswerAccess().getAnswerSTRINGTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_0_0, grammarAccess.getClosedAnswerAccess().getNameSTRINGTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -638,8 +638,8 @@ ruleClosedAnswer returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"answer",
-        		lv_answer_0_0, 
+       			"name",
+        		lv_name_0_0, 
         		"STRING");
 	    }
 
@@ -657,7 +657,7 @@ ruleClosedAnswer returns [EObject current=null]
         }
 	otherlv_2=RULE_STRING
 	{
-		newLeafNode(otherlv_2, grammarAccess.getClosedAnswerAccess().getQuestionQuestionCrossReference_1_1_0_0()); 
+		newLeafNode(otherlv_2, grammarAccess.getClosedAnswerAccess().getIdQuestionCrossReference_1_1_0_0()); 
 	}
 
 )
