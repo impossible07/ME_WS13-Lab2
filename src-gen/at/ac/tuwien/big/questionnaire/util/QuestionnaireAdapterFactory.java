@@ -110,6 +110,11 @@ public class QuestionnaireAdapterFactory extends AdapterFactoryImpl
         return createAnswersAdapter();
       }
       @Override
+      public Adapter caseAnswer(Answer object)
+      {
+        return createAnswerAdapter();
+      }
+      @Override
       public Adapter caseOpenAnswer(OpenAnswer object)
       {
         return createOpenAnswerAdapter();
@@ -118,6 +123,11 @@ public class QuestionnaireAdapterFactory extends AdapterFactoryImpl
       public Adapter caseClosedAnswer(ClosedAnswer object)
       {
         return createClosedAnswerAdapter();
+      }
+      @Override
+      public Adapter caseDefAnswer(DefAnswer object)
+      {
+        return createDefAnswerAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -247,6 +257,21 @@ public class QuestionnaireAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link at.ac.tuwien.big.questionnaire.Answer <em>Answer</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.ac.tuwien.big.questionnaire.Answer
+   * @generated
+   */
+  public Adapter createAnswerAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link at.ac.tuwien.big.questionnaire.OpenAnswer <em>Open Answer</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -272,6 +297,21 @@ public class QuestionnaireAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createClosedAnswerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.ac.tuwien.big.questionnaire.DefAnswer <em>Def Answer</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.ac.tuwien.big.questionnaire.DefAnswer
+   * @generated
+   */
+  public Adapter createDefAnswerAdapter()
   {
     return null;
   }

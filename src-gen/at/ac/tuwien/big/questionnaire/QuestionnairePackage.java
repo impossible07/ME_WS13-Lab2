@@ -289,13 +289,13 @@ public interface QuestionnairePackage extends EPackage
   int ANSWERS__ANSWERS = 0;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' reference.
+   * The feature id for the '<em><b>Defanswer</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANSWERS__NAME = 1;
+  int ANSWERS__DEFANSWER = 1;
 
   /**
    * The number of structural features of the '<em>Answers</em>' class.
@@ -307,14 +307,14 @@ public interface QuestionnairePackage extends EPackage
   int ANSWERS_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link at.ac.tuwien.big.questionnaire.impl.OpenAnswerImpl <em>Open Answer</em>}' class.
+   * The meta object id for the '{@link at.ac.tuwien.big.questionnaire.impl.AnswerImpl <em>Answer</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see at.ac.tuwien.big.questionnaire.impl.OpenAnswerImpl
-   * @see at.ac.tuwien.big.questionnaire.impl.QuestionnairePackageImpl#getOpenAnswer()
+   * @see at.ac.tuwien.big.questionnaire.impl.AnswerImpl
+   * @see at.ac.tuwien.big.questionnaire.impl.QuestionnairePackageImpl#getAnswer()
    * @generated
    */
-  int OPEN_ANSWER = 7;
+  int ANSWER = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -323,7 +323,35 @@ public interface QuestionnairePackage extends EPackage
    * @generated
    * @ordered
    */
-  int OPEN_ANSWER__NAME = 0;
+  int ANSWER__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Answer</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANSWER_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link at.ac.tuwien.big.questionnaire.impl.OpenAnswerImpl <em>Open Answer</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.ac.tuwien.big.questionnaire.impl.OpenAnswerImpl
+   * @see at.ac.tuwien.big.questionnaire.impl.QuestionnairePackageImpl#getOpenAnswer()
+   * @generated
+   */
+  int OPEN_ANSWER = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPEN_ANSWER__NAME = ANSWER__NAME;
 
   /**
    * The number of structural features of the '<em>Open Answer</em>' class.
@@ -332,7 +360,7 @@ public interface QuestionnairePackage extends EPackage
    * @generated
    * @ordered
    */
-  int OPEN_ANSWER_FEATURE_COUNT = 1;
+  int OPEN_ANSWER_FEATURE_COUNT = ANSWER_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link at.ac.tuwien.big.questionnaire.impl.ClosedAnswerImpl <em>Closed Answer</em>}' class.
@@ -342,7 +370,7 @@ public interface QuestionnairePackage extends EPackage
    * @see at.ac.tuwien.big.questionnaire.impl.QuestionnairePackageImpl#getClosedAnswer()
    * @generated
    */
-  int CLOSED_ANSWER = 8;
+  int CLOSED_ANSWER = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -351,7 +379,7 @@ public interface QuestionnairePackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLOSED_ANSWER__NAME = 0;
+  int CLOSED_ANSWER__NAME = ANSWER__NAME;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' reference list.
@@ -360,7 +388,7 @@ public interface QuestionnairePackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLOSED_ANSWER__ID = 1;
+  int CLOSED_ANSWER__ID = ANSWER_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Closed Answer</em>' class.
@@ -369,7 +397,35 @@ public interface QuestionnairePackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLOSED_ANSWER_FEATURE_COUNT = 2;
+  int CLOSED_ANSWER_FEATURE_COUNT = ANSWER_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link at.ac.tuwien.big.questionnaire.impl.DefAnswerImpl <em>Def Answer</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.ac.tuwien.big.questionnaire.impl.DefAnswerImpl
+   * @see at.ac.tuwien.big.questionnaire.impl.QuestionnairePackageImpl#getDefAnswer()
+   * @generated
+   */
+  int DEF_ANSWER = 10;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEF_ANSWER__ID = 0;
+
+  /**
+   * The number of structural features of the '<em>Def Answer</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEF_ANSWER_FEATURE_COUNT = 1;
 
 
   /**
@@ -542,15 +598,36 @@ public interface QuestionnairePackage extends EPackage
   EReference getAnswers_Answers();
 
   /**
-   * Returns the meta object for the reference '{@link at.ac.tuwien.big.questionnaire.Answers#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference '{@link at.ac.tuwien.big.questionnaire.Answers#getDefanswer <em>Defanswer</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Name</em>'.
-   * @see at.ac.tuwien.big.questionnaire.Answers#getName()
+   * @return the meta object for the containment reference '<em>Defanswer</em>'.
+   * @see at.ac.tuwien.big.questionnaire.Answers#getDefanswer()
    * @see #getAnswers()
    * @generated
    */
-  EReference getAnswers_Name();
+  EReference getAnswers_Defanswer();
+
+  /**
+   * Returns the meta object for class '{@link at.ac.tuwien.big.questionnaire.Answer <em>Answer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Answer</em>'.
+   * @see at.ac.tuwien.big.questionnaire.Answer
+   * @generated
+   */
+  EClass getAnswer();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.ac.tuwien.big.questionnaire.Answer#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see at.ac.tuwien.big.questionnaire.Answer#getName()
+   * @see #getAnswer()
+   * @generated
+   */
+  EAttribute getAnswer_Name();
 
   /**
    * Returns the meta object for class '{@link at.ac.tuwien.big.questionnaire.OpenAnswer <em>Open Answer</em>}'.
@@ -563,17 +640,6 @@ public interface QuestionnairePackage extends EPackage
   EClass getOpenAnswer();
 
   /**
-   * Returns the meta object for the attribute '{@link at.ac.tuwien.big.questionnaire.OpenAnswer#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see at.ac.tuwien.big.questionnaire.OpenAnswer#getName()
-   * @see #getOpenAnswer()
-   * @generated
-   */
-  EAttribute getOpenAnswer_Name();
-
-  /**
    * Returns the meta object for class '{@link at.ac.tuwien.big.questionnaire.ClosedAnswer <em>Closed Answer</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -582,17 +648,6 @@ public interface QuestionnairePackage extends EPackage
    * @generated
    */
   EClass getClosedAnswer();
-
-  /**
-   * Returns the meta object for the attribute '{@link at.ac.tuwien.big.questionnaire.ClosedAnswer#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see at.ac.tuwien.big.questionnaire.ClosedAnswer#getName()
-   * @see #getClosedAnswer()
-   * @generated
-   */
-  EAttribute getClosedAnswer_Name();
 
   /**
    * Returns the meta object for the reference list '{@link at.ac.tuwien.big.questionnaire.ClosedAnswer#getId <em>Id</em>}'.
@@ -604,6 +659,27 @@ public interface QuestionnairePackage extends EPackage
    * @generated
    */
   EReference getClosedAnswer_Id();
+
+  /**
+   * Returns the meta object for class '{@link at.ac.tuwien.big.questionnaire.DefAnswer <em>Def Answer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Def Answer</em>'.
+   * @see at.ac.tuwien.big.questionnaire.DefAnswer
+   * @generated
+   */
+  EClass getDefAnswer();
+
+  /**
+   * Returns the meta object for the reference list '{@link at.ac.tuwien.big.questionnaire.DefAnswer#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Id</em>'.
+   * @see at.ac.tuwien.big.questionnaire.DefAnswer#getId()
+   * @see #getDefAnswer()
+   * @generated
+   */
+  EReference getDefAnswer_Id();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -771,12 +847,30 @@ public interface QuestionnairePackage extends EPackage
     EReference ANSWERS__ANSWERS = eINSTANCE.getAnswers_Answers();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Defanswer</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ANSWERS__NAME = eINSTANCE.getAnswers_Name();
+    EReference ANSWERS__DEFANSWER = eINSTANCE.getAnswers_Defanswer();
+
+    /**
+     * The meta object literal for the '{@link at.ac.tuwien.big.questionnaire.impl.AnswerImpl <em>Answer</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.ac.tuwien.big.questionnaire.impl.AnswerImpl
+     * @see at.ac.tuwien.big.questionnaire.impl.QuestionnairePackageImpl#getAnswer()
+     * @generated
+     */
+    EClass ANSWER = eINSTANCE.getAnswer();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ANSWER__NAME = eINSTANCE.getAnswer_Name();
 
     /**
      * The meta object literal for the '{@link at.ac.tuwien.big.questionnaire.impl.OpenAnswerImpl <em>Open Answer</em>}' class.
@@ -789,14 +883,6 @@ public interface QuestionnairePackage extends EPackage
     EClass OPEN_ANSWER = eINSTANCE.getOpenAnswer();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OPEN_ANSWER__NAME = eINSTANCE.getOpenAnswer_Name();
-
-    /**
      * The meta object literal for the '{@link at.ac.tuwien.big.questionnaire.impl.ClosedAnswerImpl <em>Closed Answer</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -807,12 +893,22 @@ public interface QuestionnairePackage extends EPackage
     EClass CLOSED_ANSWER = eINSTANCE.getClosedAnswer();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Id</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLOSED_ANSWER__NAME = eINSTANCE.getClosedAnswer_Name();
+    EReference CLOSED_ANSWER__ID = eINSTANCE.getClosedAnswer_Id();
+
+    /**
+     * The meta object literal for the '{@link at.ac.tuwien.big.questionnaire.impl.DefAnswerImpl <em>Def Answer</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.ac.tuwien.big.questionnaire.impl.DefAnswerImpl
+     * @see at.ac.tuwien.big.questionnaire.impl.QuestionnairePackageImpl#getDefAnswer()
+     * @generated
+     */
+    EClass DEF_ANSWER = eINSTANCE.getDefAnswer();
 
     /**
      * The meta object literal for the '<em><b>Id</b></em>' reference list feature.
@@ -820,7 +916,7 @@ public interface QuestionnairePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLOSED_ANSWER__ID = eINSTANCE.getClosedAnswer_Id();
+    EReference DEF_ANSWER__ID = eINSTANCE.getDefAnswer_Id();
 
   }
 

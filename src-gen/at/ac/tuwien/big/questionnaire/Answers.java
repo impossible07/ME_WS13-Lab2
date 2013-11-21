@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link at.ac.tuwien.big.questionnaire.Answers#getAnswers <em>Answers</em>}</li>
- *   <li>{@link at.ac.tuwien.big.questionnaire.Answers#getName <em>Name</em>}</li>
+ *   <li>{@link at.ac.tuwien.big.questionnaire.Answers#getDefanswer <em>Defanswer</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,7 +27,7 @@ public interface Answers extends EObject
 {
   /**
    * Returns the value of the '<em><b>Answers</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
+   * The list contents are of type {@link at.ac.tuwien.big.questionnaire.Answer}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Answers</em>' containment reference list isn't clear,
@@ -39,32 +39,32 @@ public interface Answers extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getAnswers();
+  EList<Answer> getAnswers();
 
   /**
-   * Returns the value of the '<em><b>Name</b></em>' reference.
+   * Returns the value of the '<em><b>Defanswer</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' reference isn't clear,
+   * If the meaning of the '<em>Defanswer</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' reference.
-   * @see #setName(ClosedAnswer)
-   * @see at.ac.tuwien.big.questionnaire.QuestionnairePackage#getAnswers_Name()
-   * @model
+   * @return the value of the '<em>Defanswer</em>' containment reference.
+   * @see #setDefanswer(DefAnswer)
+   * @see at.ac.tuwien.big.questionnaire.QuestionnairePackage#getAnswers_Defanswer()
+   * @model containment="true"
    * @generated
    */
-  ClosedAnswer getName();
+  DefAnswer getDefanswer();
 
   /**
-   * Sets the value of the '{@link at.ac.tuwien.big.questionnaire.Answers#getName <em>Name</em>}' reference.
+   * Sets the value of the '{@link at.ac.tuwien.big.questionnaire.Answers#getDefanswer <em>Defanswer</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' reference.
-   * @see #getName()
+   * @param value the new value of the '<em>Defanswer</em>' containment reference.
+   * @see #getDefanswer()
    * @generated
    */
-  void setName(ClosedAnswer value);
+  void setDefanswer(DefAnswer value);
 
 } // Answers

@@ -71,8 +71,10 @@ public class QuestionnaireFactoryImpl extends EFactoryImpl implements Questionna
       case QuestionnairePackage.CLOSED_QUESTION: return createClosedQuestion();
       case QuestionnairePackage.LIKERT_QUESTION: return createLikertQuestion();
       case QuestionnairePackage.ANSWERS: return createAnswers();
+      case QuestionnairePackage.ANSWER: return createAnswer();
       case QuestionnairePackage.OPEN_ANSWER: return createOpenAnswer();
       case QuestionnairePackage.CLOSED_ANSWER: return createClosedAnswer();
+      case QuestionnairePackage.DEF_ANSWER: return createDefAnswer();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -160,6 +162,17 @@ public class QuestionnaireFactoryImpl extends EFactoryImpl implements Questionna
    * <!-- end-user-doc -->
    * @generated
    */
+  public Answer createAnswer()
+  {
+    AnswerImpl answer = new AnswerImpl();
+    return answer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public OpenAnswer createOpenAnswer()
   {
     OpenAnswerImpl openAnswer = new OpenAnswerImpl();
@@ -175,6 +188,17 @@ public class QuestionnaireFactoryImpl extends EFactoryImpl implements Questionna
   {
     ClosedAnswerImpl closedAnswer = new ClosedAnswerImpl();
     return closedAnswer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DefAnswer createDefAnswer()
+  {
+    DefAnswerImpl defAnswer = new DefAnswerImpl();
+    return defAnswer;
   }
 
   /**

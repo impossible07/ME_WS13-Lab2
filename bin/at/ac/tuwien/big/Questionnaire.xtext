@@ -35,9 +35,13 @@ LikertQuestion:
 
 Answers:
 	'answers ['
-	(answers+=(OpenAnswer | ClosedAnswer)+)
+	(answers+=(Answer)+)
 	']'
-	('default answer is' name=[ClosedAnswer|STRING])?
+	(defanswer=DefAnswer)?
+;
+
+Answer:
+	(OpenAnswer | ClosedAnswer)
 ;
 
 OpenAnswer:
@@ -48,13 +52,6 @@ ClosedAnswer:
 	name=STRING ('enables question ['(id+=[Question|STRING](',')?)+']')?(',')?
 ;
 
-//Answers:
-//	'answers ['
-//	(answers+=(DefAnswer)+)
-//	']'
-//	('default answer is' name=[DefAnswer|STRING])?
-//;
-
-//DefAnswer:
-//	name=(OpenAnswer|ClosedAnswer)
-//;
+DefAnswer:
+	'default answer is' id+=[Answer|STRING]
+;

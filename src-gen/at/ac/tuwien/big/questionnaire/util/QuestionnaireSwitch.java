@@ -124,10 +124,18 @@ public class QuestionnaireSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case QuestionnairePackage.ANSWER:
+      {
+        Answer answer = (Answer)theEObject;
+        T result = caseAnswer(answer);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case QuestionnairePackage.OPEN_ANSWER:
       {
         OpenAnswer openAnswer = (OpenAnswer)theEObject;
         T result = caseOpenAnswer(openAnswer);
+        if (result == null) result = caseAnswer(openAnswer);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -135,6 +143,14 @@ public class QuestionnaireSwitch<T> extends Switch<T>
       {
         ClosedAnswer closedAnswer = (ClosedAnswer)theEObject;
         T result = caseClosedAnswer(closedAnswer);
+        if (result == null) result = caseAnswer(closedAnswer);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case QuestionnairePackage.DEF_ANSWER:
+      {
+        DefAnswer defAnswer = (DefAnswer)theEObject;
+        T result = caseDefAnswer(defAnswer);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -255,6 +271,22 @@ public class QuestionnaireSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Answer</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Answer</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnswer(Answer object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Open Answer</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -282,6 +314,22 @@ public class QuestionnaireSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseClosedAnswer(ClosedAnswer object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Def Answer</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Def Answer</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefAnswer(DefAnswer object)
   {
     return null;
   }
