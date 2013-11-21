@@ -369,7 +369,17 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//ClosedAnswer:
+		////Answers:
+		// //	'answers ['
+		// //	(answers+=(DefAnswer)+)
+		// //	']'
+		// //	('default answer is' name=[DefAnswer|STRING])?
+		// //;
+		//
+		////DefAnswer:
+		// //	name=(OpenAnswer|ClosedAnswer)
+		// //;
+		// ClosedAnswer:
 		//	name=STRING ("enables question [" (id+=[Question|STRING] ","?)+ "]")? ","?;
 		public ParserRule getRule() { return rule; }
 
@@ -539,7 +549,17 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 		return getOpenAnswerAccess().getRule();
 	}
 
-	//ClosedAnswer:
+	////Answers:
+	// //	'answers ['
+	// //	(answers+=(DefAnswer)+)
+	// //	']'
+	// //	('default answer is' name=[DefAnswer|STRING])?
+	// //;
+	//
+	////DefAnswer:
+	// //	name=(OpenAnswer|ClosedAnswer)
+	// //;
+	// ClosedAnswer:
 	//	name=STRING ("enables question [" (id+=[Question|STRING] ","?)+ "]")? ","?;
 	public ClosedAnswerElements getClosedAnswerAccess() {
 		return (pClosedAnswer != null) ? pClosedAnswer : (pClosedAnswer = new ClosedAnswerElements());

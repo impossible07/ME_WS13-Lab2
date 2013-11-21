@@ -47,3 +47,14 @@ OpenAnswer:
 ClosedAnswer:
 	name=STRING ('enables question ['(id+=[Question|STRING](',')?)+']')?(',')?
 ;
+
+//Answers:
+//	'answers ['
+//	(answers+=(DefAnswer)+)
+//	']'
+//	('default answer is' name=[DefAnswer|STRING])?
+//;
+
+//DefAnswer:
+//	name=(OpenAnswer|ClosedAnswer)
+//;
