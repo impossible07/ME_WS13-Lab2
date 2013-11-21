@@ -12,7 +12,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//Questionnaire/groups"/>
     </genClasses>
     <genClasses ecoreClass="Questionnaire.ecore#//Group">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Questionnaire.ecore#//Group/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Questionnaire.ecore#//Group/questions"/>
     </genClasses>
     <genClasses ecoreClass="Questionnaire.ecore#//Question">

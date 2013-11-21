@@ -11,7 +11,7 @@ Questionnaire:
 ;
 
 Group:
-	'group' name=STRING '['
+	'group' STRING '['
 	(questions+=(Question)+)
 	']'(',')?
 ;

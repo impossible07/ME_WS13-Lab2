@@ -62,8 +62,7 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Group");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cGroupKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cQuestionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cQuestionsQuestionParserRuleCall_3_0 = (RuleCall)cQuestionsAssignment_3.eContents().get(0);
@@ -71,20 +70,17 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Group:
-		//	"group" name=STRING "[" questions+=Question+ "]" ","?;
+		//	"group" STRING "[" questions+=Question+ "]" ","?;
 		public ParserRule getRule() { return rule; }
 
-		//"group" name=STRING "[" questions+=Question+ "]" ","?
+		//"group" STRING "[" questions+=Question+ "]" ","?
 		public Group getGroup() { return cGroup; }
 
 		//"group"
 		public Keyword getGroupKeyword_0() { return cGroupKeyword_0; }
 
-		//name=STRING
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getSTRINGTerminalRuleCall_1() { return cSTRINGTerminalRuleCall_1; }
 
 		//"["
 		public Keyword getLeftSquareBracketKeyword_2() { return cLeftSquareBracketKeyword_2; }
@@ -500,7 +496,7 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Group:
-	//	"group" name=STRING "[" questions+=Question+ "]" ","?;
+	//	"group" STRING "[" questions+=Question+ "]" ","?;
 	public GroupElements getGroupAccess() {
 		return (pGroup != null) ? pGroup : (pGroup = new GroupElements());
 	}

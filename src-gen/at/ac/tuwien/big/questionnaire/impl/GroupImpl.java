@@ -8,7 +8,6 @@ import at.ac.tuwien.big.questionnaire.QuestionnairePackage;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,7 +15,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,7 +27,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.ac.tuwien.big.questionnaire.impl.GroupImpl#getName <em>Name</em>}</li>
  *   <li>{@link at.ac.tuwien.big.questionnaire.impl.GroupImpl#getQuestions <em>Questions</em>}</li>
  * </ul>
  * </p>
@@ -38,26 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class GroupImpl extends MinimalEObjectImpl.Container implements Group
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getQuestions() <em>Questions</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -87,29 +64,6 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
   protected EClass eStaticClass()
   {
     return QuestionnairePackage.Literals.GROUP;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.GROUP__NAME, oldName, name));
   }
 
   /**
@@ -152,8 +106,6 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
   {
     switch (featureID)
     {
-      case QuestionnairePackage.GROUP__NAME:
-        return getName();
       case QuestionnairePackage.GROUP__QUESTIONS:
         return getQuestions();
     }
@@ -171,9 +123,6 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
   {
     switch (featureID)
     {
-      case QuestionnairePackage.GROUP__NAME:
-        setName((String)newValue);
-        return;
       case QuestionnairePackage.GROUP__QUESTIONS:
         getQuestions().clear();
         getQuestions().addAll((Collection<? extends Question>)newValue);
@@ -192,9 +141,6 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
   {
     switch (featureID)
     {
-      case QuestionnairePackage.GROUP__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case QuestionnairePackage.GROUP__QUESTIONS:
         getQuestions().clear();
         return;
@@ -212,29 +158,10 @@ public class GroupImpl extends MinimalEObjectImpl.Container implements Group
   {
     switch (featureID)
     {
-      case QuestionnairePackage.GROUP__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case QuestionnairePackage.GROUP__QUESTIONS:
         return questions != null && !questions.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //GroupImpl
