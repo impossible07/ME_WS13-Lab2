@@ -27,8 +27,8 @@ public class InternalQuestionnaireLexer extends Lexer {
     public static final int EOF=-1;
     public static final int RULE_SL_COMMENT=8;
     public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
     public static final int T__19=19;
+    public static final int T__30=30;
     public static final int RULE_STRING=4;
     public static final int T__16=16;
     public static final int T__15=15;
@@ -1184,8 +1184,8 @@ public class InternalQuestionnaireLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\33\2\uffff\1\33\1\uffff\5\33\2\uffff\1\31\1\uffff\3\33"+
-        "\1\31\2\uffff\3\31\2\uffff\1\33\3\uffff\1\33\1\uffff\6\33\2\uffff"+
+        "\1\uffff\1\33\2\uffff\1\33\1\uffff\5\33\2\uffff\1\31\1\uffff\3"+
+        "\33\1\31\2\uffff\3\31\2\uffff\1\33\3\uffff\1\33\1\uffff\6\33\2\uffff"+
         "\1\73\1\uffff\3\33\5\uffff\10\33\2\uffff\17\33\1\126\2\33\1\uffff"+
         "\7\33\1\uffff\15\33\3\uffff\7\33\3\uffff\1\33\1\166\1\167\1\uffff"+
         "\1\33\2\uffff\2\33\1\173\1\uffff";
@@ -1203,16 +1203,16 @@ public class InternalQuestionnaireLexer extends Lexer {
         "\3\40\1\156\1\171\1\145\1\40\3\uffff\1\141\2\60\1\uffff\1\151\2"+
         "\uffff\1\162\1\145\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\165\2\uffff\1\162\1\uffff\1\165\1\160\1\154\2\151\2\uffff"+
-        "\1\56\1\uffff\2\156\1\145\1\172\2\uffff\2\uffff\1\57\2\uffff\1\145"+
-        "\3\uffff\1\157\1\uffff\1\156\1\154\1\145\1\157\1\156\1\153\2\uffff"+
-        "\1\56\1\uffff\1\163\1\141\1\146\5\uffff\1\163\1\165\1\144\1\164"+
-        "\1\156\1\163\1\147\1\145\2\uffff\1\167\1\142\1\141\1\164\1\160\1"+
-        "\141\1\151\1\40\1\145\1\154\1\162\1\145\1\154\1\165\1\151\1\172"+
-        "\1\164\1\160\1\uffff\1\144\1\145\1\164\1\162\1\145\1\154\1\157\1"+
-        "\uffff\1\157\1\151\1\154\3\40\2\163\1\164\1\156\1\162\1\156\1\145"+
-        "\3\uffff\3\40\1\156\1\171\1\145\1\40\3\uffff\1\141\2\172\1\uffff"+
-        "\1\151\2\uffff\1\162\1\145\1\172\1\uffff";
+        "\1\uffff\1\165\2\uffff\1\162\1\uffff\1\165\1\160\1\154\2\151\2"+
+        "\uffff\1\56\1\uffff\2\156\1\145\1\172\2\uffff\2\uffff\1\57\2\uffff"+
+        "\1\145\3\uffff\1\157\1\uffff\1\156\1\154\1\145\1\157\1\156\1\153"+
+        "\2\uffff\1\56\1\uffff\1\163\1\141\1\146\5\uffff\1\163\1\165\1\144"+
+        "\1\164\1\156\1\163\1\147\1\145\2\uffff\1\167\1\142\1\141\1\164\1"+
+        "\160\1\141\1\151\1\40\1\145\1\154\1\162\1\145\1\154\1\165\1\151"+
+        "\1\172\1\164\1\160\1\uffff\1\144\1\145\1\164\1\162\1\145\1\154\1"+
+        "\157\1\uffff\1\157\1\151\1\154\3\40\2\163\1\164\1\156\1\162\1\156"+
+        "\1\145\3\uffff\3\40\1\156\1\171\1\145\1\40\3\uffff\1\141\2\172\1"+
+        "\uffff\1\151\2\uffff\1\162\1\145\1\172\1\uffff";
     static final String DFA12_acceptS =
         "\2\uffff\1\2\1\3\1\uffff\1\5\5\uffff\1\15\1\16\1\uffff\1\20\4\uffff"+
         "\1\25\1\26\3\uffff\1\32\1\33\1\uffff\1\25\1\2\1\3\1\uffff\1\5\6"+

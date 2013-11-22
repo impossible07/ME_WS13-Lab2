@@ -20,6 +20,7 @@ Question:
 	(OpenQuestion | ClosedQuestion | LikertQuestion)
 ;
 
+//Nur OpenQuestion mandatory ?????
 OpenQuestion:
 	('mandatory')? ('multiline')? 'open question' name=STRING(',')?
 ;

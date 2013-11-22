@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.scoping.Scopes
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
+//import at.ac.tuwien.big.questionnaire.ClosedAnswer
+//import at.ac.tuwien.big.questionnaire.impl.QuestionImpl
 
 /**
  * This class contains custom scoping description.
@@ -28,6 +30,13 @@ class QuestionnaireScopeProvider extends AbstractDeclarativeScopeProvider {
 			}
 			return Scopes.scopeFor(scopeList);
 		}
+		//val List<EObject> scopeList2 = newArrayList;
+		//if (context instanceof ClosedAnswer) {
+		//	for (EObject e : (context.eContainer() as QuestionImpl).getQuestions()) {
+		//		scopeList.add(e);
+		//	}
+		//	return Scopes.scopeFor(scopeList2);
+		//}
     	return super.getScope(context, reference);
 	}
 }
