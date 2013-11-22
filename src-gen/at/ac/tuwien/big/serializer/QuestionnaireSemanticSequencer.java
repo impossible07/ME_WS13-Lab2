@@ -135,10 +135,17 @@ public class QuestionnaireSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     id+=[Answer|STRING]
+	 *     id=[Answer|STRING]
 	 */
 	protected void sequence_DefAnswer(EObject context, DefAnswer semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, QuestionnairePackage.Literals.DEF_ANSWER__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QuestionnairePackage.Literals.DEF_ANSWER__ID));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDefAnswerAccess().getIdAnswerSTRINGTerminalRuleCall_1_0_1(), semanticObject.getId());
+		feeder.finish();
 	}
 	
 	

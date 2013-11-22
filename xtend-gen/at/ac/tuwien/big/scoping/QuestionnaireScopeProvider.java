@@ -3,11 +3,17 @@
  */
 package at.ac.tuwien.big.scoping;
 
-import org.eclipse.emf.ecore.EClass;
+import java.util.ArrayList;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
+import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
+
+import at.ac.tuwien.big.questionnaire.DefAnswer;
+import at.ac.tuwien.big.questionnaire.impl.AnswerImpl;
+import at.ac.tuwien.big.questionnaire.impl.AnswersImpl;
 
 /**
  * This class contains custom scoping description.
@@ -18,14 +24,21 @@ import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 @SuppressWarnings("all")
 public class QuestionnaireScopeProvider extends AbstractDeclarativeScopeProvider {
   public IScope getScope(final EObject context, final EReference reference) {
-    String _name = reference.getName();
+	ArrayList<EObject> scopeList = new ArrayList<EObject>();
+	if (context instanceof DefAnswer) {
+		for (EObject e : ((AnswersImpl)context.eContainer()).getAnswers()) {
+			scopeList.add(e);
+		}
+		return Scopes.scopeFor(scopeList);
+	}
+    /*String _name = reference.getName();
     String _plus = ("scope_" + _name);
     String _plus_1 = (_plus + "(");
     EClass _eClass = context.eClass();
     String _name_1 = _eClass.getName();
     String _plus_2 = (_plus_1 + _name_1);
     String _plus_3 = (_plus_2 + ",..)");
-    System.out.println(_plus_3);
+    System.out.println(_plus_3);*/
     return super.getScope(context, reference);
   }
 }

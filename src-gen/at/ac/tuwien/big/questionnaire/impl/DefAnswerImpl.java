@@ -6,15 +6,13 @@ import at.ac.tuwien.big.questionnaire.Answer;
 import at.ac.tuwien.big.questionnaire.DefAnswer;
 import at.ac.tuwien.big.questionnaire.QuestionnairePackage;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,14 +30,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 public class DefAnswerImpl extends MinimalEObjectImpl.Container implements DefAnswer
 {
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' reference list.
+   * The cached value of the '{@link #getId() <em>Id</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getId()
    * @generated
    * @ordered
    */
-  protected EList<Answer> id;
+  protected Answer id;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,13 +65,42 @@ public class DefAnswerImpl extends MinimalEObjectImpl.Container implements DefAn
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Answer> getId()
+  public Answer getId()
   {
-    if (id == null)
+    if (id != null && id.eIsProxy())
     {
-      id = new EObjectResolvingEList<Answer>(Answer.class, this, QuestionnairePackage.DEF_ANSWER__ID);
+      InternalEObject oldId = (InternalEObject)id;
+      id = (Answer)eResolveProxy(oldId);
+      if (id != oldId)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, QuestionnairePackage.DEF_ANSWER__ID, oldId, id));
+      }
     }
     return id;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Answer basicGetId()
+  {
+    return id;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setId(Answer newId)
+  {
+    Answer oldId = id;
+    id = newId;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, QuestionnairePackage.DEF_ANSWER__ID, oldId, id));
   }
 
   /**
@@ -87,7 +114,8 @@ public class DefAnswerImpl extends MinimalEObjectImpl.Container implements DefAn
     switch (featureID)
     {
       case QuestionnairePackage.DEF_ANSWER__ID:
-        return getId();
+        if (resolve) return getId();
+        return basicGetId();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -97,15 +125,13 @@ public class DefAnswerImpl extends MinimalEObjectImpl.Container implements DefAn
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case QuestionnairePackage.DEF_ANSWER__ID:
-        getId().clear();
-        getId().addAll((Collection<? extends Answer>)newValue);
+        setId((Answer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -122,7 +148,7 @@ public class DefAnswerImpl extends MinimalEObjectImpl.Container implements DefAn
     switch (featureID)
     {
       case QuestionnairePackage.DEF_ANSWER__ID:
-        getId().clear();
+        setId((Answer)null);
         return;
     }
     super.eUnset(featureID);
@@ -139,7 +165,7 @@ public class DefAnswerImpl extends MinimalEObjectImpl.Container implements DefAn
     switch (featureID)
     {
       case QuestionnairePackage.DEF_ANSWER__ID:
-        return id != null && !id.isEmpty();
+        return id != null;
     }
     return super.eIsSet(featureID);
   }

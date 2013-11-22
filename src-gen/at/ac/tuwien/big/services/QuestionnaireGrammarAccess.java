@@ -415,16 +415,16 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIdAnswerSTRINGTerminalRuleCall_1_0_1 = (RuleCall)cIdAnswerCrossReference_1_0.eContents().get(1);
 		
 		//DefAnswer:
-		//	"default answer is" id+=[Answer|STRING];
+		//	"default answer is" id=[Answer|STRING];
 		public ParserRule getRule() { return rule; }
 
-		//"default answer is" id+=[Answer|STRING]
+		//"default answer is" id=[Answer|STRING]
 		public Group getGroup() { return cGroup; }
 
 		//"default answer is"
 		public Keyword getDefaultAnswerIsKeyword_0() { return cDefaultAnswerIsKeyword_0; }
 
-		//id+=[Answer|STRING]
+		//id=[Answer|STRING]
 		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
 
 		//[Answer|STRING]
@@ -586,7 +586,7 @@ public class QuestionnaireGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DefAnswer:
-	//	"default answer is" id+=[Answer|STRING];
+	//	"default answer is" id=[Answer|STRING];
 	public DefAnswerElements getDefAnswerAccess() {
 		return (pDefAnswer != null) ? pDefAnswer : (pDefAnswer = new DefAnswerElements());
 	}

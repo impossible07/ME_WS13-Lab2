@@ -401,7 +401,7 @@ public interface QuestionnairePackage extends EPackage
   int DEF_ANSWER = 10;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' reference list.
+   * The feature id for the '<em><b>Id</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -651,10 +651,10 @@ public interface QuestionnairePackage extends EPackage
   EClass getDefAnswer();
 
   /**
-   * Returns the meta object for the reference list '{@link at.ac.tuwien.big.questionnaire.DefAnswer#getId <em>Id</em>}'.
+   * Returns the meta object for the reference '{@link at.ac.tuwien.big.questionnaire.DefAnswer#getId <em>Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Id</em>'.
+   * @return the meta object for the reference '<em>Id</em>'.
    * @see at.ac.tuwien.big.questionnaire.DefAnswer#getId()
    * @see #getDefAnswer()
    * @generated
@@ -883,7 +883,7 @@ public interface QuestionnairePackage extends EPackage
     EClass DEF_ANSWER = eINSTANCE.getDefAnswer();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Id</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

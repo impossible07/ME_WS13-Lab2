@@ -38,7 +38,6 @@
         eType="#//Question"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DefAnswer">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="id" unique="false" upperBound="-1"
-        eType="#//Answer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//Answer"/>
   </eClassifiers>
 </ecore:EPackage>

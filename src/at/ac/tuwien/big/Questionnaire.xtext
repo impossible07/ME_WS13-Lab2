@@ -53,5 +53,5 @@ ClosedAnswer:
 ;
 
 DefAnswer:
-	'default answer is' id+=[Answer|STRING]
+	'default answer is' id=[Answer|STRING]
 ;
