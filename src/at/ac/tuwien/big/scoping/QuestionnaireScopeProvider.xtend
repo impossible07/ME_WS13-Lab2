@@ -3,15 +3,17 @@
  */
 package at.ac.tuwien.big.scoping
 
+import at.ac.tuwien.big.questionnaire.ClosedAnswer
 import at.ac.tuwien.big.questionnaire.DefAnswer
 import at.ac.tuwien.big.questionnaire.impl.AnswersImpl
+import at.ac.tuwien.big.questionnaire.impl.GroupImpl
+import at.ac.tuwien.big.questionnaire.impl.QuestionnaireImpl
 import java.util.List
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
+import org.eclipse.xtext.scoping.IScope
 import org.eclipse.xtext.scoping.Scopes
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
-//import at.ac.tuwien.big.questionnaire.ClosedAnswer
-//import at.ac.tuwien.big.questionnaire.impl.QuestionImpl
 
 /**
  * This class contains custom scoping description.
@@ -24,19 +26,31 @@ class QuestionnaireScopeProvider extends AbstractDeclarativeScopeProvider {
 	
 	override getScope(EObject context, EReference reference) {
 		val List<EObject> scopeList = newArrayList;
+		  //////////////////////////////////////
+		 // Scope for "default answer is..." //
+		//////////////////////////////////////
 		if (context instanceof DefAnswer) {
 			for (EObject e : (context.eContainer() as AnswersImpl).getAnswers()) {
 				scopeList.add(e);
 			}
-			return Scopes.scopeFor(scopeList);
+			if (scopeList.empty) 
+				return IScope.NULLSCOPE
+			else 
+				return Scopes.scopeFor(scopeList);
+		  ///////////////////////////////////////
+		 // Scope for "enables question [..." //
+		///////////////////////////////////////
+		} else if (context instanceof ClosedAnswer) {
+			for (EObject e : (context.eContainer().eContainer().eContainer().eContainer() as QuestionnaireImpl).groups) {
+				for (EObject q : (e as GroupImpl).questions) {
+					scopeList.add(q);
+				}
+			}
+			if (scopeList.empty) 
+				return IScope.NULLSCOPE
+			else 
+				return Scopes.scopeFor(scopeList);
 		}
-		//val List<EObject> scopeList2 = newArrayList;
-		//if (context instanceof ClosedAnswer) {
-		//	for (EObject e : (context.eContainer() as QuestionImpl).getQuestions()) {
-		//		scopeList.add(e);
-		//	}
-		//	return Scopes.scopeFor(scopeList2);
-		//}
     	return super.getScope(context, reference);
 	}
 }
